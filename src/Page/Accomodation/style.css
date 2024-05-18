@@ -1,0 +1,68 @@
+.border-calender{
+    border: solid 1px orange;
+  }
+  
+  .hover-punter{
+    cursor: pointer;
+    padding:8px;
+    transition:  0.3s;
+    cursor: pointer !important;
+   width: 30%;
+  }
+  
+  .hover-punter:hover{
+    background: #f0f0f0;
+    border-radius: 5px;
+    cursor: pointer !important;
+    border-radius: 10px;
+    z-index: 1000;
+  }
+  
+  
+  .Button-Search{
+    border-radius: 5px;
+    cursor: pointer;
+    border-radius: 10px;
+    justify-content: center;
+  }
+  
+  .rdrCalendarWrapper {
+    background: #fff;
+    box-sizing: border-box;
+    display: inline-flex;
+    flex-direction: column;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    transition:  0.3s;
+  }
+  
+  .rdrMonth{
+    width: 100% !;
+  }
+  
+  .rdrCalendarWrapper{
+    font-size: 16px !important;
+    box-shadow: 17px 20px 40px rgba(0,0,0,.21) !important;
+    border-radius: 1.25rem;
+    user-select: none;
+    width: 720px;
+    position: absolute;
+    right: -177px;
+    left: 0;
+    margin: auto;
+    top: 330px;
+    transition:  0.3s;
+  }
+  
+  
+  .border-header{
+    border-bottom: 1px solid rgb(224, 224, 224);
+    
+  }
+  
+  
+  
+  
+  
