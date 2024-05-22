@@ -1,6 +1,25 @@
 import styled, { keyframes ,css } from "styled-components"; // Make sure to install styled-components
 
 
+
+export const fadeInImg = ({time ='2s', type="ease"} = {}) => 
+css` animation: ${time} ${fadekeyframes} ${type};`
+
+
+const fadekeyframes = keyframes`
+from {
+    filter: blur(5px);
+    opacity: 0;
+}
+
+
+to {
+
+    filter: blur(0);
+    opacity: 1;
+}
+`
+
 export const fadeIn = keyframes`
   from {
     opacity: 0;
@@ -78,9 +97,7 @@ text-align: center;
 border: solid 1px #dbdde1;
 height: 39px;
 border-radius: 5px;
-
 `
-
 
 export const StyleSpanIcons = styled.span`
 display: flex;
@@ -92,37 +109,56 @@ export const StyleGroup= styled.div`
 `
 
 
-export const MainProduct = styled.span`
+export const MainProduct = styled.div`
 width: 100%;
-display: flex;
 box-shadow: 17px 20px 40px rgba(0, 0, 0, .21) ;
 justify-content: space-between;
 align-items: center;
 border-radius:25px;
+@media(min-width: 1024) {
+  dispaly: block;
+}
 `
 
-
 export const ImginProduct = styled.img`
-width: 28%;
+width: 100%;
 object-fit: cover;
 height:12rem;
-border-bottom-left-radius:8%;
-border-top-left-radius: 8%;
+
+${fadeInImg({time:"2s"})}
+
+@media (max-width: 2000px) {
+  border-bottom-left-radius:8%;
+  border-top-left-radius: 8%;
+}
+@media (max-width: 1000px) {
+  border-bottom-left-radius: 0px; 
+  border-top-left-radius: 23px;
+  border-top-right-radius: 23px;
+}
+
+@media (max-width: 480px) {
+  border-bottom-left-radius: 0px; 
+  border-top-left-radius: 23px;
+  border-top-right-radius: 23px;
+}
+@media(max-width: 400px) {
+  border-bottom-left-radius: 0px; 
+  border-top-left-radius: 23px;
+  border-top-right-radius: 23px;
+}
 `
 export const SectionSearch = styled.section`
 border-bottom: 1px solid rgb(224, 224, 224);
-height: 13rem;
+
 `
-
-
 export const ContainerIcons = styled.div`
 display: flex;
 justify-content: space-between;
 `
-
-
 export const ContaineButton = styled.div`
-width:17%;
+width:100%%;
+padding: 0.5rem;
 `
 
 export const ContainerHeader = styled.header`
@@ -134,5 +170,58 @@ font-weight: 400;
 overflow: hidden;
 text-overflow: ellipsis;
 white-space: nowrap;
-width: 470px
+width: 470px;
+
+@media (max-width: 768px) {
+  width: 90%;
+}
+
+@media (max-width: 480px) {
+  width: 100%;
+}
+`
+
+export const  ContainerFooter = styled.footer`
+  border-top:1px solid rgb(224, 224, 224);
+`
+
+
+export const  BorderInput = styled.div`
+border-left:1px solid rgb(224, 224, 224);
+cursos:pointer;
+
+@media(max-width: 1024px) {
+  border-left:none;
+  border-bottom: 1px solid rgb(224, 224, 224)
+}
+`
+
+export const MainAccomodation = styled.main`
+
+`
+
+
+export const BorderSearch = styled.div`
+
+@media(max-width: 1500px) {
+  border-bottom: 1px solid rgb(224, 224, 224)
+}
+`
+
+
+export const ContainerButtonSearch = styled.div`
+
+@media(max-width: 1500px) {
+ 
+}
+`
+
+
+export const ButtonSearch = styled.button`
+
+border-radius: 10px;
+
+@media(max-width: 1500px) {
+  width:100%;
+}
 `
