@@ -3,11 +3,11 @@ import IconAccomodation from "../IconAccomodation/IconAccomodation"
 
 
 
-const DescripctionAccomodation =() =>{
+const DescripctionAccomodation =({title}) =>{
 
     return (  <div className="p-2" >
                 <TextWidth>
-                <h2 className="text-lg font-semibold mb-2">Room sencilla</h2>
+                <h2 className="text-lg font-semibold mb-2">{title}</h2>
                 </TextWidth>
                 <div className="text-sm text-gray-600 mb-2">Saint-Florent, a 5.9 km de: Patrimonio</div>
                     <div>

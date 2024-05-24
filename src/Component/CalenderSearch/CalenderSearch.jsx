@@ -3,7 +3,7 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { BorderInput, BorderSearch, ButtonSearch, ContainerButtonSearch, ContainerFooter, MainAccomodation, MainProduct } from "../../Ui/Style/GeneralStyle";
 
-const CalenderSearch =({HandClickMenuPeople,HandClickMenuEnd,setStartDate,startDate,HandClickMenu}) =>{
+const CalenderSearch =({HandClickMenuPeople,HandClickMenuEnd,setStartDate,startDate,HandClickMenu,onsubmit}) =>{
 
     return (
         <MainAccomodation className=" lg:flex   mx-auto   max-w-5xl items-center justify-between p-4 lg:px-8">
@@ -26,7 +26,7 @@ const CalenderSearch =({HandClickMenuPeople,HandClickMenuEnd,setStartDate,startD
                                 <span>5 Huespedes</span>
                             </BorderInput>
                             <ContainerButtonSearch className="flex flex-col ">
-                                <ButtonSearch className="   w-[150px] bg-blue-500 text-white py-4    rounded hover:bg-blue-600 transition duration-200">
+                                <ButtonSearch className="   w-[150px] bg-blue-500 text-white py-4    rounded hover:bg-blue-600 transition duration-200" onClick={onsubmit}>
                                         Buscar
                                 </ButtonSearch>
                             </ContainerButtonSearch>

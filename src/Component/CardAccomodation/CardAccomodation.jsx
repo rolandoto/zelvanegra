@@ -4,7 +4,7 @@ import ButtonAccomodation from "../ButtonAccomodation/ButtonAccomodation";
 import DescripctionAccomodation from "../DescripctionAccomodation/DescripctionAccomodation";
 import UsenearScrean from "../../Hooks/USenearScreean";
 
-const CardAccomodation =({img}) =>{
+const CardAccomodation =({img,title,price}) =>{
 
     const {show,element} =  UsenearScrean()
   
@@ -14,8 +14,8 @@ const CardAccomodation =({img}) =>{
                 {show  && 
                         <ImginProduct className="lg:w-full " src={img}  alt="Hotel Image"/>
                     }    
-                        <DescripctionAccomodation />
-                        <ButtonAccomodation />
+                        <DescripctionAccomodation  title={title}  />
+                        <ButtonAccomodation price={price}  />
                     </MainProduct> 
                 </MainAccomodation>)
 
