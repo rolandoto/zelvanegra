@@ -190,7 +190,7 @@ const Accommodation = () => {
                     <Search contextShowMenuPeople={contextShowMenuPeople}
                           setContextShowMenuPeople={setContextShowMenuPeople}  />
                 </SectionSearch>
-                <LoadingSkeleton />
+               
                {FillContent()}
                 </Layout>
             </>
