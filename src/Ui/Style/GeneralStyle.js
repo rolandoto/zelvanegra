@@ -33,12 +33,12 @@ export const fadeIn = keyframes`
 
 
 export const StyledContextTyeHotel = styled.div`
-top: 330px;
+top: 348px;
 position: absolute;
 left: 0%;
 width: 330px;
 height: 170px;
-right:-567px;
+right: -445px;
 margin: auto;
 z-index: 1000;
 padding: 8px;
@@ -115,13 +115,14 @@ box-shadow: 17px 20px 40px rgba(0, 0, 0, .21) ;
 justify-content: space-between;
 align-items: center;
 border-radius:25px;
+
 @media(min-width: 1024) {
   dispaly: block;
 }
 `
 
 export const ImginProduct = styled.img`
-width: 100%;
+width: 30%;
 object-fit: cover;
 height:12rem;
 
@@ -147,6 +148,11 @@ ${fadeInImg({time:"2s"})}
   border-top-left-radius: 23px;
   border-top-right-radius: 23px;
 }
+
+@media (max-width: 1000px) {
+  width: 100%;
+}
+
 `
 export const SectionSearch = styled.section`
 border-bottom: 1px solid rgb(224, 224, 224);
@@ -189,7 +195,16 @@ export const  ContainerFooter = styled.footer`
 export const  BorderInput = styled.div`
 border-left:1px solid rgb(224, 224, 224);
 cursos:pointer;
+width:100%;
+@media(max-width: 1024px) {
+  border-left:none;
+  border-bottom: 1px solid rgb(224, 224, 224)
+}
+`
 
+export const  BorderInputInitial = styled.div`
+cursos:pointer;
+width:100%;
 @media(max-width: 1024px) {
   border-left:none;
   border-bottom: 1px solid rgb(224, 224, 224)
@@ -208,20 +223,47 @@ export const BorderSearch = styled.div`
 }
 `
 
-
 export const ContainerButtonSearch = styled.div`
-
 @media(max-width: 1500px) {
- 
 }
 `
-
-
 export const ButtonSearch = styled.button`
-
 border-radius: 10px;
-
 @media(max-width: 1500px) {
   width:100%;
 }
 `
+
+export const ContainerLabel =styled.div`
+position: absolute;
+height: 200px;
+width: 158px;
+margin-left: -20px;
+`
+
+export const Label = styled.div`
+  display: inline-block;
+  background-color: #72c196;
+  color: white;
+  padding: 5px 10px;
+  font-size: 14px;
+  border-radius: 5px;
+  position: absolute;
+  z-index: 1;
+  font-weight: 500;
+  top: 12px; /* Ajusta según sea necesario */
+  left: 10px; /* Ajusta según sea necesario */
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 93%;
+    left: 0px;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid #72c196;
+    transform: translateY(-50%);
+  }
+`;

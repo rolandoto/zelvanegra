@@ -8,7 +8,7 @@ const Layout =({children }) =>{
     return (<>
          <ContainerHeader >
                 <Banner/>
-                <nav className="mx-auto flex  max-w-5xl items-end justify-between p-4 lg:px-8" aria-label="Global">
+                <nav className=  "   mx-auto flex  max-w-5xl items-end justify-between p-4 lg:px-8" aria-label="Global">
                     <div className="flex lg:flex-1">
                     <a href="#" className="-m-1.5 p-1.5">
                         <img className="w-60" src="https://raw.githubusercontent.com/rolandoto/image-pms/main/Logos/Mesa%20de%20trabajo%204%402x.png" alt=""/>

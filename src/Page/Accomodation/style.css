@@ -24,7 +24,7 @@
     cursor: pointer;
     border-radius: 10px;
     justify-content: center;
-    margin-top: 5px;
+ 
     
   }
   
@@ -46,25 +46,43 @@
   
   .rdrCalendarWrapper{
     font-size: 16px !important;
-    box-shadow: 17px 20px 40px rgba(0,0,0,.21) !important;
+    box-shadow: 17px 20px 40px rgba(0, 0, 0, .21) !important;
     border-radius: 1.25rem;
+    -webkit-user-select: none;
     user-select: none;
-    width: 720px;
+    width: 778px;
     position: absolute;
-    right: -177px;
+    right: 186px;;
     left: 0;
     margin: auto;
-    top: 330px;
-    transition:  0.3s;
+    top: 350px;
+    transition: 0.3s;
+    z-index: 1000;
+    
   }
-  
+
+  /* Para pantallas medianas (tablets) */
+@media (max-width: 1024px) {
+  .rdrCalendarWrapper {
+    width: 95%;
+    top: 200px;
+    left: 10px;
+  }
+}
+
+/* Para pantallas pequeñas (móviles) */
+@media (max-width: 640px) {
+  .rdrCalendarWrapper {
+    width: 95%;
+    top: 200px;
+    left: 10px;
+    box-shadow: 10px 15px 30px rgba(0, 0, 0, .21) !important; /* Ajusta la sombra */
+  }
+} 
   
   .border-header{
     border-bottom: 1px solid rgb(224, 224, 224);
     
   }
   
-  
-  
-  
-  
+

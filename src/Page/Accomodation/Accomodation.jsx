@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { DateRange } from 'react-date-range';
 import esLocale from 'date-fns/locale/es';
 import "./style.css"
@@ -14,106 +14,35 @@ import UseHotelActions from "../../Actions/useHotelsActions";
 import { useSelector } from "react-redux";
 import { Toaster } from "sonner";
 import moment from "moment";
-import ContentLoader from "react-content-loader";
-
-
-const LoadingSkeleton =(props) =>{
-  return (      <ContentLoader height={1000} width={700} >
-      <circle cx="25" cy="50" r="25" />
-      <circle cx="25" cy="150" r="25" />
-      <circle cx="25" cy="250" r="25" />
-      <circle cx="25" cy="330" r="25" />
-    
-     
-      <rect x="60" y="30" rx="5" ry="5" width="220" height="15" />
-      <rect x="60" y="50" rx="5" ry="5" width="70" height="15" />
-      <rect x="140" y="50" rx="5" ry="5" width="90" height="15" />
-      <rect x="240" y="50" rx="5" ry="5" width="70" height="15" />
-      <rect x="320" y="50" rx="5" ry="5" width="60" height="15" />
-      <rect x="390" y="50" rx="5" ry="5" width="50" height="15" />
-      <rect x="450" y="50" rx="5" ry="5" width="70" height="15" />
-      <rect x="60" y="70" rx="5" ry="5" width="60" height="15" />
-      <rect x="130" y="70" rx="5" ry="5" width="80" height="15" />
-      <rect x="220" y="70" rx="5" ry="5" width="90" height="15" />
-      <rect x="320" y="70" rx="5" ry="5" width="100" height="15" />
-      <rect x="380" y="70" rx="5" ry="5" width="50" height="15" />
-      <rect x="440" y="70" rx="5" ry="5" width="60" height="15" />
-
-      <rect x="60" y="130" rx="5" ry="5" width="220" height="15" />
-      <rect x="60" y="150" rx="5" ry="5" width="70" height="15" />
-      <rect x="140" y="150" rx="5" ry="5" width="90" height="15" />
-      <rect x="240" y="150" rx="5" ry="5" width="70" height="15" />
-      <rect x="320" y="150" rx="5" ry="5" width="60" height="15" />
-      <rect x="390" y="150" rx="5" ry="5" width="50" height="15" />
-      <rect x="450" y="150" rx="5" ry="5" width="70" height="15" />
-      <rect x="60" y="170" rx="5" ry="5" width="60" height="15" />
-      <rect x="130" y="170" rx="5" ry="5" width="80" height="15" />
-      <rect x="220" y="170" rx="5" ry="5" width="90" height="15" />
-      <rect x="320" y="170" rx="5" ry="5" width="100" height="15" />
-      <rect x="380" y="170" rx="5" ry="5" width="50" height="15" />
-      <rect x="440" y="170" rx="5" ry="5" width="60" height="15" />
-
-      <rect x="60" y="230" rx="5" ry="5" width="220" height="15" />
-      <rect x="60" y="250" rx="5" ry="5" width="70" height="15" />
-      <rect x="140" y="250" rx="5" ry="5" width="90" height="15" />
-      <rect x="240" y="250" rx="5" ry="5" width="70" height="15" />
-      <rect x="320" y="250" rx="5" ry="5" width="60" height="15" />
-      <rect x="390" y="250" rx="5" ry="5" width="50" height="15" />
-      <rect x="450" y="250" rx="5" ry="5" width="70" height="15" />
-      <rect x="60" y="270" rx="5" ry="5" width="60" height="15" />
-      <rect x="130" y="270" rx="5" ry="5" width="80" height="15" />
-      <rect x="220" y="270" rx="5" ry="5" width="90" height="15" />
-      <rect x="320" y="270" rx="5" ry="5" width="100" height="15" />
-      <rect x="380" y="270" rx="5" ry="5" width="50" height="15" />
-      <rect x="440" y="270" rx="5" ry="5" width="60" height="15" />
-
-      <rect x="60" y="310" rx="5" ry="5" width="220" height="15" />
-      <rect x="60" y="330" rx="5" ry="5" width="70" height="15" />
-      <rect x="140" y="330" rx="5" ry="5" width="90" height="15" />
-      <rect x="240" y="330" rx="5" ry="5" width="70" height="15" />
-      <rect x="320" y="330" rx="5" ry="5" width="60" height="15" />
-      <rect x="390" y="330" rx="5" ry="5" width="50" height="15" />
-      <rect x="450" y="330" rx="5" ry="5" width="70" height="15" />
-      <rect x="60" y="350" rx="5" ry="5" width="60" height="15" />
-      <rect x="130" y="350" rx="5" ry="5" width="80" height="15" />
-      <rect x="220" y="350" rx="5" ry="5" width="90" height="15" />
-      <rect x="320" y="350" rx="5" ry="5" width="100" height="15" />
-      <rect x="380" y="350" rx="5" ry="5" width="50" height="15" />
-      <rect x="440" y="350" rx="5" ry="5" width="60" height="15" />
-
-    
-     
-    </ContentLoader>)
-}
+import LoadingSkeleton from "../../Component/LoadingSkeleton/LoadingSkeleton";
+import UseCalenderSearch from "../../Hooks/UseCalenderSearch";
 
 
 const Accommodation = () => {
 
   const {getHotel} = UseHotelActions()
+  const [contextMenuPosition, setContextMenuPosition] = useState(false);
+  const [contextShowMenuPeople, setContextShowMenuPeople] = useState(false);
+  const {error,hotel,loading}= useSelector((state) => state.Hotel)
 
- 
-    
-
-  const [state, setState] = useState([
-      {
-        startDate: new Date(),
-        endDate: new Date(),
-        key: "selection",
-      },
-    ]);
+  const {handleSelect,state} =  UseCalenderSearch({setContextMenuPosition})
+  
     const formattedStartDate = moment(state[0].startDate).format('YYYY-MM-DD');
     const formattedEndDate = moment(state[0].endDate).format('YYYY-MM-DD');
 
+    const formattedStartDateToString = moment(state[0].startDate).format('DD MMM YYYY').toLowerCase();
+    const formattedEndDateToString = moment(state[0].endDate).format('DD MMM YYYY').toLowerCase();
 
-    const PostHotelByIdHotel=async()=>{
-      await getHotel({id:23,desde:formattedStartDate,hasta:formattedEndDate})
-    }
-  
-    const {error,hotel,loading}= useSelector((state) => state.Hotel)
-  
-    const [contextMenuPosition, setContextMenuPosition] = useState(false);
-    const [contextShowMenuPeople, setContextShowMenuPeople] = useState(false);
-  
+    
+    const PostHotelByIdHotel = useCallback(async () => {
+      setContextMenuPosition(false);
+     await getHotel({ id: 23, desde: formattedStartDate, hasta: formattedEndDate });
+    }, []);
+
+  useEffect(() => {
+    PostHotelByIdHotel();
+  }, [PostHotelByIdHotel]);
+
     const HandClickMenuPeople =() =>{
       if(contextShowMenuPeople){
         setContextShowMenuPeople(false)
@@ -142,9 +71,7 @@ const Accommodation = () => {
       setContextShowMenuPeople(false)
     }
 
-    /**
-     *  
-     */
+
 
     const FillContent =()=>{
       if(loading){
@@ -156,41 +83,68 @@ const Accommodation = () => {
       }if(error){
         return <h1>error</h1>
       }
-      return <>  {hotel?.availableRooms?.map((List) => <CardAccomodation price={List.Price} title={List.title} img={List.room_image} />)}</>
+      return <>  {hotel?.availableRooms?.map((List) => <CardAccomodation  cantidad={List.cantidad}
+                                                                           price={List.Price} title={List.title} img={List.room_image} />)}</>
     }
-                                
-    
 
+                                
     return (<>
-    <Toaster position="bottom-right" />
+    <Toaster position="bottom-right"  />
+    
                 <Layout>
                 <SectionSearch  className="  ">
                   <TitleRoom/>
                   <CalenderSearch  HandClickMenuPeople={HandClickMenuPeople} 
+                                 formattedStartDateToString={formattedStartDateToString}
+                                 formattedEndDateToString={formattedEndDateToString}
                                   HandClickMenuEnd={HandClickMenuEnd}
-                                 
                                   HandClickMenu={HandClickMenu}
                                   onsubmit={PostHotelByIdHotel} />
-                                  
-                    {contextMenuPosition &&
-                        <DateRange
+                  
+
+            {contextMenuPosition &&
+                    <div className=" lg:hidden " >
+                      <DateRange 
+                          className="flex lg:hidden"
                           rangeColors={["#007cc2"]}
                           minDate={new Date()}
-                          onChange={(item) => setState([item.selection])}
+                          onChange={handleSelect}
+                          editableDateInputs={true}
+                          moveRangeOnFirstSelection={false}
                           showSelectionPreview={false}
-                          moveRangeOnFirstSelection={true}
-                          months={2}
+                          months={1}
                           showDateDisplay={false}
                           ranges={state}
-                          disabledDates={[]}
                           direction="horizontal"
                           locale={esLocale}
                       />
+                    </div>
                     }
+
+              {contextMenuPosition &&
+                    <div className=" hidden sm:mb-8 sm:flex " >
+                      <DateRange 
+                          className="flex lg:hidden"
+                          rangeColors={["#007cc2"]}
+                          minDate={new Date()}
+                          onChange={handleSelect}
+                          editableDateInputs={true}
+                          moveRangeOnFirstSelection={false}
+                          showSelectionPreview={false}
+                          months={2}
+                          showDateDisplay={false}
+                          ranges={state}
+                          direction="horizontal"
+                          locale={esLocale}
+                      />
+                    </div>
+                    }
+
+
+           
                     <Search contextShowMenuPeople={contextShowMenuPeople}
                           setContextShowMenuPeople={setContextShowMenuPeople}  />
                 </SectionSearch>
-            
                {FillContent()}
                 </Layout>
             </>

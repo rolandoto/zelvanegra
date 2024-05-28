@@ -1,28 +1,31 @@
 import React from "react";
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-import { BorderInput, BorderSearch, ButtonSearch, ContainerButtonSearch, ContainerFooter, MainAccomodation, MainProduct } from "../../Ui/Style/GeneralStyle";
+import { BorderInput, BorderInputInitial, BorderSearch, ButtonSearch, ContainerButtonSearch, ContainerFooter, MainAccomodation, MainProduct } from "../../Ui/Style/GeneralStyle";
 
-const CalenderSearch =({HandClickMenuPeople,HandClickMenuEnd,setStartDate,startDate,HandClickMenu,onsubmit}) =>{
+const CalenderSearch =({HandClickMenuPeople,
+                        HandClickMenuEnd
+                        ,HandClickMenu,
+                        onsubmit,
+                        formattedStartDateToString,
+                        formattedEndDateToString}) =>{
 
     return (
         <MainAccomodation className=" lg:flex   mx-auto   max-w-5xl items-center justify-between p-4 lg:px-8">
+            
             <MainProduct className="mx-auto  	 lg:flex  items-center justify-between p-4 rounded-lg shadow-2xl ">
-                            <BorderSearch className="flex flex-col hover-punter">
-                                <label className="mb-2 font-medium">Ciudad:</label>
-                                    Medeliin
-                            </BorderSearch>
-                            <BorderInput className="flex flex-col hover-punter "  onClick={HandClickMenu}>
-                                    <label className="mb-2 font-medium" >Llegada :</label>
-                                    <span> 20 may 2027</span>
-                            </BorderInput>
+                           
+                            <BorderInputInitial className="flex flex-col hover-punter "  onClick={HandClickMenu}>
+                                    <span className="mb-2 font-medium" >Llegada :</span>
+                                    <span> {formattedStartDateToString}</span>
+                            </BorderInputInitial>
                             <BorderInput className="flex flex-col  hover-punter" onClick={HandClickMenuEnd}>
-                                    <label className="mb-2 font-medium">Salida:</label>
-                                    <span> 20 may 2027</span>
+                                    <span className="mb-2 font-medium">Salida:</span>
+                                    <span>{formattedEndDateToString}</span>
                             </BorderInput>
 
                             <BorderInput className="flex flex-col hover-punter" onClick={HandClickMenuPeople}  >
-                                <label className="mb-2 font-medium">Personas:</label>
+                                <span className="mb-2 font-medium">Personas:</span>
                                 <span>5 Huespedes</span>
                             </BorderInput>
                             <ContainerButtonSearch className="flex flex-col ">
