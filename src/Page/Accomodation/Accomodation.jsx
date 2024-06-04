@@ -36,12 +36,9 @@ const Accommodation = () => {
     
     const PostHotelByIdHotel = useCallback(async () => {
       setContextMenuPosition(false);
-     await getHotel({ id: 23, desde: formattedStartDate, hasta: formattedEndDate });
-    }, []);
+       await getHotel({ id: 23, desde:formattedStartDate, hasta: formattedEndDate });
+    }, [formattedStartDate,formattedEndDate]);
 
-  useEffect(() => {
-    PostHotelByIdHotel();
-  }, [PostHotelByIdHotel]);
 
     const HandClickMenuPeople =() =>{
       if(contextShowMenuPeople){
@@ -70,8 +67,6 @@ const Accommodation = () => {
       }
       setContextShowMenuPeople(false)
     }
-
-
 
     const FillContent =()=>{
       if(loading){
@@ -139,9 +134,6 @@ const Accommodation = () => {
                       />
                     </div>
                     }
-
-
-           
                     <Search contextShowMenuPeople={contextShowMenuPeople}
                           setContextShowMenuPeople={setContextShowMenuPeople}  />
                 </SectionSearch>
