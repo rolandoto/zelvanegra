@@ -14,7 +14,8 @@ import AccordionAsk from "../../Component/AccordionAsk/AccordionAsk";
 import Events from "../../Component/Events/Events";
 import RoomDetail from "../../Component/RoomDetail/RoomDetail";
 import RoomPresentaion from "../../Component/RoomPresentation/RoomPresentation";
-
+import "./home.css"
+import { IconRiCloseLargeLine } from "../../Component/Icons/Icons";
 
 
 
@@ -78,9 +79,7 @@ const Home =() =>{
         setContextMenuPosition(true)
       }
       setContextShowMenuPeople(false)
-    }
-
-             
+    }             
 
     const faqs = [
       {
@@ -124,10 +123,13 @@ const Home =() =>{
       { title: 'Room Box Jacuzzi', image: "https://textycon.com/wp-content/uploads/MG_8585-scaled.jpg", features: ['Cama matrimonial', 'Baño privado con ducha', 'Wi-Fi gratuito', 'Smart TV'] },
     ];
 
+    const monthsToShow = window.innerWidth >= 700 ? 2 : 1; // Cambia 768 según tu punto de ruptura deseado
+      
+
     return (
         <div>
            <Header />
-            <div className="relative bg-cover bg-center h-screen" style={{ backgroundImage: `url(https://textycon.com/wp-content/uploads/MG_8648-scaled.jpg)` }}>
+            <div className="relative bg-cover bg-center h-[650px]" style={{ backgroundImage: `url(https://textycon.com/wp-content/uploads/MG_8648-scaled.jpg)` }}>
                   <div className="absolute inset-0 bg-black opacity-50"></div>
                   <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white">
                     <h1 className="text-4xl md:text-6xl font-normal">Gallery Hotel</h1>
@@ -135,6 +137,7 @@ const Home =() =>{
                     <p className="mt-2 text-md md:text-xl font-normal">Más que un hotel, una experiencia artística</p>
                     <button className="mt-6 bg-orange-500 text-white px-6 py-3 rounded-lg hover:bg-orange-600">Ver habitaciones</button>
                   </div>
+            </div>
             <CalenderSearchHome HandClickMenuPeople={HandClickMenuPeople} 
                                  formattedStartDateToString={formattedStartDateToString}
                                  formattedEndDateToString={formattedEndDateToString}
@@ -142,27 +145,32 @@ const Home =() =>{
                                   HandClickMenu={HandClickMenu}
                                   onsubmit={PostHotelByIdHotel}
                                   totalCountAdults={totalCountAdults}/>
-            {contextMenuPosition &&
-                  <div className=" lg:hidden " >
+
+          <div className="hidden lg:block  ">
+              {contextMenuPosition && (
+                <DateRange
+                  className="flex  calender-search-home lg:hidden"
+                  rangeColors={["#f97316"]}
+                  minDate={new Date()}
+                  onChange={handleSelect}
+                  editableDateInputs={true}
+                  moveRangeOnFirstSelection={false}
+                  showSelectionPreview={false}
+                  months={2}
+                  showDateDisplay={false}
+                  ranges={state}
+                  direction="horizontal"
+                  locale={esLocale}
+                />
+              )}
+            </div>
+          {contextMenuPosition &&
+              <div class="  lg:hidden fixed inset-0 bg-white flex items-start justify-center z-50  md:shadow-[17px_20px_40px_rgba(0,0,0,0.21)] md:rounded-[1.25rem] md:!font-size[16px] md:!user-select-none">
+                <div class="bg-white p-4  rounded-lg shadow-lg w-full h-full md:w-auto md:h-auto">
+                  <button class="absolute top-4 right-4 text-black text-lg" onClick={() =>setContextMenuPosition(false)} ><IconRiCloseLargeLine /></button>
+                 <div>
+                    <h2 class="text-center text-2xl font-semibold mb-4">Selecionar fecha</h2>
                     <DateRange 
-                        className="flex calender-search-home lg:hidden"
-                        rangeColors={["#f97316"]}
-                        minDate={new Date()}
-                        onChange={handleSelect}
-                        editableDateInputs={true}
-                        moveRangeOnFirstSelection={false}
-                        showSelectionPreview={false}
-                        months={1}
-                        showDateDisplay={false}
-                        ranges={state}
-                        direction="horizontal"
-                        locale={esLocale}
-                    />
-                  </div>
-                  }
-              {contextMenuPosition &&
-                    <div className=" hidden sm:mb-8 sm:flex " >
-                      <DateRange 
                           className="flex calender-search-home lg:hidden"
                           rangeColors={["#f97316"]}
                           minDate={new Date()}
@@ -170,25 +178,45 @@ const Home =() =>{
                           editableDateInputs={true}
                           moveRangeOnFirstSelection={false}
                           showSelectionPreview={false}
-                          months={2}
+                          months={monthsToShow}
                           showDateDisplay={false}
                           ranges={state}
                           direction="horizontal"
                           locale={esLocale}
                       />
                     </div>
-                    }
-          <Search contextShowMenuPeople={contextShowMenuPeople}
-            top={1015}
-            adults={adults}
-            childrem={childrem}
-            handChangeAdults={handChangeAdults}
-            handDecreaseAdults={handDecreaseAdults}
-            handChangeChildrem={handChangeChildrem}
-            handDecreaseChildren={handDecreaseChildren}
-            setContextShowMenuPeople={setContextShowMenuPeople}  />
-            </div>
-       
+                 </div> 
+            </div>} 
+            {contextShowMenuPeople &&
+              <div className=" lg:hidden fixed inset-0 bg-white flex items-start justify-center z-50   md:rounded-[1.25rem] md:!font-size[16px] md:!user-select-none">
+                <div className="bg-white p-4   rounded-lg  w-full h-full md:w-auto md:h-auto">
+                  <button className="absolute top-4 right-4 text-black text-lg" onClick={() =>setContextShowMenuPeople(false)} ><IconRiCloseLargeLine /></button>
+                        <div>
+                              <h2 className="text-center text-2xl font-semibold mb-4">Selecionar adultos</h2>
+                              <Search contextShowMenuPeople={contextShowMenuPeople}
+                              top={715}
+                              adults={adults}
+                              childrem={childrem}
+                              handChangeAdults={handChangeAdults}
+                              handDecreaseAdults={handDecreaseAdults}
+                              handChangeChildrem={handChangeChildrem}
+                              handDecreaseChildren={handDecreaseChildren}
+                              setContextShowMenuPeople={setContextShowMenuPeople}  />
+                      </div>
+                  </div> 
+              </div>} 
+              <div className="hidden lg:block  ">
+                {contextShowMenuPeople && 
+                  <Search contextShowMenuPeople={contextShowMenuPeople}
+                  top={715}
+                  adults={adults}
+                  childrem={childrem}
+                  handChangeAdults={handChangeAdults}
+                  handDecreaseAdults={handDecreaseAdults}
+                  handChangeChildrem={handChangeChildrem}
+                  handDecreaseChildren={handDecreaseChildren}
+                  setContextShowMenuPeople={setContextShowMenuPeople}  />}
+              </div>
           <TitleWelcome />
           <Features features={features} />
           <RoomPresentaion />

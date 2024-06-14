@@ -1,4 +1,23 @@
-.border-calender{
+
+.calender-search-home{
+    background: #fff;
+    box-sizing: border-box;
+    display: inline-flex;
+    flex-direction: column;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    transition:  0.3s;
+  }
+  
+  .rdrMonth{
+    width: 100% !;
+  }
+ 
+
+
+  .border-calender{
     border: solid 1px orange;
   }
   
@@ -28,6 +47,19 @@
     
   }
   
+  .calender-search-home {
+    background: #fff;
+    box-sizing: border-box;
+    display: inline-flex;
+    flex-direction: column;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    transition:  0.3s;
+  }
+
+   
   .calender-search-Acoomodation {
     background: #fff;
     box-sizing: border-box;
@@ -45,7 +77,8 @@
   }
   
 
-  .calender-search-Acoomodation{
+  
+  .calender-search-home{
     font-size: 16px !important;
     box-shadow: 17px 20px 40px rgba(0, 0, 0, .21) !important;
     border-radius: 1.25rem;
@@ -56,14 +89,47 @@
     right: 186px;;
     left: 0;
     margin: auto;
-    top: 578px;
+    top:715px;
+    transition: 0.3s;
+    z-index: 1000;;
+  }
+
+  .calender-search-Acoomodation {
+    background: #fff;
+    box-sizing: border-box;
+    display: inline-flex;
+    flex-direction: column;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    transition:  0.3s;
+  }
+  
+  .rdrMonth{
+    width: 100% !;
+  }
+  
+
+  .calender-search-home{
+    font-size: 16px !important;
+    box-shadow: 17px 20px 40px rgba(0, 0, 0, .21) !important;
+    border-radius: 1.25rem;
+    -webkit-user-select: none;
+    user-select: none;
+    width: 778px;
+    position: absolute;
+    right: 186px;;
+    left: 0;
+    margin: auto;
+    top: 715px;
     transition: 0.3s;
     z-index: 1000;
   }
 
   /* Para pantallas medianas (tablets) */
 @media (max-width: 1020px) {
-  .calender-search-Acoomodation {
+  .calender-search-home {
     width: 98%;
     top: 100px;
     left: 0px;
@@ -73,7 +139,7 @@
 
 /* Para pantallas pequeñas (móviles) */
 @media (max-width: 640px) {
-  .calender-search-Acoomodation {
+  .calender-search-home {
     width: 98%;
     top: 100px;
     left: 0px;

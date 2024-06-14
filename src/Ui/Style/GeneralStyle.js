@@ -35,10 +35,10 @@ export const fadeIn = keyframes`
 export const StyledContextTyeHotel = styled.div`
 top:${(props) => `${props.top}px`};
 position: absolute;
-left: 0%;
-width: 330px;
+left:  400px;
+width: 300px;
 height: 170px;
-right: -420px;
+right: 0px;
 margin: auto;
 z-index: 1000;
 padding: 8px;
@@ -50,6 +50,13 @@ border-radius:  1.25rem;;
   &.fade-in {
     animation: ${fadeIn} 0.3s ease forwards; // Apply the fadeIn animation
   }
+  @media(max-width: 1024px) {
+  
+    left: 0px;
+    width: 97%;
+    position: absolute;
+    top: 73px;
+  }
 `;
 
 
@@ -58,6 +65,7 @@ export const StyledMenuItem = styled.div`
   transition: background 0.3s;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 `;
 
 
@@ -214,10 +222,10 @@ width:100%;
 `
 
 export const MainAccomodation = styled.main`
+margin-top: -65px;
 position: absolute;
 left: 0;
 right: 0;
-top:92%;
 
 `
 
@@ -243,7 +251,7 @@ export const ContainerButtonSearch = styled.div`
 export const ButtonSearch = styled.button`
 border-radius: 10px;
 @media(max-width: 1500px) {
-  width:100%;
+  
 }
 `
 

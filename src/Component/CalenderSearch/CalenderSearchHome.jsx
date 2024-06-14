@@ -27,7 +27,11 @@ const CalenderSearchHome =({HandClickMenuPeople,
                                 <span>{totalCountAdults} Huespedes</span>
                             </BorderInput>
                             <ContainerButtonSearch className=" hover-punter ">
-                                <ButtonSearch className="   w-[150px] bg-orange-500 text-white py-4    rounded hover:bg-orange-600 transition duration-200" onClick={onsubmit}>
+                            <ButtonSearch className=" lg:hidden  block  w-full bg-orange-500 text-white py-4    rounded hover:bg-orange-600 transition duration-200" onClick={onsubmit}>
+                                        Buscar
+                                </ButtonSearch>
+
+                                <ButtonSearch className=" hidden  lg:block w-[150px]   bg-orange-500 text-white py-4    rounded hover:bg-orange-600 transition duration-200" onClick={onsubmit}>
                                         Buscar
                                 </ButtonSearch>
                             </ContainerButtonSearch>

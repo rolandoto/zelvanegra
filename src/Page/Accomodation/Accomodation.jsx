@@ -17,11 +17,9 @@ import UseCalenderSearch from "../../Hooks/UseCalenderSearch";
 import Header from "../../Component/Header/Header";
 import EmpyCart from "../../Component/EmpyCart/EmpyCart";
 import Cart from "../../Component/Cart/Cart";
-
-
+import { IconRiCloseLargeLine } from "../../Component/Icons/Icons";
 
 const Accommodation = () => {
-
   const {getHotel} = UseHotelActions()
   const [contextShowMenuPeople, setContextShowMenuPeople] = useState(false);
   const {error,hotel,loading}= useSelector((state) => state.Hotel)
@@ -104,13 +102,15 @@ const Accommodation = () => {
                 }
         return <>  {hotel?.availableRooms?.map((List,index) => <CardAccomodation  key={index} {...List}/>)}</>
     }
-                          
+    const monthsToShow = window.innerWidth >= 700 ? 2 : 1; // Cambia 768 según tu punto de ruptura deseado
+      
+    //  
     return (<div>
-        <Toaster position="bottom-right"  />
-        {loadingCart && <LoadingOverlay />}
-        <Header/>
-          <Cart  />
-          <SectionSearch  className="  ">
+            <Toaster position="bottom-right"  />
+            {loadingCart && <LoadingOverlay />}
+            <Header/>
+            <Cart  />
+          <SectionSearch  >
           <div className="relative bg-cover bg-center h-[450px]" style={{ backgroundImage: `url(https://textycon.com/wp-content/uploads/MG_8648-scaled.jpg)` }}>
                   <div className="absolute inset-0 bg-black opacity-50"></div>
                   <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white">
@@ -127,54 +127,83 @@ const Accommodation = () => {
                             onsubmit={PostHotelByIdHotel} 
                             totalCountAdults={totalCountAdults}
                             />
-
-            {contextMenuPosition &&
-                    <div className=" lg:hidden " >
-                      <DateRange 
-                          className="flex  calender-search-Acoomodation lg:hidden "
+          
+            
+          <div className="hidden lg:block  ">
+              {contextMenuPosition && (
+                <DateRange
+                  className="flex calender-search-Acoomodation lg:hidden"
+                  rangeColors={["#f97316"]}
+                  minDate={new Date()}
+                  onChange={handleSelect}
+                  editableDateInputs={true}
+                  moveRangeOnFirstSelection={false}
+                  showSelectionPreview={false}
+                  months={2}
+                  showDateDisplay={false}
+                  ranges={state}
+                  direction="horizontal"
+                  locale={esLocale}
+                />
+              )}
+            </div>
+          {contextMenuPosition &&
+              <div class="  lg:hidden fixed inset-0 bg-white flex items-start justify-center z-50  md:shadow-[17px_20px_40px_rgba(0,0,0,0.21)] md:rounded-[1.25rem] md:!font-size[16px] md:!user-select-none">
+                <div class="bg-white p-4  rounded-lg shadow-lg w-full h-full md:w-auto md:h-auto">
+                  <button class="absolute top-4 right-4 text-black text-lg" onClick={() =>setContextMenuPosition(false)} ><IconRiCloseLargeLine />;</button>
+                 <div>
+                    <h2 class="text-center text-2xl font-semibold mb-4">Selecionar fecha</h2>
+                    <DateRange 
+                          className="flex calender-search-Acoomodation lg:hidden"
                           rangeColors={["#f97316"]}
                           minDate={new Date()}
                           onChange={handleSelect}
                           editableDateInputs={true}
                           moveRangeOnFirstSelection={false}
                           showSelectionPreview={false}
-                          months={1}
+                          months={monthsToShow}
                           showDateDisplay={false}
                           ranges={state}
                           direction="horizontal"
                           locale={esLocale}
                       />
                     </div>
-                    }
+                 </div> 
+            </div>} 
 
-        {contextMenuPosition &&
-              <div className=" hidden sm:mb-8 sm:flex " >
-                <DateRange 
-                    className="flex 
-                    calender-search-Acoomodation  lg:hidden "
-                    rangeColors={["#f97316"]}
-                    minDate={new Date()}
-                    onChange={handleSelect}
-                    editableDateInputs={true}
-                    moveRangeOnFirstSelection={false}
-                    showSelectionPreview={false}
-                    months={2}
-                    showDateDisplay={false}
-                    ranges={state}
-                    direction="horizontal"
-                    locale={esLocale}
-                />
-              </div>
-              }
-              <Search contextShowMenuPeople={contextShowMenuPeople}
-                    top={580}
-                    setContextShowMenuPeople={setContextShowMenuPeople} 
-                    adults={adults}
-                    childrem={childrem}
-                    handChangeAdults={handChangeAdults}
-                    handDecreaseAdults={handDecreaseAdults}
-                    handChangeChildrem={handChangeChildrem}
-                    handDecreaseChildren={handDecreaseChildren} />
+             {contextShowMenuPeople &&
+              <div className=" lg:hidden fixed inset-0 bg-white flex items-start justify-center z-50   md:rounded-[1.25rem] md:!font-size[16px] md:!user-select-none">
+                <div className="bg-white p-4   rounded-lg  w-full h-full md:w-auto md:h-auto">
+                  <button className="absolute top-4 right-4 text-black text-lg" onClick={() =>setContextShowMenuPeople(false)} ><IconRiCloseLargeLine /></button>
+                        <div>
+                              <h2 className="text-center text-2xl font-semibold mb-4">Selecionar adultos</h2>
+                              <Search contextShowMenuPeople={contextShowMenuPeople}
+                              top={715}
+                              adults={adults}
+                              childrem={childrem}
+                              handChangeAdults={handChangeAdults}
+                              handDecreaseAdults={handDecreaseAdults}
+                              handChangeChildrem={handChangeChildrem}
+                              handDecreaseChildren={handDecreaseChildren}
+                              setContextShowMenuPeople={setContextShowMenuPeople}  />
+                      </div>
+                  </div> 
+              </div>} 
+
+
+             
+              <div className="hidden lg:block  ">
+                {contextShowMenuPeople && 
+                  <Search contextShowMenuPeople={contextShowMenuPeople}
+                  top={580}
+                  adults={adults}
+                  childrem={childrem}
+                  handChangeAdults={handChangeAdults}
+                  handDecreaseAdults={handDecreaseAdults}
+                  handChangeChildrem={handChangeChildrem}
+                  handDecreaseChildren={handDecreaseChildren}
+                  setContextShowMenuPeople={setContextShowMenuPeople}  />}
+              </div>              
                 </SectionSearch>
                 <div >
                     {FillContent()}
