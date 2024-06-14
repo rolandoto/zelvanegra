@@ -1,13 +1,13 @@
 import { config } from "../Config/Config";
 
-const PostHotelByIdHotel = async ({id,desde,hasta}) => {
+const PostHotelByIdHotel = async ({id,desde,hasta,counPeople}) => {
     try {
         const resp = await fetch(`${config.serverRoute}/api/hotels/SeacrhHotelsById`, {
           method: "POST",
           headers: {
             'Content-type': 'application/json'
           },
-          body: JSON.stringify({id,desde,hasta})
+          body: JSON.stringify({id,desde,hasta,counPeople})
         });
     
         if (!resp.ok) {
@@ -17,7 +17,7 @@ const PostHotelByIdHotel = async ({id,desde,hasta}) => {
         const data = await resp.json();
         return data;
       } catch (error) {
-        console.error('Error in PostInformeInfomeMetricas:', error);
+       
         throw error; // Puedes lanzar el error nuevamente o manejarlo de otra manera según tus necesidades
       }
   };

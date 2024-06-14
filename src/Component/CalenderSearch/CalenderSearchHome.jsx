@@ -2,7 +2,7 @@ import React from "react";
 import 'react-datepicker/dist/react-datepicker.css';
 import { BorderInput, BorderInputInitial, ButtonSearch, ContainerButtonSearch, MainAccomodation, MainAccomodationRoomSearch, MainProduct } from "../../Ui/Style/GeneralStyle";
 
-const CalenderSearch =({HandClickMenuPeople,
+const CalenderSearchHome =({HandClickMenuPeople,
                         HandClickMenuEnd
                         ,HandClickMenu,
                         onsubmit,
@@ -11,9 +11,8 @@ const CalenderSearch =({HandClickMenuPeople,
                         totalCountAdults}) =>{
 
     return (
-        <MainAccomodationRoomSearch className="  lg:flex   mx-auto   max-w-5xl items-center justify-between p-4 lg:px-8">
+        <MainAccomodation className="  lg:flex   mx-auto   max-w-5xl items-center justify-between p-4 lg:px-8">
             <MainProduct className="mx-auto  	 lg:flex  items-center justify-between p-4 rounded-lg shadow-2xl ">
-                           
                             <BorderInputInitial className="flex flex-col hover-punter "  onClick={HandClickMenu}>
                                     <span className="mb-2 font-medium" >Llegada :</span>
                                     <span> {formattedStartDateToString}</span>
@@ -27,14 +26,14 @@ const CalenderSearch =({HandClickMenuPeople,
                                 <span className="mb-2 font-medium">Personas:</span>
                                 <span>{totalCountAdults} Huespedes</span>
                             </BorderInput>
-                            <ContainerButtonSearch className="flex flex-col ">
+                            <ContainerButtonSearch className=" hover-punter ">
                                 <ButtonSearch className="   w-[150px] bg-orange-500 text-white py-4    rounded hover:bg-orange-600 transition duration-200" onClick={onsubmit}>
                                         Buscar
                                 </ButtonSearch>
                             </ContainerButtonSearch>
             </MainProduct>
-            </MainAccomodationRoomSearch>    
+            </MainAccomodation>    
     )
 }
 
-export default CalenderSearch
+export default CalenderSearchHome

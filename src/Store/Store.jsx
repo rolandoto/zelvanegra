@@ -1,6 +1,8 @@
 
-import {configureStore, createAsyncThunk } from '@reduxjs/toolkit'
-import ApiHotelByIdReduccers from '../reducers/ApiHotelByIdReduccers';
+import {configureStore } from '@reduxjs/toolkit'
+import {ApiHotelByIdReduccers} from '../reducers/ApiHotelByIdReduccers';
+import {CartReduccers} from '../reducers/CartReduccers';
+
 const persistanceLocalStorageMiddleware = (store) => (next) => (action) => {
 	next(action);
 	localStorage.setItem("redux", JSON.stringify(store.getState()));
@@ -8,8 +10,9 @@ const persistanceLocalStorageMiddleware = (store) => (next) => (action) => {
 
 const store = configureStore ({
     reducer:{
-        Hotel:ApiHotelByIdReduccers
-    },
+        Hotel:ApiHotelByIdReduccers.reducer,
+        Cart:CartReduccers.reducer
+        },
     devTools:true,
     middleware: [persistanceLocalStorageMiddleware],
 })

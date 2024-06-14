@@ -1,4 +1,3 @@
-import React from "react"
 import { useAppDispatch } from "../Hooks/Redux"
 import { loading,setHotel,setError } from "../reducers/ApiHotelByIdReduccers"
 import HttpClient from "../HttpClient"
@@ -8,10 +7,10 @@ const UseHotelActions =() =>{
 
     const dispatch =  useAppDispatch()
 
-    const getHotel =async({id,desde,hasta}) =>{
+    const getHotel =async({id,desde,hasta,counPeople}) =>{
         dispatch(loading())
         try {
-            const response  = await   HttpClient.PostHotelByIdHotel({id,desde,hasta})
+            const response  = await   HttpClient.PostHotelByIdHotel({id,desde,hasta,counPeople})
             if(response){
                 dispatch(setHotel(response)) 
                 toast.success(`Exitoso`)
@@ -24,7 +23,6 @@ const UseHotelActions =() =>{
             toast.error(`error en el servicio  ${error}` )
         }
     }
-    
     return {
         getHotel
     }

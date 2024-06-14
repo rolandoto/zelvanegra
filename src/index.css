@@ -5,9 +5,58 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  font-family: 'Lora', Georgia, "Times New Roman", serif;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.image{
+
+  transition: transform .5s ease, -webkit-transform .5s ease;
+  
+}
+.image:hover{
+  transform:  scale(1.1);
+  animation-duration: 5ms;
+  transition: transform .5s ease, -webkit-transform .5s ease;
+  cursor: pointer;
+}
+
+.header-navbar{
+  backdrop-filter: blur(10px);
+  background-color: rgba(142, 146, 140, 0.342);
+}
+
+.Search-Reservation{
+  position: absolute;
+    left: 0;
+    right: 0;
+    top: 90%;
+    z-index: 10000;
+}
+
+.calender-search-Acoomodation{
+  width: 778px;
+    position: absolute;
+    right: 186px;
+    left: 0;
+    margin: auto;
+    top: 578px !important;
+    transition: 0.3s;
+    z-index: 1000;
+}
+
+.calender-search-home{
+  width: 778px;
+    position: absolute;
+    right: 186px;
+    left: 0;
+    margin: auto;
+    top: 1015px !important;
+    transition: 0.3s;
+    z-index: 1000;
 }

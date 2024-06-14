@@ -33,12 +33,12 @@ export const fadeIn = keyframes`
 
 
 export const StyledContextTyeHotel = styled.div`
-top: 348px;
+top:${(props) => `${props.top}px`};
 position: absolute;
 left: 0%;
 width: 330px;
 height: 170px;
-right: -445px;
+right: -420px;
 margin: auto;
 z-index: 1000;
 padding: 8px;
@@ -85,10 +85,11 @@ border-top: 1px solid rgb(224, 224, 224);
 export const StyleTitleHotel = styled.span`
 font-weight: 500;
 `
-export const StyleSpan = styled.span`
+export const StyleSpan = styled.button`
 display: flex;
 align-items: center;
 font-weight: 300;
+cursor: pointer;
 
 `
 export const StyleNumberPeople = styled.input`
@@ -103,6 +104,7 @@ export const StyleSpanIcons = styled.span`
 display: flex;
 align-items: center
 margin-right: 10px;
+
 `
 
 export const StyleGroup= styled.div`
@@ -114,8 +116,8 @@ width: 100%;
 box-shadow: 17px 20px 40px rgba(0, 0, 0, .21) ;
 justify-content: space-between;
 align-items: center;
-border-radius:25px;
-
+border-radius:10px;
+background: white;
 @media(min-width: 1024) {
   dispaly: block;
 }
@@ -156,7 +158,6 @@ ${fadeInImg({time:"2s"})}
 `
 export const SectionSearch = styled.section`
 border-bottom: 1px solid rgb(224, 224, 224);
-
 `
 export const ContainerIcons = styled.div`
 display: flex;
@@ -196,6 +197,7 @@ export const  BorderInput = styled.div`
 border-left:1px solid rgb(224, 224, 224);
 cursos:pointer;
 width:100%;
+
 @media(max-width: 1024px) {
   border-left:none;
   border-bottom: 1px solid rgb(224, 224, 224)
@@ -212,6 +214,18 @@ width:100%;
 `
 
 export const MainAccomodation = styled.main`
+position: absolute;
+left: 0;
+right: 0;
+top:92%;
+
+`
+
+export const MainAccomodationRoomSearch = styled.main`
+
+`
+
+export const MainAccomodationRoom = styled.main`
 
 `
 
@@ -224,8 +238,7 @@ export const BorderSearch = styled.div`
 `
 
 export const ContainerButtonSearch = styled.div`
-@media(max-width: 1500px) {
-}
+
 `
 export const ButtonSearch = styled.button`
 border-radius: 10px;
@@ -243,7 +256,7 @@ margin-left: -20px;
 
 export const Label = styled.div`
   display: inline-block;
-  background-color: #72c196;
+  background-color: #ff7018;
   color: white;
   padding: 5px 10px;
   font-size: 14px;
@@ -263,7 +276,7 @@ export const Label = styled.div`
     height: 0;
     border-top: 10px solid transparent;
     border-bottom: 10px solid transparent;
-    border-right: 10px solid #72c196;
+    border-right: 10px solid #ff7018;
     transform: translateY(-50%);
   }
 `;

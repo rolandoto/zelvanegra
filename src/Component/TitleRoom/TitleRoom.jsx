@@ -9,10 +9,10 @@ const TitleRoom =() =>{
                 </div>
                 <div className="flex lg:flex-2">
             
-                <select class="border border-blue-500 rounded-md">
-                    <option class="border border-blue-500">Opción 1</option>
-                    <option class="border border-blue-500">Opción 2</option>
-                    <option class="border border-blue-500">Opción 3</option>
+                <select className="border border-blue-500 rounded-md">
+                    <option className="border border-blue-500">Opción 1</option>
+                    <option className="border border-blue-500">Opción 2</option>
+                    <option className="border border-blue-500">Opción 3</option>
                     </select>
 
                 </div>

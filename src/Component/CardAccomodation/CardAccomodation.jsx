@@ -1,29 +1,34 @@
 import React, { Fragment }  from "react";
-import {ContainerLabel, ImginProduct, MainAccomodation, MainProduct, SectionSearch, TextWidth } from "../../Ui/Style/GeneralStyle";
+import {ContainerLabel, ImginProduct, MainAccomodation, MainAccomodationRoom, MainProduct, SectionSearch, TextWidth } from "../../Ui/Style/GeneralStyle";
 import ButtonAccomodation from "../ButtonAccomodation/ButtonAccomodation";
 import DescripctionAccomodation from "../DescripctionAccomodation/DescripctionAccomodation";
 import UsenearScrean from "../../Hooks/USenearScreean";
 import TitleDinner from "../TitleDinner/TitleDinner";
+import useCartActions from "../../Actions/useCartActions";
 
-const CardAccomodation =({img,title,price,cantidad}) =>{
+const CardAccomodation =({ID,room_image,title,Price,cantidad,nights,person,Room}) =>{
 
-    const {show,element} =  UsenearScrean()
-  
+    const {AddCart } =useCartActions()
+
+    const handleAddToCart = () => {
+        AddCart({ID,room_image,title,Price,cantidad,nights,person,Room})
+    };
+    
     return (   
-            <MainAccomodation className=" lg:flex    mx-auto   max-w-5xl items-center justify-between p-4 lg:px-8"   ref={element}>     
+            <MainAccomodationRoom className=" lg:flex    mx-auto   max-w-5xl items-center justify-between p-4 lg:px-8"   >     
             <MainProduct className="lg:flex block bg-white shadow-md"    >
-              
-                {show  && (
                         <Fragment>
                             <TitleDinner />
-                            <ImginProduct  className="w-auto " src={img}  alt="Hotel Image"/>
+                            <ImginProduct  className="w-auto " src={room_image}  alt="Hotel Image"/>
                         </Fragment>
-                )      
-                    }    
                         <DescripctionAccomodation cantidad={cantidad}   title={title}  />
-                        <ButtonAccomodation price={price}  />
+                        <ButtonAccomodation 
+                                handleAddToCart={handleAddToCart}
+                                price={Price} 
+                                nights={nights}
+                                person={person}  />
                     </MainProduct> 
-            </MainAccomodation>)
+            </MainAccomodationRoom>)
 }
 
 export default CardAccomodation

@@ -6,16 +6,16 @@
     cursor: pointer;
     padding:8px;
     transition:  0.3s;
-    cursor: pointer !important;
-   
+    cursor: pointer ;
+   z-index: 10;
   }
   
   .hover-punter:hover{
     background: #f0f0f0;
     border-radius: 5px;
-    cursor: pointer !important;
+    cursor: pointer ;
     border-radius: 10px;
-    z-index: 1000;
+    z-index: 10;
   }
   
   
@@ -55,7 +55,7 @@
     right: 186px;;
     left: 0;
     margin: auto;
-    top: 350px;
+    top: 1015px;
     transition: 0.3s;
     z-index: 1000;
     

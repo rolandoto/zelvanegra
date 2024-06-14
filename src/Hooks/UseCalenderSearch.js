@@ -1,39 +1,34 @@
 
-import { useState } from "react"
-import { addDays} from 'date-fns';
-import moment from "moment";
-const UseCalenderSearch =({setContextMenuPosition}) =>{
+import { useContext, useState } from "react"
 
-    const [state, setState] = useState([
-        {
-          startDate: new Date(),
-          endDate: addDays(new Date(), 1),
-          key: "selection",
-        },  
-      ]);
+import  AutoProvider  from "../UseContext/UseContext";
 
-      const handleSelect = (ranges) => {
-        const { startDate, endDate } = ranges.selection;
-        // Check if end date is the same as start date
-        if (moment(endDate).isSame(startDate, 'day')) {
-          // Reset the endDate to be the next day of startDate
-          setState([
-            {
-              startDate: startDate,
-              endDate: addDays(startDate, 1),
-              key: 'selection',
-            },
-          ]);
-        
-        } else {
-          setState([ranges.selection]);
-          setContextMenuPosition(prevState => false);
-        }
-      };
+const UseCalenderSearch =() =>{
+
+    const { state,
+      handleSelect,
+      setContextMenuPosition,
+      contextMenuPosition,
+      handChangeAdults,
+      handChangeChildrem,
+      handDecreaseAdults,
+      handDecreaseChildren,
+      totalCountAdults,
+      adults,
+      childrem} = useContext(AutoProvider)
 
 return {
-    state,
-    handleSelect
+  state,
+  handleSelect,
+  setContextMenuPosition,
+  contextMenuPosition,
+  handChangeAdults,
+  handChangeChildrem,
+  handDecreaseAdults,
+  handDecreaseChildren,
+  totalCountAdults,
+  adults,
+  childrem
 }
 
 }

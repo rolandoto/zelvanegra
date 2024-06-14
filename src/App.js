@@ -5,15 +5,22 @@ import Accommodation from './Page/Accomodation/Accomodation';
 import { Provider } from "react-redux";
 import store from './Store/Store';
 import Checkout from './Page/Checkout/Checkout';
+import Home from './Page/Home/Home';
+import { AutoProvider } from './UseContext/UseContext';
+
+
 function App() {
   return (
     <Provider  store={store}>
+      <AutoProvider>
       <BrowserRouter> 
         <Routes>
-        <Route exact path="/" element={<Accommodation/> } />
+        <Route exact path="/" element={<Home/> } />
+        <Route exact path="/Accomodation" element={<Accommodation/> } />
         <Route exact path="/Checkout" element={<Checkout/> } />
         </Routes> 
       </BrowserRouter>
+      </AutoProvider>
       </Provider>
   );
 }
