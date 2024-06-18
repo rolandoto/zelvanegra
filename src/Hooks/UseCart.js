@@ -1,31 +1,43 @@
-import { useState } from "react";
+import { useSelector } from "react-redux";
 
 const UseCart =() =>{
 
-    
-    const [cart, setCart] = useState([]);
-  
-    const removeRoom = (id) => {
-        setCart(cart.filter(room => room.id !== id));
-    };
-
-    const totalCost = cart.reduce((total, room) => total + room.price, 0);
-
-    const getCartSize = () => {
+    const {cart} = useSelector(state => state.Cart);
+   
+    /*const getCartSize = () => {
         let quantity = 0
-    
         Object.values(cart)
           .forEach(({ quantity: productQuantity }) => (quantity += productQuantity))
-    
         return quantity
+    }*/
+
+
+    const getCartSubtotal = () => {
+        let subtotal = 0    
+        Object.values(cart)
+          .forEach(({ quantity, Price }) => {
+            subtotal += Price
+          })
+    
+        return subtotal
+    }
+
+    
+    const getCartTotalCount = () => {
+        let totalCuantity = 0    
+        Object.values(cart)
+          .forEach(({ quantity}) => {
+            totalCuantity += quantity
+          })
+    
+        return totalCuantity
     }
 
     return {
-        removeRoom,
-        getCartSize,
-        totalCost,
-        removeRoom,
+        getCartSubtotal,
+        getCartTotalCount,
         cart
+       
     }
 
 

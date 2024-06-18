@@ -17,6 +17,7 @@ import { RiCloseLargeLine } from "react-icons/ri";
 import { RiDeleteBinLine } from "react-icons/ri";
 import { BsArrowDownShort } from "react-icons/bs";
 import { BsArrowUpShort } from "react-icons/bs";
+import { CiShoppingCart } from "react-icons/ci";
 
 
 export const IconsSnow =() =>{
@@ -46,9 +47,6 @@ export const IconTowels =() =>{
 export const IconsCheck =() =>{
     return <CiCircleCheck fontSize={35}  />
 }
-
-
-
 export const IconFaWhatsapp =() =>{
     return <FaWhatsapp  className="mr-2" fontSize={30}  />
 }
@@ -76,17 +74,22 @@ export const IconRiCloseLargeLine =() =>{
     return <RiCloseLargeLine  color="black" className="mr-2" fontSize={25}  />
 }
 
-export const IconRiDeleteBinLine =() =>{
-    return <RiDeleteBinLine  color="red" className="" fontSize={20}  />
+export const IconRiDeleteBinLine =({handSubmit}) =>{
+    return <RiDeleteBinLine  
+                    color="red" 
+                    className="" 
+                    fontSize={20}
+                    onClick={handSubmit}  />
 }
 
 export const IconBsArrowDownShort =() =>{
     return <BsArrowDownShort  color="black" className="" fontSize={20}  />
 }
-
-
 export const IconsBsArrowUpShort =() =>{
     return <BsArrowUpShort  color="black" className="" fontSize={20}  />
+}
+export const IconCiShoppingCart =() =>{
+    return <CiShoppingCart   color="white" className="" fontSize={35}  />
 }
 
 

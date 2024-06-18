@@ -17,8 +17,8 @@ import UseCalenderSearch from "../../Hooks/UseCalenderSearch";
 import Header from "../../Component/Header/Header";
 import EmpyCart from "../../Component/EmpyCart/EmpyCart";
 import Cart from "../../Component/Cart/Cart";
-import { IconRiCloseLargeLine } from "../../Component/Icons/Icons";
-
+import { IconCiShoppingCart, IconRiCloseLargeLine } from "../../Component/Icons/Icons";
+import UseCart from "../../Hooks/UseCart";
 const Accommodation = () => {
   const {getHotel} = UseHotelActions()
   const [contextShowMenuPeople, setContextShowMenuPeople] = useState(false);
@@ -32,11 +32,17 @@ const Accommodation = () => {
     adults,
     childrem } =  UseCalenderSearch()
 
-  const formattedStartDate = moment(state[0].startDate).format('YYYY-MM-DD');
-  const formattedEndDate = moment(state[0].endDate).format('YYYY-MM-DD');
+    const {getCartSubtotal,getCartTotalCount} = UseCart()
+    const subtotal = getCartSubtotal()
+    const totalCount = getCartTotalCount()
 
-  const formattedStartDateToString = moment(state[0]?.startDate).format('DD MMM YYYY').toLowerCase();
-  const formattedEndDateToString = moment(state[0]?.endDate).format('DD MMM YYYY').toLowerCase();
+    const [checkbox,setCheckBox] =useState(false)
+
+    const formattedStartDate = moment(state[0].startDate).format('YYYY-MM-DD');
+    const formattedEndDate = moment(state[0].endDate).format('YYYY-MM-DD');
+
+    const formattedStartDateToString = moment(state[0]?.startDate).format('DD MMM YYYY').toLowerCase();
+    const formattedEndDateToString = moment(state[0]?.endDate).format('DD MMM YYYY').toLowerCase();
 
   const PostHotelByIdHotel = useCallback(async () => {
       setContextMenuPosition(false);
@@ -48,8 +54,6 @@ const Accommodation = () => {
     useEffect(() =>{
       PostHotelByIdHotel()
     },[])
-
-
 
     const HandClickMenuPeople =() =>{
       if(contextShowMenuPeople){
@@ -68,7 +72,12 @@ const Accommodation = () => {
       }
       setContextShowMenuPeople(false)
     }
-       
+
+    
+    const handClickCart =() =>{
+      setCheckBox(!checkbox)
+   }
+
   
     const HandClickMenuEnd =() =>{
       if(contextMenuPosition){
@@ -83,13 +92,13 @@ const Accommodation = () => {
 
     const LoadingOverlay = () => {
       return (
-        <div className="fixed inset-0  bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <h1 className="text-4xl md:text-6xl font-normal text-white">Cargando producto...</h1>
+        <div className="loading-opacity ">
+          <h1 className="text-4xl md:text-5xl font-normal text-white">Cargando...</h1>
         </div>
       );
     };
 
-
+  
     const FillContent =()=>{
       if(loading){
        return  (
@@ -103,21 +112,32 @@ const Accommodation = () => {
         return <>  {hotel?.availableRooms?.map((List,index) => <CardAccomodation  key={index} {...List}/>)}</>
     }
     const monthsToShow = window.innerWidth >= 700 ? 2 : 1; // Cambia 768 según tu punto de ruptura deseado
-      
-    //  
+
     return (<div>
-            <Toaster position="bottom-right"  />
+            {subtotal >0 && 
+            <button className="cartIcon  cursor-pointer "   onClick={handClickCart}   >
+                      <div className="cartIcon-Number">
+                          <span className="md:text-1xl font-normal">{totalCount}</span>
+                          
+                      </div>
+                      <IconCiShoppingCart  />
+              </button>
+            }
+                  
+            <Toaster position="bottom-right"  richColors   />
             {loadingCart && <LoadingOverlay />}
             <Header/>
-            <Cart  />
-          <SectionSearch  >
-          <div className="relative bg-cover bg-center h-[450px]" style={{ backgroundImage: `url(https://textycon.com/wp-content/uploads/MG_8648-scaled.jpg)` }}>
-                  <div className="absolute inset-0 bg-black opacity-50"></div>
-                  <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white">
-                    <h1 className="text-4xl md:text-6xl font-normal">Gallery Hotel</h1>
-                    <p className="mt-4 text-lg md:text-2xl font-normal">Termina de buscar tu habitacion</p>
-                  </div>
-          </div>
+            {subtotal >0 &&<Cart    
+                            checkbox={checkbox} 
+                            handClickCart={handClickCart} /> } 
+            <SectionSearch  >
+            <div className="relative bg-cover bg-center h-[450px]" style={{ backgroundImage: `url(https://textycon.com/wp-content/uploads/MG_8648-scaled.jpg)` }}>
+                    <div className="absolute inset-0 bg-black opacity-50"></div>
+                    <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white">
+                      <h1 className="text-4xl md:text-6xl font-normal">Gallery Hotel</h1>
+                      <p className="mt-4 text-lg md:text-2xl font-normal">Termina de buscar tu habitacion</p>
+                    </div>
+            </div>
             
             <CalenderSearch  HandClickMenuPeople={HandClickMenuPeople} 
                             formattedStartDateToString={formattedStartDateToString}

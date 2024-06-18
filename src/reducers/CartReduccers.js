@@ -18,14 +18,17 @@ export const CartReduccers = createSlice({
             state.errorCart = "false"
         },
         addItemToCart:(state,action) =>{
-            const {id} = action.payload
             state.cart.push(action.payload);
             state.loadingCart= false
+        },
+        removetoCart: (state, action) => {
+            const { roomByID } = action.payload;
+            state.cart = state.cart.filter((item) => item.roomByID !== roomByID);
+            state.loadingCart = false;
         }
-       
     }
 })
 
-export const {loadingCart,addItemToCart,setErrorCart} = CartReduccers.actions
+export const {loadingCart,addItemToCart,setErrorCart,removetoCart} = CartReduccers.actions
 
 export default  CartReduccers.reducers

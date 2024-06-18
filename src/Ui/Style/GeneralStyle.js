@@ -164,6 +164,29 @@ ${fadeInImg({time:"2s"})}
 }
 
 `
+
+
+export const ImgenCehckout = styled.img`
+width: 100%;
+object-fit: cover;
+height:12rem;
+
+${fadeInImg({time:"2s"})}
+
+@media (max-width: 2000px) {
+  border-bottom-left-radius: 15px; 
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius:15px;
+  
+}
+
+
+@media (max-width: 1000px) {
+  width: 100%;
+}
+
+`
 export const SectionSearch = styled.section`
 border-bottom: 1px solid rgb(224, 224, 224);
 `

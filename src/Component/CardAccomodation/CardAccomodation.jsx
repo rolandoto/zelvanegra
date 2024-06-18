@@ -1,19 +1,35 @@
 import React, { Fragment }  from "react";
-import {ContainerLabel, ImginProduct, MainAccomodation, MainAccomodationRoom, MainProduct, SectionSearch, TextWidth } from "../../Ui/Style/GeneralStyle";
+import { ImginProduct, MainAccomodationRoom, MainProduct } from "../../Ui/Style/GeneralStyle";
 import ButtonAccomodation from "../ButtonAccomodation/ButtonAccomodation";
 import DescripctionAccomodation from "../DescripctionAccomodation/DescripctionAccomodation";
-import UsenearScrean from "../../Hooks/USenearScreean";
 import TitleDinner from "../TitleDinner/TitleDinner";
 import useCartActions from "../../Actions/useCartActions";
+import { useSelector } from "react-redux";
+import {toast} from "sonner"
 
-const CardAccomodation =({ID,room_image,title,Price,cantidad,nights,person,Room}) =>{
+const CardAccomodation =({ID,room_image,title,Price,cantidad,nights,person,Room,end,start,Price_nigth}) =>{
 
     const {AddCart } =useCartActions()
+    
+    const {cart} = useSelector(state => state.Cart);
 
     const handleAddToCart = () => {
-        AddCart({ID,room_image,title,Price,cantidad,nights,person,Room})
+        let roomByID = 0
+        Object.values(Room)
+          .forEach((itemRoom) => {
+            if(cart.every((item) =>item.roomByID != itemRoom)){
+                roomByID = itemRoom
+            }else{
+                roomByID=roomByID
+            }
+          })
+        if(roomByID !=0){
+            AddCart({ID,room_image,title,Price,cantidad,nights,person,roomByID,end,start,quantity:1,Price_nigth})
+        }else{
+            toast.error("no habitacion disponible")
+        }
     };
-    
+
     return (   
             <MainAccomodationRoom className=" lg:flex    mx-auto   max-w-5xl items-center justify-between p-4 lg:px-8"   >     
             <MainProduct className="lg:flex block bg-white shadow-md"    >
