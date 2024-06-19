@@ -6,7 +6,7 @@ const Footer =() =>{
 
     return (
             <footer className="bg-black   text-white py-8">
-                <div className="mx-auto max-w-7xl  flex flex-col md:flex-row justify-between items-start md:items-center">
+                <div className="mx-auto max-w-7xl p-4  flex flex-col md:flex-row justify-between items-start md:items-center">
                 <div className="flex ">
                 <img src="https://textycon.com/wp-content/uploads/logo-blanco.png" alt="Gallery Hotel" className=" w-[220px] mb-4" /> {/* Adjust the path accordingly */}   
                 </div>
@@ -42,17 +42,17 @@ const Footer =() =>{
                 </div>
                 
                 </div>
-                <div className="text-center border-t-1    mx-auto max-w-7xl  text-white mt-8">
-                    <div className="flex justify-between mt-8 mx-auto max-w-7xl items-center">
-                        <div>
+                <div className="text-center border-t-1  mx-auto max-w-7xl  text-white mt-8">
+                    <div className=" flex  flex-col sm:flex-row  justify-between mt-8 mx-auto max-w-7xl items-center">
+                            <div>
                                 Copyright © 2024 – All Rights Reserved Gallery Hotel
+                            </div>
+                                    <div className=" ">
+                                    <div className="flex space-x-4">
+                                    <img src="https://textycon.com/wp-content/uploads/payment.png" alt="" />
+                                    </div>
+                            </div>
                         </div>
-                                <div className=" ">
-                                <div className="flex space-x-4">
-                                <img src="https://textycon.com/wp-content/uploads/payment.png" alt="" />
-                                </div>
-                        </div>
-                    </div>
                 </div>
             </footer>
     )
