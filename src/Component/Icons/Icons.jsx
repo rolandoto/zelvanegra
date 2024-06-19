@@ -18,6 +18,15 @@ import { RiDeleteBinLine } from "react-icons/ri";
 import { BsArrowDownShort } from "react-icons/bs";
 import { BsArrowUpShort } from "react-icons/bs";
 import { CiShoppingCart } from "react-icons/ci";
+import { TiHome } from "react-icons/ti";
+import { GiForkKnifeSpoon } from "react-icons/gi";
+import { FaMartiniGlassCitrus } from "react-icons/fa6";
+import { FaCar } from "react-icons/fa6";
+import { FaSquareParking } from "react-icons/fa6";
+import { FaStore } from "react-icons/fa";
+import { FaBanSmoking } from "react-icons/fa6";
+import { FaConciergeBell } from "react-icons/fa";
+import { RiBankFill } from "react-icons/ri";
 
 
 export const IconsSnow =() =>{
@@ -91,6 +100,43 @@ export const IconsBsArrowUpShort =() =>{
 export const IconCiShoppingCart =() =>{
     return <CiShoppingCart   color="white" className="" fontSize={35}  />
 }
+export const IconsTiHome =() =>{
+    return <TiHome   color="#ff7a45" className="" fontSize={30}  />
+}
+
+export const IconsFaGlassMartini =() =>{
+    return <FaMartiniGlassCitrus   color="#ff7a45" className="" fontSize={30}  />
+}
+
+export const IconsGiForkKnifeSpoon =() =>{
+    return <GiForkKnifeSpoon   color="#ff7a45" className="" fontSize={30}  />
+}
 
 
+export const IconsaCar =() =>{
+    return <FaCar   color="#ff7a45" className="" fontSize={30}  />
+}
+
+
+
+export const IconsFaSquareParking =() =>{
+    return <FaSquareParking   color="#ff7a45" className="" fontSize={30}  />
+}
+
+export const IconsFaStore =() =>{
+    return <FaStore   color="#ff7a45" className="" fontSize={30}  />
+}
+
+export const IconsFaBanSmoking =() =>{
+    return <FaBanSmoking   color="#ff7a45" className="" fontSize={30}  />
+}
+
+export const IconsFaConciergeBell =() =>{
+    return <FaConciergeBell   color="#ff7a45" className="" fontSize={30}  />
+}
+
+
+export const IconsRiBankFill =() =>{
+    return <RiBankFill   color="#ff7a45" className="" fontSize={30}  />
+}
 

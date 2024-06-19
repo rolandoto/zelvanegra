@@ -15,19 +15,22 @@ import Events from "../../Component/Events/Events";
 import RoomDetail from "../../Component/RoomDetail/RoomDetail";
 import RoomPresentaion from "../../Component/RoomPresentation/RoomPresentation";
 import "./home.css"
-import { IconRiCloseLargeLine } from "../../Component/Icons/Icons";
+import { IconRiCloseLargeLine, IconsFaBanSmoking, IconsFaConciergeBell, IconsFaGlassMartini, IconsFaSquareParking, IconsFaStore, IconsGiForkKnifeSpoon, IconsRiBankFill, IconsTiHome, IconsaCar } from "../../Component/Icons/Icons";
 
 
 
 const Home =() =>{
   const navigate = useNavigate();
     const features = [
-        { icon: '🍸', title: 'Cóctel de bienvenida' },
-        { icon: '🍴', title: 'Desayuno incluido' },
-        { icon: '🕛', title: 'Recepción 24 horas' },
-        { icon: '🚗', title: 'Variedad de transporte', description: 'Metro, tranvía, autobús, taxi' },
-        { icon: '🏛️', title: 'Vida cultural y nocturna', description: 'Bares, museos, restaurantes' },
-        { icon: '🅿️', title: 'Parqueadero gratis*', description: 'Sujeto a disponibilidad' },
+        { icon: <IconsFaGlassMartini/>, title: 'Cóctel de bienvenida' },
+        { icon: <IconsGiForkKnifeSpoon/>, title: 'Desayuno incluido' },
+        { icon: <IconsFaConciergeBell/>, title: 'Recepción 24 horas' },
+        { icon: <IconsaCar/>, title: 'Variedad de transporte', description: 'Metro, tranvía, autobús, taxi' },
+        { icon: <IconsRiBankFill/>, title: 'Vida cultural y nocturna', description: 'Bares, museos, restaurantes' },
+        { icon: <IconsFaSquareParking/>, title: 'Parqueadero gratis*', description: 'Sujeto a disponibilidad' },
+        { icon: <IconsGiForkKnifeSpoon/>, title: 'Restaurante - Bar con vista ', description: 'panorámica' },
+        { icon: <IconsFaStore/>, title: 'Alianzas comerciales', description: 'Servicio de taxi, gimnasio, tours, médico, comunicaciones.' },
+        { icon: <IconsFaBanSmoking/>, title: 'Espacios libre de humo', description: "" },
       ];
 
     
@@ -118,9 +121,10 @@ const Home =() =>{
 
 
     const rooms = [
-      { title: 'Room Box Clásica', image:"https://textycon.com/wp-content/uploads/MG_8585-scaled.jpg", features: ['Cama matrimonial', 'Baño privado con ducha', 'Wi-Fi gratuito', 'Smart TV'] },
-      { title: 'Room Box Aire', image: "https://textycon.com/wp-content/uploads/MG_8585-scaled.jpg", features: ['Cama matrimonial', 'Baño privado con ducha', 'Wi-Fi gratuito', 'Smart TV'] },
-      { title: 'Room Box Jacuzzi', image: "https://textycon.com/wp-content/uploads/MG_8585-scaled.jpg", features: ['Cama matrimonial', 'Baño privado con ducha', 'Wi-Fi gratuito', 'Smart TV'] },
+      { title: 'Room Box Clásica', image:"https://textycon.com/wp-content/uploads/MG_8599-scaled.jpg", features: ['Cama matrimonial', 'Baño privado con ducha', 'Wi-Fi gratuito', 'Smart TV'] },
+      { title: 'Room Box Aire', image: "https://textycon.com/wp-content/uploads/MG_8588-scaled.jpg", features: ['Cama matrimonial', 'Baño privado con ducha', 'Wi-Fi gratuito', 'Smart TV','Aire Acondicionado'] },
+      { title: 'Room Box Jacuzzi', image: "https://textycon.com/wp-content/uploads/MG_8591-scaled.jpg", features: ['Cama matrimonial', 'Baño privado con ducha', 'Wi-Fi gratuito', 'Smart TV','Aire Acondicionado','Jacuzzi'] },
+      
     ];
 
     const monthsToShow = window.innerWidth >= 700 ? 2 : 1; // Cambia 768 según tu punto de ruptura deseado
@@ -133,9 +137,8 @@ const Home =() =>{
                   <div className="absolute inset-0 bg-black opacity-50"></div>
                   <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white">
                     <h1 className="text-4xl md:text-6xl font-normal">Gallery Hotel</h1>
-                    <p className="mt-4 text-lg md:text-2xl font-normal">Tu hogar en el centro de Medellín</p>
                     <p className="mt-2 text-md md:text-xl font-normal">Más que un hotel, una experiencia artística</p>
-                    <button className="mt-6 bg-orange-500 text-white px-6 py-3 rounded-lg hover:bg-orange-600">Ver habitaciones</button>
+                    <button className="mt-6 bg-orange-500  wordButton text-white px-6 py-3 rounded-lg hover:bg-orange-600">Ver habitaciones</button>
                   </div>
             </div>
             <CalenderSearchHome HandClickMenuPeople={HandClickMenuPeople} 

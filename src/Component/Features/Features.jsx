@@ -11,7 +11,7 @@ const Features =({features}) =>{
                         <CardFeatures   
                                 {...feature} 
                                 key={index}
-                                />
+                    />
                     ))}
                     </div>
             </div>

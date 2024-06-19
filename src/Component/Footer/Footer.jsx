@@ -6,9 +6,11 @@ const Footer =() =>{
 
     return (
             <footer className="bg-black   text-white py-8">
-                <div className="container  mx-auto max-w-7xl px-4 flex flex-col md:flex-row justify-between items-start md:items-center">
-                <div className="md:w-1/3 mb-8 md:mb-0">
-                    <img src="https://textycon.com/wp-content/uploads/logo-blanco.png" alt="Gallery Hotel" className=" w-[220px] mb-4" /> {/* Adjust the path accordingly */}
+                <div className="mx-auto max-w-7xl  flex flex-col md:flex-row justify-between items-start md:items-center">
+                <div className="flex ">
+                <img src="https://textycon.com/wp-content/uploads/logo-blanco.png" alt="Gallery Hotel" className=" w-[220px] mb-4" /> {/* Adjust the path accordingly */}   
+                </div>
+                <div className=" ">
                     <ul className="space-y-2">
                     <li className="flex items-center"> <IconFaWhatsapp /> +57 315 223 44 83</li>
                     <li className="flex items-center">  <IconCiFacebook /> reservas@galleryhotel.co</li>
@@ -20,16 +22,37 @@ const Footer =() =>{
                     <IconFaYoutube />
                     </div>
                 </div>
-                
-                    <div className="md:w-1/3 ">
-                    <h2 className="text-lg mb-4">PAGOS</h2>
-                    <div className="flex space-x-4">
-                    <img src="https://textycon.com/wp-content/uploads/payment.png" alt="" />
-                    </div>
+                <div className=" ">
+                    <div class="bg-black text-white flex items-center justify-center ">
+                        <div class="w-full max-w-md">
+                            <h2 class="text-center text-xl font-semibold mb-6">CONTACTO</h2>
+                            <form class="space-y-4">
+                                <div class="grid grid-cols-2 gap-4">
+                                    <input class="col-span-1 bg-white text-black p-3 focus:outline-none focus:ring-2 focus:ring-orange-500" type="text" placeholder="Nombre"/>
+                                    <input class="col-span-1 bg-white text-black p-3  focus:outline-none focus:ring-2 focus:ring-orange-500" type="email" placeholder="Email" />
+                                </div>
+
+                                <div class="grid grid-cols-2 gap-4">
+                                    <input class="col-span-1 bg-white text-black p-3 focus:outline-none focus:ring-2 focus:ring-orange-500" type="text" placeholder="Nombre"/>
+                                    <button type="submit" class="bg-black text-white border border-white p-3  focus:outline-none focus:ring-2 focus:ring-orange-500 hover:bg-white hover:text-black">Enviar</button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
-                <div className="text-center border-t-1  mx-auto max-w-7xl  text-white mt-8">
-                    Copyright © 2024 – All Rights Reserved Gallery Hotel
+                
+                </div>
+                <div className="text-center border-t-1    mx-auto max-w-7xl  text-white mt-8">
+                    <div className="flex justify-between mt-8 mx-auto max-w-7xl items-center">
+                        <div>
+                                Copyright © 2024 – All Rights Reserved Gallery Hotel
+                        </div>
+                                <div className=" ">
+                                <div className="flex space-x-4">
+                                <img src="https://textycon.com/wp-content/uploads/payment.png" alt="" />
+                                </div>
+                        </div>
+                    </div>
                 </div>
             </footer>
     )

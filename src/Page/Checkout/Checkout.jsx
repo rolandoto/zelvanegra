@@ -25,11 +25,12 @@ const Checkout  =() =>{
         script.dataset.currency = "COP";
         script.dataset.amountInCents = `${subtotal}00`;
         script.dataset.reference = `sdas`;
-    
         if (scriptRef.current) {
           scriptRef.current.appendChild(script);
         }
       }, []);
+
+      
     
       useEffect(() => {
         appendScript();

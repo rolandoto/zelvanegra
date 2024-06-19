@@ -97,3 +97,22 @@ code {
   z-index: 20;
   color: white;
 }
+
+.wordButton{
+  font-family: Raleway;
+}
+
+.iconsFeature{
+  padding: 0.6rem; /* Set a specific padding value for better control */
+  background-color: white; /* Use background-color for clarity */
+  border-radius: 25px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adding a subtle shadow for depth */
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.PriceRoomDetail{
+  border-radius: 26px;
+  padding: 4px;
+  position: absolute;
+  bottom: 1px;
+}
