@@ -27,6 +27,7 @@ import { FaStore } from "react-icons/fa";
 import { FaBanSmoking } from "react-icons/fa6";
 import { FaConciergeBell } from "react-icons/fa";
 import { RiBankFill } from "react-icons/ri";
+import { MdOutlineEmail } from "react-icons/md";
 
 
 export const IconsSnow =() =>{
@@ -138,5 +139,10 @@ export const IconsFaConciergeBell =() =>{
 
 export const IconsRiBankFill =() =>{
     return <RiBankFill   color="#ff7a45" className="" fontSize={30}  />
+}
+
+
+export const IconsMdEmail =() =>{
+    return <MdOutlineEmail   color="white" className="mr-2" fontSize={30}  />
 }
 

@@ -28,7 +28,7 @@ const Home =() =>{
         { icon: <IconsaCar/>, title: 'Variedad de transporte', description: 'Metro, tranvía, autobús, taxi' },
         { icon: <IconsRiBankFill/>, title: 'Vida cultural y nocturna', description: 'Bares, museos, restaurantes' },
         { icon: <IconsFaSquareParking/>, title: 'Parqueadero gratis*', description: 'Sujeto a disponibilidad' },
-        { icon: <IconsGiForkKnifeSpoon/>, title: 'Restaurante - Bar con vista ', description: 'panorámica' },
+        { icon: <IconsGiForkKnifeSpoon/>, title: 'Restaurante - Bar  ', description: ' con vista panorámica' },
         { icon: <IconsFaStore/>, title: 'Alianzas comerciales', description: 'Servicio de taxi, gimnasio, tours, médico, comunicaciones.' },
         { icon: <IconsFaBanSmoking/>, title: 'Espacios libre de humo', description: "" },
       ];
@@ -136,9 +136,9 @@ const Home =() =>{
             <div className="relative bg-cover bg-center h-[650px]" style={{ backgroundImage: `url(https://textycon.com/wp-content/uploads/MG_8648-scaled.jpg)` }}>
                   <div className="absolute inset-0 bg-black opacity-50"></div>
                   <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white">
-                    <h1 className="text-4xl md:text-6xl font-normal">Gallery Hotel</h1>
-                    <p className="mt-2 text-md md:text-xl font-normal">Más que un hotel, una experiencia artística</p>
-                    <button className="mt-6 bg-orange-500  wordButton text-white px-6 py-3 rounded-lg hover:bg-orange-600">Ver habitaciones</button>
+                    <h1 className=" md:text-6xl lg:text-[60px]  font-lora">Gallery Hotel</h1>
+                    <p className="mt-2 text-md lg:text-[30px] md:text-xl font-lora  font-normal">Más que un hotel, una experiencia artística</p>
+                    <button className="mt-6 bg-orange-500  wordButton text-white px-6 py-3 rounded-lg hover:bg-[#ff7a45]">Ver habitaciones</button>
                   </div>
             </div>
             <CalenderSearchHome HandClickMenuPeople={HandClickMenuPeople} 

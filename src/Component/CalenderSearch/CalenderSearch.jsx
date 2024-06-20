@@ -25,14 +25,14 @@ const CalenderSearch =({HandClickMenuPeople,
 
                             <BorderInput className="flex flex-col hover-punter" onClick={HandClickMenuPeople}  >
                                 <span className="mb-2 font-medium">Personas:</span>
-                                <span>{totalCountAdults} Huespedes</span>
+                                <span>{totalCountAdults} </span>
                             </BorderInput>
                             <ContainerButtonSearch className="flex flex-col ">
-                                <ButtonSearch className=" lg:hidden  block  w-full bg-orange-500 text-white py-4    rounded hover:bg-orange-600 transition duration-200" onClick={onsubmit}>
+                                <ButtonSearch className=" lg:hidden  block  w-full bg-[#ff7a45] text-white py-4    rounded hover:bg-[ff7a45px] transition duration-200" onClick={onsubmit}>
                                         Buscar
                                 </ButtonSearch>
 
-                                <ButtonSearch className=" hidden  lg:block w-[150px]   bg-orange-500 text-white py-4    rounded hover:bg-orange-600 transition duration-200" onClick={onsubmit}>
+                                <ButtonSearch className=" hidden  lg:block w-[150px]   bg-[#ff7a45] text-white py-4    rounded hover:bg-[ff7a45px] transition duration-200" onClick={onsubmit}>
                                         Buscar
                                 </ButtonSearch>
                             </ContainerButtonSearch>

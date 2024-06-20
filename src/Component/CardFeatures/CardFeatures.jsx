@@ -7,7 +7,7 @@ const CardFeatures =({icon,title,description,index}) =>{
                     <div className="text-4xl mr-2 iconsFeature ">{icon}</div>
                     <div> <h3 className="text-xl text-justify font-bold mb-2">{title}</h3>
                     <div>
-                        {description && <p className="text-gray-700">{description}</p>}
+                        {description && <p className="text-gray-700 text-justify">{description}</p>}
                     </div></div>        
                 </div>
             </div>)

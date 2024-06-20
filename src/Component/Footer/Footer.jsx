@@ -1,5 +1,5 @@
 import React from "react"
-import { IconCiFacebook, IconFaFacebookF, IconFaInstagram, IconFaMapMarkerAlt, IconFaWhatsapp, IconFaYoutube } from "../Icons/Icons"
+import { IconCiFacebook, IconFaFacebookF, IconFaInstagram, IconFaMapMarkerAlt, IconFaWhatsapp, IconFaYoutube, IconsMdEmail } from "../Icons/Icons"
 
 
 const Footer =() =>{
@@ -13,13 +13,13 @@ const Footer =() =>{
                 <div className=" ">
                     <ul className="space-y-2">
                     <li className="flex items-center"> <IconFaWhatsapp /> +57 315 223 44 83</li>
-                    <li className="flex items-center">  <IconCiFacebook /> reservas@galleryhotel.co</li>
+                    <li className="flex items-center mr-6">  <IconsMdEmail />  reservas@galleryhotel.co</li>
                     <li className="flex items-center"> <IconFaMapMarkerAlt/>  Cl. 47 #41 - 55, Medellín, Colombia</li>
                     </ul>
-                    <div className="flex space-x-4 mt-4">
-                    <IconFaInstagram />
-                    <IconFaFacebookF />
-                    <IconFaYoutube />
+                    <div className="flex  justify-center space-x-4 mt-4">
+                        <IconFaInstagram />
+                        <IconFaFacebookF />
+                        <IconFaYoutube />
                     </div>
                 </div>
                 <div className=" ">
@@ -33,7 +33,7 @@ const Footer =() =>{
                                 </div>
 
                                 <div class="grid grid-cols-2 gap-4">
-                                    <input class="col-span-1 bg-white text-black p-3 focus:outline-none focus:ring-2 focus:ring-orange-500" type="text" placeholder="Nombre"/>
+                                    <input class="col-span-1 bg-white text-black p-3 focus:outline-none focus:ring-2 focus:ring-orange-500" type="text" placeholder="Telefono"/>
                                     <button type="submit" class="bg-black text-white border border-white p-3  focus:outline-none focus:ring-2 focus:ring-orange-500 hover:bg-white hover:text-black">Enviar</button>
                                 </div>
                             </form>
