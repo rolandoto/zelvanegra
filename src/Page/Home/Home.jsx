@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react"
+import React, { useCallback, useRef, useState } from "react"
 import UseCalenderSearch from "../../Hooks/UseCalenderSearch";
 import moment from "moment";
 import { DateRange } from 'react-date-range';
@@ -21,6 +21,9 @@ import { IconRiCloseLargeLine, IconsFaBanSmoking, IconsFaConciergeBell, IconsFaG
 
 const Home =() =>{
   const navigate = useNavigate();
+  
+ 
+
     const features = [
         { icon: <IconsFaGlassMartini/>, title: 'Cóctel de bienvenida' },
         { icon: <IconsGiForkKnifeSpoon/>, title: 'Desayuno incluido' },
@@ -132,7 +135,7 @@ const Home =() =>{
 
     return (
         <div>
-           <Header />
+           <Header    />
             <div className="relative bg-cover bg-center h-[650px]" style={{ backgroundImage: `url(https://textycon.com/wp-content/uploads/MG_8648-scaled.jpg)` }}>
                   <div className="absolute inset-0 bg-black opacity-50"></div>
                   <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white">
@@ -224,7 +227,7 @@ const Home =() =>{
           <Features features={features} />
           <RoomPresentaion />
           <RoomDetail rooms={rooms} />
-          <Events />
+          <Events  />
           <AccordionAsk faqs={faqs} />
           <Footer />
           </div>

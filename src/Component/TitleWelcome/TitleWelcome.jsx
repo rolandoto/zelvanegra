@@ -9,7 +9,7 @@ const TitleWelcome  =() =>{
                     <img src={"https://textycon.com/wp-content/uploads/MG_8585-scaled.jpg"} alt="Room" className="w-full rounded-lg shadow-lg" />
                 </div>
                 <div className="md:w-1/2 p-4">
-                    <h2 className="text-3xl font-normal text-orange-600 mb-4 font-lora text-[30px] ">¡Donde el arte y la hospitalidad se unen!</h2>
+                    <h2 className="text-3xl font-normal text-orange-600 mb-4 font-lora text-[30px] text-center ">¡Donde el arte y la hospitalidad se unen!</h2>
                 <p className="text-gray-700 text-justify	 mb-4">
                     Bienvenido a Gallery Hotel, ubicado en el corazón del vibrante centro de Medellín. Inspirado en la rica cultura callejera de la ciudad, nuestro hotel ofrece un espacio único donde podrás conectarte con el arte urbano y disfrutar de una experiencia memorable.
                 </p>

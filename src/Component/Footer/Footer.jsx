@@ -8,7 +8,7 @@ const Footer =() =>{
             <footer className="bg-black   text-white py-8">
                 <div className="mx-auto max-w-7xl p-4  flex flex-col md:flex-row justify-between items-start md:items-center">
                 <div className="flex ">
-                <img src="https://textycon.com/wp-content/uploads/logo-blanco.png" alt="Gallery Hotel" className=" w-[220px] mb-4" /> {/* Adjust the path accordingly */}   
+                <img src="https://textycon.com/wp-content/uploads/Logo-Gallery-Colores.png" alt="Gallery Hotel" className=" w-[220px] mb-4" /> {/* Adjust the path accordingly */}   
                 </div>
                 <div className=" ">
                     <ul className="space-y-2">
@@ -56,7 +56,5 @@ const Footer =() =>{
                 </div>
             </footer>
     )
-
 }
-
 export default Footer

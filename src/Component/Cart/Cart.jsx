@@ -12,6 +12,7 @@ const Cart = ({handClickCart,checkbox}) => {
     const totalCount = getCartTotalCount()
     const navigate = useNavigate();
 
+
     const PostHotelByIdHotel = useCallback(async () => {
          navigate("/Checkout");
       }, []);

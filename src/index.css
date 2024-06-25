@@ -126,3 +126,11 @@ code {
 .words{
   font-weight: 400;
 }
+
+.scroll-container {
+  width: 350px;
+  height: 500px;
+  margin-top: 50px;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
