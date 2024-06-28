@@ -34,30 +34,30 @@ const RoomItem = ({ title,Price,person,start,end,roomByID }) => {
                 
         </div>
         <button className="flex items-center " onClick={toggleAccordion} >
-            <span className="text-normal text-[10px]">VER DETALLES  </span>
+            <span className="text-normal text-[14px]">Ver detalles  </span>
             {Open}
         </button>
 
         {isOpen &&  ( <div className="flex justify-between  flex-col  ">
                         <div className="flex justify-between items-center ">
-                            <span className="font-normal text-[10px] ">ENTRADA:</span>
-                            <span>{dateStart}</span>
+                            <span className="font-normal text-[13px] ">Entrada:</span>
+                            <span className="font-normal text-[13px] ">{dateStart}</span>
                         </div>
                         <div className="flex justify-between  items-center ">
-                            <span className="font-normal text-[10px] ">SALIDA:</span>
-                            <span>{dateEnd}</span>
+                            <span className="font-normal text-[13px] ">Salida:</span>
+                            <span className="font-normal text-[13px] ">{dateEnd}</span>
                         </div>
                         <div className="flex justify-between items-center">
-                            <span className="font-normal text-[10px]   ">RÉGIMEN/PLAN:</span>
-                            <span>Alojamiento y Desayuno</span>
+                            <span className="font-normal text-[13px]   ">Regimen/plan:</span>
+                            <span className="font-normal text-[13px] ">Alojamiento y Desayuno</span>
                         </div>
                         <div className="flex justify-between items-center">
-                            <span className="font-normal text-[10px]   ">OCUPACIÓN:</span>
-                            <span>{person} adultos</span>
+                            <span className="font-normal text-[13px]   ">Ocupacion:</span>
+                            <span className="font-normal text-[13px] ">{person} adultos</span>
                         </div>
                         <div className="flex justify-between items-center">
-                            <span className="font-normal text-[10px]   ">PRECIO:</span>
-                            <span>${parseInt(Price).toLocaleString()}</span>
+                            <span className="font-normal text-[13px]   ">Precio:</span>
+                            <span className="font-normal text-[13px] ">${parseInt(Price).toLocaleString()}</span>
                         </div>
                     </div>
         ) }

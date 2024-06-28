@@ -43,7 +43,6 @@ const Cart = ({handClickCart,checkbox}) => {
                     <div className="p-4">
                         <h3 className="text-lg   font-normal">Total de la Reserva</h3>
                         <p className="text-black text-[30px] ">{subtotal.toLocaleString('es-CO')} COP</p>
-                        <p className="text-sm text-black ">NO INCLUYE: 19% de IVA y Seguro hotelero ($17,000 COP por persona/por noche)</p>
                         <button className="mt-4 w-full px-4 py-2 items-center bg-orange-500 text-white rounded-md"
                             onClick={PostHotelByIdHotel}>Continuar</button>
                     </div>

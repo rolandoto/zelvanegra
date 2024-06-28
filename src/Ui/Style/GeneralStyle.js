@@ -134,7 +134,7 @@ background: white;
 export const ImginProduct = styled.img`
 width: 30%;
 object-fit: cover;
-height:12rem;
+height:13rem;
 
 ${fadeInImg({time:"2s"})}
 
@@ -169,7 +169,7 @@ ${fadeInImg({time:"2s"})}
 export const ImgenCehckout = styled.img`
 width: 100%;
 object-fit: cover;
-height:12rem;
+height:13rem;
 
 ${fadeInImg({time:"2s"})}
 
@@ -177,10 +177,8 @@ ${fadeInImg({time:"2s"})}
   border-bottom-left-radius: 15px; 
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
-  border-bottom-right-radius:15px;
-  
+  border-bottom-right-radius:15px;  
 }
-
 
 @media (max-width: 1000px) {
   width: 100%;
@@ -192,6 +190,7 @@ border-bottom: 1px solid rgb(224, 224, 224);
 `
 export const ContainerIcons = styled.div`
 display: flex;
+margin-top:9px;
 justify-content: space-between;
 `
 export const ContaineButton = styled.div`
@@ -207,7 +206,7 @@ export const  TextWidth = styled.div`
 font-weight: 400;
 overflow: hidden;
 text-overflow: ellipsis;
-white-space: nowrap;
+
 width: 470px;
 
 @media (max-width: 768px) {

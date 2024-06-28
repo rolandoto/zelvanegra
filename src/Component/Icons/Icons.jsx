@@ -28,34 +28,117 @@ import { FaBanSmoking } from "react-icons/fa6";
 import { FaConciergeBell } from "react-icons/fa";
 import { RiBankFill } from "react-icons/ri";
 import { MdOutlineEmail } from "react-icons/md";
+import { Tooltip } from "react-tooltip";
 
 
 export const IconsSnow =() =>{
-    return <PiSnowflakeThin fontSize={35}  />
+    const key = `my-tooltip`;
+   
+    return <>
+            <Tooltip 
+                    id={key} 
+                    place="top"
+                    style={{ backgroundColor: "black", color: "white" }} 
+                    variant="info"  >
+                    Hello
+            </Tooltip>
+     
+            <PiSnowflakeThin   data-tooltip-id="my-tooltip"
+                                data-tooltip-content="Aire acondicionado" data-for={key} data-tip fontSize={35}  />
+            </>
 }
 
 export const IconsWifi =() =>{
-    return <CiWifiOn fontSize={35}  />
+   
+    const key = `my-tooltip`;
+    
+    return <>
+            <Tooltip 
+                    id={key} 
+                    place="top"
+                    style={{ backgroundColor: "black", color: "white" }} 
+                    variant="info"  >
+
+            </Tooltip>
+            <CiWifiOn  data-tooltip-id="my-tooltip"
+                data-tooltip-content="Wifi" data-for={key} data-tip fontSize={35}   />
+            </> 
 }
 
 export const IconsTv =() =>{
-    return <PiAirplayLight fontSize={35}  />
+    const key = `my-tooltip`;
+    
+    return <>
+             <Tooltip 
+                    id={key} 
+                    place="top"
+                    style={{ backgroundColor: "black", color: "white" }} 
+                    variant="info"  >
+
+            </Tooltip>
+            <PiAirplayLight data-tooltip-id="my-tooltip"
+                data-tooltip-content="Tv" data-for={key} data-tip fontSize={35}   />
+            </> 
 }
 
 export const IconsSafe =() =>{
-    return <BsSafe fontSize={30}  />
+    const key = `my-tooltip`;
+    
+    return <>
+                <Tooltip 
+                    id={key} 
+                    place="top"
+                    style={{ backgroundColor: "black", color: "white" }} 
+                    variant="info"  >
+                        </Tooltip>
+                <BsSafe data-tooltip-id="my-tooltip"
+                data-tooltip-content="Caja fuerte" data-for={key} data-tip fontSize={33} />
+            </> 
 }
 
 export const IconShower =() =>{
-    return <PiShowerLight fontSize={35}  />
+    const key = `my-tooltip`;
+    
+    return <>
+            <Tooltip 
+                id={key} 
+                place="top"
+                style={{ backgroundColor: "black", color: "white" }} 
+                variant="info"  >
+                    </Tooltip>
+                    <PiShowerLight data-tooltip-id="my-tooltip"
+                data-tooltip-content="Ducha" data-for={key} data-tip fontSize={35}  />
+        </> 
 }
 
 export const IconTowels =() =>{
-    return <PiTowelLight fontSize={35}  />
+    const key = `my-tooltip`;
+    
+    return <>
+            <Tooltip 
+                id={key} 
+                place="top"
+                style={{ backgroundColor: "black", color: "white" }} 
+                variant="info"  >
+                    </Tooltip>
+                    <PiTowelLight data-tooltip-id="my-tooltip"
+                data-tooltip-content="Toalla" data-for={key} data-tip fontSize={35}  />
+            </> 
 }
 
 export const IconsCheck =() =>{
-    return <CiCircleCheck fontSize={35}  />
+    const key = `my-tooltip`;
+    
+    return <>
+                <Tooltip 
+                id={key} 
+                place="top"
+                style={{ backgroundColor: "black", color: "white" }} 
+                variant="info"  >
+                    </Tooltip>
+                    <CiCircleCheck  data-tooltip-id="my-tooltip"
+                data-tooltip-content="Desayuno" data-for={key} data-tip fontSize={35}   />
+        </> 
 }
 export const IconFaWhatsapp =() =>{
     return <FaWhatsapp  className="mr-2" fontSize={30}  />

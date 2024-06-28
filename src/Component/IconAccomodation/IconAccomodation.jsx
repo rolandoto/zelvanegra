@@ -3,9 +3,10 @@ import { ContainerIcons } from "../../Ui/Style/GeneralStyle"
 import { IconShower, IconTowels, IconsCheck, IconsSafe, IconsSnow, IconsTv, IconsWifi } from "../Icons/Icons"
 
 const IconAccomodation =() =>{
-
+   
     return (  <ContainerIcons >
-                    <IconsSnow />
+                    
+                    <IconsSnow  />
                     <IconsWifi />
                     <IconsTv />
                     <IconsSafe />

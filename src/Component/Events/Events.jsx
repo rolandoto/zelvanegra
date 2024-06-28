@@ -3,7 +3,6 @@ import CardEvents from "../CardEvents/CardEventjs";
 
 const Events =()  =>{
 
-
     return (
         <>
          <div  id="page-2"    className="   mx-auto max-w-7xl p-6" >
@@ -16,7 +15,5 @@ const Events =()  =>{
             </div>
         </>
     )
-
 }
-
 export default Events

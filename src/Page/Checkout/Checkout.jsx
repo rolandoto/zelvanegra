@@ -40,8 +40,10 @@ const Checkout  =() =>{
           }
         };
       }, [appendScript]);
-    
-
+    /* <form className="w-full flex justify-center bg-orange-500 text-white py-2 px-4 rounded-md mt-4">
+        <div className=" bg-orange-500" ref={scriptRef}></div>
+        </form>
+    */
     return (<>
         <Header />
          <div className="relative bg-cover bg-center h-[450px]" style={{ backgroundImage: `url(https://textycon.com/wp-content/uploads/MG_8648-scaled.jpg)` }}>
@@ -94,9 +96,7 @@ const Checkout  =() =>{
                             <button type="button" className="w-full bg-orange-500 text-white py-2 px-4 rounded-md mt-4">
                             Ir a Finalizar compra
                             </button>
-                            <form className="w-full flex justify-center bg-orange-500 text-white py-2 px-4 rounded-md mt-4">
-                                <div className=" bg-orange-500" ref={scriptRef}></div>
-                            </form>
+                           
                         </form>
                         </div>
                 
@@ -104,22 +104,20 @@ const Checkout  =() =>{
                             <div className="p-6 border border-gray-300 rounded-lg">
                                 <h2 className="text-xl font-bold mb-4">RESUMEN DE TU RESERVA</h2>
                                     <div className="mb-4">
-                                        <h3 className="text-lg font-semibold">Hotel gallery Medellín ★★★★★</h3>
+                                        <h3 className="text-lg font-semibold">Hotel gallery Medellín</h3>
                                         <p className="text-gray-600">Cra. 37 #10A 29 - Medellín</p>
                                     </div>
                                     {cart.map((itemCardRoom) =>(
                                     <CardCheckout  {...itemCardRoom} />
                                 ))}
                                  <div className=" border-gray-300 rounded-lg">
-                                <div className="text-right">
+                                <div className="text-right items-center">
                                     <p className="text-sm text-gray-600 mb-1">Total de la reserva</p>
                                     <p className="text-2xl font-bold mb-2">{parseInt(subtotal).toLocaleString()} COP</p>
-                                    <p className="text-sm text-gray-600">
-                                    NO INCLUYE: 1.9% de IVA y Seguro hotelero ($17.000 COP por persona/por noche)
-                                    </p>
+                                   
                                 </div>
-                                </div>
-                                </div>
+                            </div>
+                        </div>
                                
                         </div>
                     </div>

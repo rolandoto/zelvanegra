@@ -1,4 +1,4 @@
-import React, { useCallback, useRef, useState } from "react"
+import React, { useCallback, useEffect, useRef, useState } from "react"
 import UseCalenderSearch from "../../Hooks/UseCalenderSearch";
 import moment from "moment";
 import { DateRange } from 'react-date-range';
@@ -17,13 +17,9 @@ import RoomPresentaion from "../../Component/RoomPresentation/RoomPresentation";
 import "./home.css"
 import { IconRiCloseLargeLine, IconsFaBanSmoking, IconsFaConciergeBell, IconsFaGlassMartini, IconsFaSquareParking, IconsFaStore, IconsGiForkKnifeSpoon, IconsRiBankFill, IconsTiHome, IconsaCar } from "../../Component/Icons/Icons";
 
-
-
 const Home =() =>{
   const navigate = useNavigate();
-  
  
-
     const features = [
         { icon: <IconsFaGlassMartini/>, title: 'Cóctel de bienvenida' },
         { icon: <IconsGiForkKnifeSpoon/>, title: 'Desayuno incluido' },
@@ -135,6 +131,7 @@ const Home =() =>{
 
     return (
         <div>
+         
            <Header    />
             <div className="relative bg-cover bg-center h-[650px]" style={{ backgroundImage: `url(https://textycon.com/wp-content/uploads/MG_8648-scaled.jpg)` }}>
                   <div className="absolute inset-0 bg-black opacity-50"></div>
@@ -223,13 +220,17 @@ const Home =() =>{
                   handDecreaseChildren={handDecreaseChildren}
                   setContextShowMenuPeople={setContextShowMenuPeople}  />}
               </div>
+             
           <TitleWelcome />
           <Features features={features} />
           <RoomPresentaion />
           <RoomDetail rooms={rooms} />
           <Events  />
+          
+        
           <AccordionAsk faqs={faqs} />
           <Footer />
+         
           </div>
     )
     

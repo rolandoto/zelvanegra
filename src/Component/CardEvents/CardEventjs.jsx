@@ -4,6 +4,7 @@ const CardEvents =() =>{
 
     return ( <div  className="flex flex-col md:flex-row  p-3 ease-in duration-300  hover:bg-white hover:shadow items-start
         bg-gray-100	  	rounded-lg  ">
+            
                 <div className=" p-4">
                     <img src={"https://textycon.com/wp-content/uploads/blog-img1.jpg"} alt="Room" className="w-[200px]  h-[290px] rounded-lg shadow-lg" />
                 </div>
