@@ -102,7 +102,7 @@ const Checkout  =() =>{
                 
                         <div className="w-full md:w-1/2 p-4 bg-gray-50 rounded-lg">
                             <div className="p-6 border border-gray-300 rounded-lg">
-                                <h2 className="text-xl font-bold mb-4">RESUMEN DE TU RESERVA</h2>
+                                <h2 className="text-xl font-bold mb-4">Resumen de tu reserva</h2>
                                     <div className="mb-4">
                                         <h3 className="text-lg font-semibold">Hotel gallery Medellín</h3>
                                         <p className="text-gray-600">Cra. 37 #10A 29 - Medellín</p>
