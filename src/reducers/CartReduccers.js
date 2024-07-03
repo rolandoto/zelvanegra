@@ -25,10 +25,14 @@ export const CartReduccers = createSlice({
             const { roomByID } = action.payload;
             state.cart = state.cart.filter((item) => item.roomByID !== roomByID);
             state.loadingCart = false;
+        },
+        removeALL: (state, action) => {
+            state.cart = [];
+            state.loadingCart = false;
         }
     }
 })
 
-export const {loadingCart,addItemToCart,setErrorCart,removetoCart} = CartReduccers.actions
+export const {loadingCart,addItemToCart,setErrorCart,removetoCart,removeALL} = CartReduccers.actions
 
 export default  CartReduccers.reducers

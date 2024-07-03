@@ -118,7 +118,7 @@ const Accommodation = () => {
             <button className="cartIcon  cursor-pointer "   onClick={handClickCart}   >
                       <div className="cartIcon-Number">
                           <span className="md:text-1xl font-normal">{totalCount}</span>
-                          
+            
                       </div>
                       <IconCiShoppingCart  />
               </button>

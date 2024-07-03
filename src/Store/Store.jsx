@@ -2,6 +2,7 @@
 import {configureStore } from '@reduxjs/toolkit'
 import {ApiHotelByIdReduccers} from '../reducers/ApiHotelByIdReduccers';
 import {CartReduccers} from '../reducers/CartReduccers';
+import {ApiCreateByidHotel} from '../reducers/ApiCreateByidHotel';
 
 const persistanceLocalStorageMiddleware = (store) => (next) => (action) => {
 	next(action);
@@ -11,7 +12,8 @@ const persistanceLocalStorageMiddleware = (store) => (next) => (action) => {
 const store = configureStore ({
     reducer:{
         Hotel:ApiHotelByIdReduccers.reducer,
-        Cart:CartReduccers.reducer
+        Cart:CartReduccers.reducer,
+        Reservation:ApiCreateByidHotel.reducer
         },
     devTools:true,
     middleware: [persistanceLocalStorageMiddleware],
