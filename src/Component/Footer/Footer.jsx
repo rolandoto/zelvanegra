@@ -4,6 +4,14 @@ import { IconCiFacebook, IconFaFacebookF, IconFaInstagram, IconFaMapMarkerAlt, I
 
 const Footer =() =>{
 
+    const handleFacebook = () => {
+        window.open("https://www.facebook.com/galleryhotelmedellin", "_blank");
+    };
+
+    const handleInstagram = () => {
+        window.open("https://www.instagram.com/galleryhotelmed/", "_blank");
+    };
+
     return (
             <footer className="bg-black   text-white py-8">
                 <div className="mx-auto max-w-7xl p-4  flex flex-col md:flex-row justify-between items-start md:items-center">
@@ -23,8 +31,8 @@ const Footer =() =>{
                     
                     <div className="w-[350px] lg:w-[280px] lg:w-122 " >
                             <div className="flex justify-center space-x-4 mt-4">
-                                <IconFaInstagram />
-                                <IconFaFacebookF />
+                                <IconFaInstagram   onclick={handleInstagram} />
+                                <IconFaFacebookF  onclick={handleFacebook} />
                                 <IconFaYoutube />
                             </div>
                     </div>

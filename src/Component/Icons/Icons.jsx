@@ -149,11 +149,11 @@ export const IconCiFacebook =() =>{
 export const IconFaMapMarkerAlt =() =>{
     return <FaMapMarkerAlt className="mr-2" fontSize={30}  />
 }
-export const IconFaInstagram =() =>{
-    return <FaInstagram className="mr-2" fontSize={30}  />
+export const IconFaInstagram =({onclick}) =>{
+    return <FaInstagram className="mr-2" fontSize={30} onClick={onclick}  />
 }
-export const IconFaFacebookF =() =>{
-    return <FaFacebookF className="mr-2" fontSize={30}  />
+export const IconFaFacebookF =({onclick}) =>{
+    return <FaFacebookF className="mr-2" fontSize={30}  onClick={onclick} />
 }
 export const IconFaYoutube =() =>{
     return <FaYoutube className="mr-2" fontSize={30}  />
