@@ -10,21 +10,29 @@ const Footer =() =>{
                 <div className="flex ">
                 <img src="https://textycon.com/wp-content/uploads/Logo-Gallery-Colores.png" alt="Gallery Hotel" className=" w-[220px] mb-4" /> {/* Adjust the path accordingly */}   
                 </div>
-                <div className=" ">
-                    <ul className="space-y-2">
-                    <li className="flex items-center"> <IconFaWhatsapp /> +57 315 223 44 83</li>
-                    <li className="flex items-center mr-6">  <IconsMdEmail />  reservas@galleryhotel.co</li>
-                    <li className="flex items-center"> <IconFaMapMarkerAlt/>  Cl. 47 #41 - 55, Medellín, Colombia</li>
-                    </ul>
-                    <div className="flex  justify-center space-x-4 mt-4">
-                        <IconFaInstagram />
-                        <IconFaFacebookF />
-                        <IconFaYoutube />
+
+                <div>
+                    <div className="">
+                        <ul className="space-y-2">
+                            <li className="flex items-center"> <IconFaWhatsapp /> +57 315 223 44 83</li>
+                            <li className="flex items-center mr-6">  <IconsMdEmail />  reservas@galleryhotel.co</li>
+                            <li className="flex items-center"> <IconFaMapMarkerAlt/>  Cl. 47 #41 - 55, Medellín, Colombia</li>
+                        </ul>
+                    
+                    </div>
+                    
+                    <div className="w-[280px] lg:w-[230px] lg:w-122 " >
+                            <div className="flex justify-center space-x-4 mt-4">
+                                <IconFaInstagram />
+                                <IconFaFacebookF />
+                                <IconFaYoutube />
+                            </div>
                     </div>
                 </div>
+               
                 <div className=" ">
                     <div class="bg-black text-white flex items-center justify-center ">
-                        <div class="w-full max-w-md">
+                        <div class="w-full max-w-md mt-6">
                             <h2 class="text-center text-xl font-semibold mb-6">CONTACTO</h2>
                             <form class="space-y-4">
                                 <div class="grid grid-cols-2 gap-4">
@@ -33,7 +41,7 @@ const Footer =() =>{
                                 </div>
 
                                 <div class="grid grid-cols-2 gap-4">
-                                    <input class="col-span-1 bg-white text-black p-3 focus:outline-none focus:ring-2 focus:ring-orange-500" type="text" placeholder="Telefono"/>
+                                    <input class="col-span-1 bg-white text-black p-3 focus:outline-none focus:ring-2 focus:ring-orange-500" type="text" placeholder="Teléfono"/>
                                     <button type="submit" class="bg-black text-white border border-white p-3  focus:outline-none focus:ring-2 focus:ring-orange-500 hover:bg-white hover:text-black">Enviar</button>
                                 </div>
                             </form>

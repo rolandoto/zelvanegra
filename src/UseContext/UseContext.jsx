@@ -7,11 +7,10 @@ const Autoconext = React.createContext({})
 export const AutoProvider =({children}) =>{
     
     const [contextMenuPosition, setContextMenuPosition] = useState(false);
-    const [adults, setAdults] = useState(1);
+    const [adults, setAdults] = useState(2);
     const [childrem, setChildrem] = useState(0);
 
     const totalCountAdults = adults + childrem;
-
 
     const handChangeAdults = () => {
       setAdults(adults + 1);

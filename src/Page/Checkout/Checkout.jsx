@@ -44,40 +44,42 @@ const Checkout  =() =>{
   });
 
 
-const handleChange = (e) => {
-  const { name, value } = e.target;
-  if (name === 'cardNumber') {
-    const inputVal = value.replace(/\D/g, ''); // Eliminar todos los caracteres no numéricos
-    const limitedInputVal = inputVal.slice(0, 16); // Limitar a 16 dígitos
-    const formattedCardNumber = limitedInputVal.replace(/(\d{4})(?=\d)/g, '$1 '); // Insertar un espacio cada cuatro dígitos
-    setFormValues({ ...formValues, [name]: formattedCardNumber });
-  }else if (name === 'cvc') {
-    const inputVal = value.replace(/\D/g, ''); // Eliminar todos los caracteres no numéricos
-    const limitedInputVal = inputVal.slice(0, 4); // Limitar a 4 dígitos (entre 3 y 4)
-    setFormValues({ ...formValues, [name]: limitedInputVal });
-  }else if (name === 'termsAccepted') {
-    const inputValue = value.toLowerCase().trim(); // Convertir a minúsculas y eliminar espacios adicionales
-    const accepted = inputValue === 'false';
-    setFormValues({ ...formValues, [name]: accepted });
-  }else if (name === 'siteTermsAccepted') {
-    const inputValue = value.toLowerCase().trim(); // Convertir a minúsculas y eliminar espacios adicionales
-    const acceptede = inputValue === 'false';
-    setFormValues({ ...formValues, [name]: acceptede });
-  } else {
-    setFormValues({ ...formValues, [name]: value });
-  }
-};
- 
-
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    if (name === 'cardNumber') {
+      const inputVal = value.replace(/\D/g, ''); // Eliminar todos los caracteres no numéricos
+      const limitedInputVal = inputVal.slice(0, 16); // Limitar a 16 dígitos
+      const formattedCardNumber = limitedInputVal.replace(/(\d{4})(?=\d)/g, '$1 '); // Insertar un espacio cada cuatro dígitos
+      setFormValues({ ...formValues, [name]: formattedCardNumber });
+    }else if (name === 'cvc') {
+      const inputVal = value.replace(/\D/g, ''); // Eliminar todos los caracteres no numéricos
+      const limitedInputVal = inputVal.slice(0, 4); // Limitar a 4 dígitos (entre 3 y 4)
+      setFormValues({ ...formValues, [name]: limitedInputVal });
+    }else if (name === 'termsAccepted') {
+      const inputValue = value.toLowerCase().trim(); // Convertir a minúsculas y eliminar espacios adicionales
+      const accepted = inputValue === 'false';
+      setFormValues({ ...formValues, [name]: accepted });
+    }else if (name === 'siteTermsAccepted') {
+      const inputValue = value.toLowerCase().trim(); // Convertir a minúsculas y eliminar espacios adicionales
+      const acceptede = inputValue === 'false';
+      setFormValues({ ...formValues, [name]: acceptede });
+    } else {
+      setFormValues({ ...formValues, [name]: value });
+    }
+  };
+  
     const {cart,getCartSubtotal,getCartTotalCount} = UseCart()
     const subtotal = getCartSubtotal()
     const totalCount = getCartTotalCount()
     const {PostCreateHotel,getCountry} =useReservationCreate()
-    const [result, setResult] = useState("ok" | "ko" | null)
     const {loadingCart} = useSelector(state => state.Cart);
-    const {Country,loading,error}= useSelector(state => state.Reservation);
+    const {Country,loading,error,reservation}= useSelector(state => state.Reservation);
     const {RemoveCartAll } =useCartActions()
-   
+
+    const cardNumberArray = formValues.cardNumber.split(" ");
+    const cardNumberString = cardNumberArray.join("");
+    console.log(formValues)
+
     const GetFetchDate =async() =>{
         await  getCountry()
     }
@@ -88,6 +90,7 @@ const handleChange = (e) => {
         GetFetchDate()
     },[])
 
+    console.log(error)
 
     const [formErrors, setFormErrors] = useState({});
     
@@ -102,33 +105,20 @@ const handleChange = (e) => {
                                   email:formValues.email,
                                   city:formValues.city,
                                   country:formValues.country,
-                                  fecha:now})
-           
-        setResult('ok');
-        RemoveCartAll()
-        setFormValues({
-          name: '',
-          apellido: '',
-          email: '',
-          phone: '',
-          address: '',
-          city: '',
-          country: '',
-          specialReq: '',
-          cardNumber: '',
-          cardName: '',
-          expiryMonth: '',
-          expiryYear: '',
-          cvc: '',
-          termsAccepted: false,
-          siteTermsAccepted: false,
-        })
-        } else {
-            setResult('ko');
-        }
+                                  fecha:now,
+                                  number:cardNumberString,
+                                  exp_month:formValues.expiryMonth,
+                                  exp_year:formValues.expiryYear,
+                                  cvc:formValues.cvc,
+                                  card_holder:formValues.cardName,
+                                  })
+        
+       
+        } 
     };
 
     const validate = (values) => {
+      const cardNumberRegex = /^(?:\d{4} ){3}\d{3,4}$|^\d{15,16}$/;
       const errors = {};
       if (!values.name) errors.name = 'Nombre es requerido';
       if (!values.apellido) errors.apellido = 'Apellido es requerido';
@@ -145,9 +135,14 @@ const handleChange = (e) => {
       if (!values.cardName) errors.cardName = 'Nombre del titular  es requerido';
       if (!values.cardNumber) {
         errors.cardNumber = 'Número de la tarjeta es requerido';
-      } else if (!/^\d{4} \d{4} \d{4} \d{4}$/.test(values.cardNumber)) {
+    } 
+
+    if (!values.cardNumber) {
+        errors.cardNumber = 'Número de la tarjeta es requerido';
+    } else if (!cardNumberRegex.test(values.cardNumber)) {
         errors.cardNumber = 'Número de la tarjeta no es válido';
-      }
+    }
+
       
       if (!values.expiryMonth) errors.expiryMonth = 'Mes de caducidad es requerido';
       if (!values.expiryYear) errors.expiryYear = 'Año de caducidad es requerido';
@@ -410,18 +405,16 @@ const handleChange = (e) => {
                       {formErrors.siteTermsAccepted && <p className="text-red-500 text-xs">{formErrors.siteTermsAccepted}</p>}
                     </div>
                     <Button 
-                    disabled={loading} 
+                      disabled={loading} 
                       type="submit" 
-                      className="w-full bg-black text-white py-2 px-4 rounded hover:bg-gray-800"
+                      className={`w-full text-white py-2 bg-black px-4 rounded hover:bg-gray-800`} 
                     >
-                      CONFIRMAR RESERVA
+                     {loading ? "Cargando reserva" : " CONFIRMAR RESERVA" } 
                     </Button>
                     <p className=" text-xs text-gray-500 mt-4">
                     Al completar esta reserva, acuerdo que he leído y aceptado las <a href="#" className="text-orange-500">Políticas de Propiedad</a>.
                 </p>
             </div>
-
-
              </form>
                     </div>
             
@@ -456,7 +449,7 @@ const handleChange = (e) => {
         <Header />
         
 
-        {loadingCart && <LoadingOverlay />}  
+        {loading && <LoadingOverlay />}  
          <div className="relative bg-cover bg-center h-[450px]" style={{ backgroundImage: `url(https://grupo-hoteles.com/storage/app/4/page/1155970062-4-page-slider-1-Habitacion-todos-jacuzzi-ventilador-centro-de-medellin-antioquia-colombia.png)` }}>
                     <div className="absolute inset-0 bg-black opacity-50"></div>
                     <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white">

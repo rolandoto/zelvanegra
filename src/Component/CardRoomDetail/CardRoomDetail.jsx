@@ -1,6 +1,6 @@
 import React from "react";
 
-const CardRoomDetail =({features,image,title}) =>{
+const CardRoomDetail =({features,image,title,price}) =>{
 
     return (
         <div  className="  p-6 rounded-lg relative ">
@@ -14,7 +14,7 @@ const CardRoomDetail =({features,image,title}) =>{
                 </ul>        
                 <div className="PriceRoomDetail">
                     <div >
-                        <strong className=" text-[20px] " >Desde $129.000</strong>
+                        <strong className=" text-[20px] " >Desde ${parseInt(price).toLocaleString()} </strong>
                     </div>
                 </div>
                                 

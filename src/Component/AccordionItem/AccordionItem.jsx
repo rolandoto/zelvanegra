@@ -8,7 +8,7 @@ const AccordionItem = ({ question, answer }) => {
     };
   
     return (
-      <div className="border ease-in duration-300  rounded-sm shadow-md mb-4">
+      <div className="bg-gray-100 border ease-in duration-300  mb-4">
         <button
           className="w-full text-left px-4 py-2 flex  items-center justify-between"
           onClick={toggleAccordion}
