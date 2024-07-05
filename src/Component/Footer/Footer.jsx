@@ -21,7 +21,7 @@ const Footer =() =>{
                     
                     </div>
                     
-                    <div className="w-[280px] lg:w-[230px] lg:w-122 " >
+                    <div className="w-[350px] lg:w-[280px] lg:w-122 " >
                             <div className="flex justify-center space-x-4 mt-4">
                                 <IconFaInstagram />
                                 <IconFaFacebookF />
