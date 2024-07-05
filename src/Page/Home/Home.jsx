@@ -122,8 +122,7 @@ const Home =() =>{
     const rooms = [
       { title: 'Room Box Clásica', image:"https://textycon.com/wp-content/uploads/MG_8599-scaled.jpg", features: ['Cama matrimonial', 'Baño privado con ducha', 'Wi-Fi gratuito', 'Smart TV'] },
       { title: 'Room Box Aire', image: "https://textycon.com/wp-content/uploads/MG_8588-scaled.jpg", features: ['Cama matrimonial', 'Baño privado con ducha', 'Wi-Fi gratuito', 'Smart TV','Aire Acondicionado'] },
-      { title: 'Room Box Jacuzzi', image: "https://textycon.com/wp-content/uploads/MG_8591-scaled.jpg", features: ['Cama matrimonial', 'Baño privado con ducha', 'Wi-Fi gratuito', 'Smart TV','Aire Acondicionado','Jacuzzi'] },
-      
+      { title: 'Room Box Jacuzzi', image: "https://grupo-hoteles.com/storage/app/4/rooms/1563326590-12-rooms-slider-1-habitacion_Jacuzzi_Hotel_en_Medellin_Gallery_Hotel-02.webp", features: ['Cama matrimonial', 'Baño privado con ducha', 'Wi-Fi gratuito', 'Smart TV','Aire Acondicionado','Jacuzzi'] },
     ];
 
     const monthsToShow = window.innerWidth >= 700 ? 2 : 1; // Cambia 768 según tu punto de ruptura deseado
@@ -133,7 +132,7 @@ const Home =() =>{
         <div>
          
            <Header    />
-            <div className="relative bg-cover bg-center h-[650px]" style={{ backgroundImage: `url(https://textycon.com/wp-content/uploads/MG_8648-scaled.jpg)` }}>
+            <div className="relative bg-cover bg-center h-[650px]" style={{ backgroundImage: `url(https://grupo-hoteles.com/storage/app/4/page/1155970062-4-page-slider-1-Habitacion-todos-jacuzzi-ventilador-centro-de-medellin-antioquia-colombia.png)` }}>
                   <div className="absolute inset-0 bg-black opacity-50"></div>
                   <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white">
                     <h1 className=" md:text-6xl lg:text-[60px]  font-lora">Gallery Hotel</h1>

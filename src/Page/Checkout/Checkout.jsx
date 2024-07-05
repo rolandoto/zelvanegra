@@ -345,7 +345,7 @@ const handleChange = (e) => {
                       </div>
                       <div className="w-1/3">
                         <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="expiryYear">
-                          Año de caducidad
+                          Año
                         </label>
                         <select 
                           className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
@@ -369,7 +369,7 @@ const handleChange = (e) => {
 
                       <div className="w-1/3">
                         <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="cvc">
-                          CVC (obligatorio)
+                          CVC
                         </label>
                         <input 
                           className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
@@ -457,7 +457,7 @@ const handleChange = (e) => {
         
 
         {loadingCart && <LoadingOverlay />}  
-         <div className="relative bg-cover bg-center h-[450px]" style={{ backgroundImage: `url(https://textycon.com/wp-content/uploads/MG_8648-scaled.jpg)` }}>
+         <div className="relative bg-cover bg-center h-[450px]" style={{ backgroundImage: `url(https://grupo-hoteles.com/storage/app/4/page/1155970062-4-page-slider-1-Habitacion-todos-jacuzzi-ventilador-centro-de-medellin-antioquia-colombia.png)` }}>
                     <div className="absolute inset-0 bg-black opacity-50"></div>
                     <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white">
                       <h1 className="text-4xl md:text-6xl font-normal">Gallery Hotel</h1>

@@ -5,6 +5,10 @@ const Header =({scrollToElement}) =>{
 
     const navigate = useNavigate();
 
+    const HandNextHome = () =>{
+        navigate("/");
+    }
+
     const HandNextAccomodation = () =>{
         navigate("/Accomodation");
     }
@@ -21,12 +25,15 @@ const Header =({scrollToElement}) =>{
                     <div className="text-3xl font-bold text-indigo-600"><Link  to="/"><img className="w-[100px]" src="https://textycon.com/wp-content/uploads/Logo-Gallery-Colores.png" alt="" /></Link> </div>
 
                     <div className=" hidden lg:block   space-x-4">
-                        <a href="#" className="text-white text-[16px] font-normal  hover:text-[#ff7a45]">Inicio</a>
+                        <a href="#" className="text-white text-[16px] font-normal  hover:text-[#ff7a45]" onClick={HandNextHome} >Inicio</a>
                         <a href="#page-2" className="text-white text-[16px] font-normal hover:text-[#ff7a45]" onClick={scrollToElement} >Próximos eventos</a>
                         <a href="#" className="text-white  text-[16px] font-normal hover:text-[#ff7a45]" onClick={HandNextAccomodation} >Reservas</a>
                     </div>
                     <div className="hidden lg:block " >
-                        <a href="#" className="text-white bg-orange-500 w-[150px] p-4 rounded hover:bg-orange-600">Cómo llegar</a>
+                        <a 
+                         target="_blank"
+                         href="https://www.google.com/maps/dir//Gallery+Hotel+Medell%C3%ADn,+Cl.+47+%2341-55,+La+Candelaria,+Medell%C3%ADn,+La+Candelaria,+Medell%C3%ADn,+Antioquia/@6.2405494,-75.5638233,14z/data=!4m9!4m8!1m0!1m5!1m1!1s0x8e4428575a0dc0d1:0xbc26f43cbd055cc8!2m2!1d-75.5631796!2d6.2437756!3e0?entry=ttu"
+                        className="text-white bg-orange-500 w-[150px] p-4 rounded hover:bg-orange-600">Cómo llegar</a>
                     </div>
 
                     <div className="lg:hidden" >
@@ -55,18 +62,19 @@ const Header =({scrollToElement}) =>{
             </div>
 
            {menuOpen &&  <div className="lg:hidden flex flex-col mt-4 space-y-2">
-                        <a href="#" className="text-white text-[16px] font-normal  hover:text-[#ff7a45]">
+                        <a href="#" className="text-white text-[16px] font-normal  hover:text-[#ff7a45]" onClick={HandNextHome}>
                             Inicio
                         </a>
-                        <a href="#" className="text-white text-[16px] font-normal  hover:text-[#ff7a45]">
+                        <a href="#" className="text-white text-[16px] font-normal  hover:text-[#ff7a45]"  onClick={scrollToElement}>
                             Próximos eventos
                         </a>
                         <a href="#" className="text-white text-[16px] font-normal  hover:text-[#ff7a45]" onClick={HandNextAccomodation}>
                             Reservas
                         </a>
-                        <a
-                            href="#"
+                        <a  target="_blank"
+                            href="https://www.google.com/maps/dir//Gallery+Hotel+Medell%C3%ADn,+Cl.+47+%2341-55,+La+Candelaria,+Medell%C3%ADn,+La+Candelaria,+Medell%C3%ADn,+Antioquia/@6.2405494,-75.5638233,14z/data=!4m9!4m8!1m0!1m5!1m1!1s0x8e4428575a0dc0d1:0xbc26f43cbd055cc8!2m2!1d-75.5631796!2d6.2437756!3e0?entry=ttu"
                             className="text-white bg-orange-500 w-full p-4 rounded hover:bg-orange-600"
+                            
                         >
                             Cómo llegar
                         </a>

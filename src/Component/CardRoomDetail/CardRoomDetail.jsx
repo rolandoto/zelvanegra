@@ -4,7 +4,7 @@ const CardRoomDetail =({features,image,title}) =>{
 
     return (
         <div  className="  p-6 rounded-lg relative ">
-            <img src={image} alt={title} className="w-full rounded-lg mb-4" />
+            <img src={image} alt={title} className="w-full h-[250px] rounded-lg mb-4" />
                 <h3 className=" words  text-[#ff7a45] text-[23px]  mb-4">{title}</h3>
                 <ul className="text-gray-700 h-[180px] text-left list-disc list-inside">
                 {features.map((feature, idx) => (
@@ -19,7 +19,7 @@ const CardRoomDetail =({features,image,title}) =>{
                 </div>
                                 
         </div>
-                )
+    )
 }
 
 export default CardRoomDetail
