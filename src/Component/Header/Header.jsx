@@ -73,8 +73,7 @@ const Header =({scrollToElement}) =>{
                         </a>
                         <a  target="_blank"
                             href="https://www.google.com/maps/dir//Gallery+Hotel+Medell%C3%ADn,+Cl.+47+%2341-55,+La+Candelaria,+Medell%C3%ADn,+La+Candelaria,+Medell%C3%ADn,+Antioquia/@6.2405494,-75.5638233,14z/data=!4m9!4m8!1m0!1m5!1m1!1s0x8e4428575a0dc0d1:0xbc26f43cbd055cc8!2m2!1d-75.5631796!2d6.2437756!3e0?entry=ttu"
-                            className="text-white bg-orange-500 w-full p-4 rounded hover:bg-orange-600"
-                            
+                            className="text-white bg-orange-500 w-full p-4 rounded hover:bg-orange-600"   
                         >
                             Cómo llegar
                         </a>
