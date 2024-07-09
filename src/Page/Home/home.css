@@ -30,7 +30,7 @@
   }
   
   .hover-punter:hover{
-    background: #ff7a45;
+    background: rgb(245, 242, 242);
     border-radius: 5px;
     cursor: pointer ;
     border-radius: 10px;
