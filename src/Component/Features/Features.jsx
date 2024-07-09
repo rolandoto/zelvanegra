@@ -1,7 +1,6 @@
 import React from "react"
 import CardFeatures from "../CardFeatures/CardFeatures"
 
-
 const Features =({features}) =>{
 
     return  (<div className="my-12 text-center mx-auto max-w-7xl">

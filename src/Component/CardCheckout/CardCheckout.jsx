@@ -1,7 +1,7 @@
 import React from "react"
 import moment from "moment";
 
-const CardCheckout =({ID,room_image,title,Price,cantidad,nights,person,Room,end,start,Price_nigth}) =>{
+const CardCheckout =({room_image,title,Price,nights,person,end,start,Price_nigth}) =>{
 
     
     const dateStart=  moment(start).format('YYYY-MM-DD');

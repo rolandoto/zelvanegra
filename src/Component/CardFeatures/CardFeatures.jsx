@@ -1,6 +1,6 @@
 import React from "react";
 
-const CardFeatures =({icon,title,description,index}) =>{
+const CardFeatures =({icon,title,description}) =>{
 
     return (<div  className="bg-gray-100 p-6   rounded-lg  hover:bg-white  hover:shadow-lg  transition duration-150 ease-in-out">
                 <div className="flex items-center ">

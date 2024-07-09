@@ -2,7 +2,6 @@ import React, { Fragment, useCallback, useState } from "react"
 import RoomItem from "../RoomItem/RoomItem";
 import { IconRiCloseLargeLine } from "../Icons/Icons";
 import UseCart from "../../Hooks/UseCart";
-import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 const Cart = ({handClickCart,checkbox}) => {

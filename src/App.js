@@ -19,7 +19,7 @@ function App() {
         <Route exact path="/" element={<Home/> } />
         <Route exact path="/Accomodation" element={<Accommodation/> } />
         <Route exact path="/Checkout" element={<Checkout/> } />
-        <Route path='*'  element={<NoFound/> } />
+        <Route path='/*'  element={<NoFound/> } />
         </Routes> 
       </BrowserRouter>
       </AutoProvider>

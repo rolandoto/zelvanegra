@@ -1,6 +1,5 @@
 import React from "react"
-import { IconCiFacebook, IconFaFacebookF, IconFaInstagram, IconFaMapMarkerAlt, IconFaWhatsapp, IconFaYoutube, IconsMdEmail } from "../Icons/Icons"
-
+import {  IconFaFacebookF, IconFaInstagram, IconFaMapMarkerAlt, IconFaWhatsapp, IconFaYoutube, IconsMdEmail } from "../Icons/Icons"
 
 const Footer =() =>{
 
@@ -15,8 +14,14 @@ const Footer =() =>{
     return (
             <footer className="bg-black   text-white py-8">
                 <div className="mx-auto max-w-7xl p-4  flex flex-col md:flex-row justify-between items-start md:items-center">
-                <div className="flex ">
-                <img src="https://github.com/rolandoto/image-pms/blob/main/Logo-Gallery-Colores.png?raw=true" alt="Gallery Hotel" className=" w-[220px] mb-4" /> {/* Adjust the path accordingly */}   
+                <div className="flex">
+                    <img
+                        src="https://github.com/rolandoto/image-pms/blob/main/Logo-Gallery-Colores.png?raw=true"
+                        alt="Logo de Gallery Hotel" 
+                        width="100" 
+                        height="100"
+                        className="w-48 mb-4"
+                    />
                 </div>
 
                 <div>
@@ -65,7 +70,12 @@ const Footer =() =>{
                             </div>
                                     <div className=" ">
                                     <div className="flex space-x-4">
-                                    <img src="https://github.com/rolandoto/image-pms/blob/main/payment.png?raw=true" alt="" />
+                                    <img 
+                                        src="https://github.com/rolandoto/image-pms/blob/main/payment.png?raw=true" 
+                                        alt="Métodos de pago" 
+                                        width="200" 
+                                        height="100" 
+                                    />
                                     </div>
                             </div>
                         </div>

@@ -19,11 +19,14 @@ import EmpyCart from "../../Component/EmpyCart/EmpyCart";
 import Cart from "../../Component/Cart/Cart";
 import { IconCiShoppingCart, IconRiCloseLargeLine } from "../../Component/Icons/Icons";
 import UseCart from "../../Hooks/UseCart";
+import LoadingOverlay from "../../Component/LoadingCreateReserva/LoadingOverlay";
+import HeaderAccomodation from "../../Component/HeaderAccomodation/HeaderAccomodation";
 
 const Accommodation = () => {
   const {getHotel} = UseHotelActions()
   const [contextShowMenuPeople, setContextShowMenuPeople] = useState(false);
   const {error,hotel,loading}= useSelector((state) => state.Hotel)
+  const {loadingCart} = useSelector(state => state.Cart);
   const {handleSelect,state,setContextMenuPosition,contextMenuPosition,
     handChangeAdults,
     handChangeChildrem,
@@ -42,16 +45,16 @@ const Accommodation = () => {
     const formattedStartDateToString = moment(state[0]?.startDate).format('DD MMM YYYY').toLowerCase();
     const formattedEndDateToString = moment(state[0]?.endDate).format('DD MMM YYYY').toLowerCase();
 
-  const PostHotelByIdHotel = useCallback(async () => {
-      setContextMenuPosition(false);
-      setContextShowMenuPeople(false)
-       await getHotel({ id: 4, desde:formattedStartDate, hasta: formattedEndDate,counPeople:totalCountAdults });
-    }, [formattedStartDate,formattedEndDate,totalCountAdults]);
+    const PostHotelByIdHotel = useCallback(async () => {
+        setContextMenuPosition(false);
+        setContextShowMenuPeople(false)
+        await getHotel({ id: 4, desde:formattedStartDate, hasta: formattedEndDate,counPeople:totalCountAdults });
+      }, [formattedStartDate,formattedEndDate,totalCountAdults]);
 
 
-    useEffect(() =>{
-      PostHotelByIdHotel()
-    },[])
+      useEffect(() =>{
+        PostHotelByIdHotel()
+      },[PostHotelByIdHotel])
 
     const HandClickMenuPeople =() =>{
       if(contextShowMenuPeople){
@@ -70,13 +73,11 @@ const Accommodation = () => {
       }
       setContextShowMenuPeople(false)
     }
-
     
     const handClickCart =() =>{
       setCheckBox(!checkbox)
    }
 
-  
     const HandClickMenuEnd =() =>{
       if(contextMenuPosition){
         setContextMenuPosition(false)
@@ -85,16 +86,6 @@ const Accommodation = () => {
       }
       setContextShowMenuPeople(false)
     }
-
-    const {loadingCart} = useSelector(state => state.Cart);
-
-    const LoadingOverlay = () => {
-      return (
-        <div className="loading-opacity ">
-          <h1 className="text-4xl md:text-5xl font-normal text-white">Cargando...</h1>
-        </div>
-      );
-    };
 
   
     const FillContent =()=>{
@@ -113,29 +104,22 @@ const Accommodation = () => {
 
     return (<div>
             {subtotal >0 && 
-            <button className="cartIcon  cursor-pointer "   onClick={handClickCart}   >
-                      <div className="cartIcon-Number">
-                          <span className="md:text-1xl font-normal">{totalCount}</span>
-            
-                      </div>
-                      <IconCiShoppingCart  />
-              </button>
-            }
-                  
+              <button className="cartIcon  cursor-pointer "   onClick={handClickCart}   >
+                        <div className="cartIcon-Number">
+                            <span className="md:text-1xl font-normal">{totalCount}</span>
+              
+                        </div>
+                        <IconCiShoppingCart  />
+                </button>
+              }
             <Toaster position="bottom-right"  richColors   />
-            {loadingCart && <LoadingOverlay />}
+            {loadingCart && <LoadingOverlay title={"Cargando..."} />}
             <Header/>
             {subtotal >0 &&<Cart    
                             checkbox={checkbox} 
                             handClickCart={handClickCart} /> } 
             <SectionSearch  >
-            <div className="relative bg-cover bg-center h-[450px]" style={{ backgroundImage: `url(https://grupo-hoteles.com/storage/app/4/page/1155970062-4-page-slider-1-Habitacion-todos-jacuzzi-ventilador-centro-de-medellin-antioquia-colombia.png)` }}>
-                    <div className="absolute inset-0 bg-black opacity-50"></div>
-                    <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white">
-                      <h1 className="text-4xl md:text-6xl font-normal">Gallery Hotel</h1>
-                      <p className="mt-4 text-lg md:text-2xl font-normal">Termina de buscar tu habitacion</p>
-                    </div>
-            </div>
+            <HeaderAccomodation />
             <CalenderSearch  HandClickMenuPeople={HandClickMenuPeople} 
                             formattedStartDateToString={formattedStartDateToString}
                             formattedEndDateToString={formattedEndDateToString}
@@ -161,7 +145,7 @@ const Accommodation = () => {
                   locale={esLocale}
                 />
               )}
-            </div>
+          </div>
           {contextMenuPosition &&
               <div class="  lg:hidden fixed inset-0 bg-white flex items-start justify-center z-50  md:shadow-[17px_20px_40px_rgba(0,0,0,0.21)] md:rounded-[1.25rem] md:!font-size[16px] md:!user-select-none">
                 <div class="bg-white p-4  rounded-lg shadow-lg w-full h-full md:w-auto md:h-auto">
@@ -204,20 +188,17 @@ const Accommodation = () => {
                       </div>
                   </div> 
               </div>} 
-
-
-             
               <div className="hidden lg:block  ">
-                {contextShowMenuPeople && 
-                  <Search contextShowMenuPeople={contextShowMenuPeople}
-                  top={580}
-                  adults={adults}
-                  childrem={childrem}
-                  handChangeAdults={handChangeAdults}
-                  handDecreaseAdults={handDecreaseAdults}
-                  handChangeChildrem={handChangeChildrem}
-                  handDecreaseChildren={handDecreaseChildren}
-                  setContextShowMenuPeople={setContextShowMenuPeople}  />}
+                  {contextShowMenuPeople && 
+                    <Search contextShowMenuPeople={contextShowMenuPeople}
+                    top={580}
+                    adults={adults}
+                    childrem={childrem}
+                    handChangeAdults={handChangeAdults}
+                    handDecreaseAdults={handDecreaseAdults}
+                    handChangeChildrem={handChangeChildrem}
+                    handDecreaseChildren={handDecreaseChildren}
+                    setContextShowMenuPeople={setContextShowMenuPeople}  />}
               </div>              
                 </SectionSearch>
                 <div >

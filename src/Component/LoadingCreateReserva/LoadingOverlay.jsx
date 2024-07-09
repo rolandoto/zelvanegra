@@ -1,10 +1,9 @@
 import React from "react"
 
-
-const LoadingOverlay = () => {
+const LoadingOverlay = ({title}) => {
     return (
       <div className="loading-opacity ">
-        <h1 className="text-4xl md:text-5xl font-normal text-white">Creando reserva...</h1>
+        <h1 className="text-4xl md:text-5xl font-normal text-white">{title}</h1>
       </div>
     );
   };

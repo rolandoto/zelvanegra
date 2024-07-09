@@ -20,10 +20,7 @@ const RoomDetail =({rooms}) =>{
                             </Fragment>
                           
                         ))} 
-
-                       
-                            
-                       
+  
                     </div>
             </div>
         </div>

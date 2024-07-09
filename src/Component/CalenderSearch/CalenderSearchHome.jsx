@@ -1,5 +1,4 @@
 import React from "react";
-import 'react-datepicker/dist/react-datepicker.css';
 import { BorderInput, BorderInputInitial, ButtonSearch, ContainerButtonSearch, MainAccomodation, MainAccomodationRoomSearch, MainProduct } from "../../Ui/Style/GeneralStyle";
 
 const CalenderSearchHome =({HandClickMenuPeople,
