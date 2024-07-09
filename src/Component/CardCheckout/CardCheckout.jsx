@@ -8,8 +8,8 @@ const CardCheckout =({ID,room_image,title,Price,cantidad,nights,person,Room,end,
     const dateEnd=  moment(end).format('YYYY-MM-DD');
     
 
-    return ( <div>
-                <div className=" border-b border-y-black mb-4 flex  justify-between items-end">
+    return ( <div className="border-b border-y-black" >
+                <div className="  mb-4 flex  justify-between items-end">
                     <div className="text-gray-700  mt-3 text-sm">
                             <p className="text-sm  font-semibold">{title}</p>
                             <p className="font-normal text-[13px]" >Entrada: <span className="font-normal text-[13px]">{dateStart}</span></p>
