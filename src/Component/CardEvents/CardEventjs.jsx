@@ -6,7 +6,7 @@ const CardEvents =() =>{
         bg-gray-100	  	rounded-lg  ">
             
                 <div className=" p-4">
-                    <img src={"https://textycon.com/wp-content/uploads/blog-img1.jpg"} alt="Room" className="w-[200px]  h-[290px] rounded-lg shadow-lg" />
+                    <img src={"https://github.com/rolandoto/image-pms/blob/main/blog-img1.jpg?raw=true"} alt="Room" className="w-[200px]  h-[290px] rounded-lg shadow-lg" />
                 </div>
                 <div className="md:w-1/2">
                         <h2 className="text-[25px] font-mono text-black mb-4">Expo Artesano La Memoria</h2>

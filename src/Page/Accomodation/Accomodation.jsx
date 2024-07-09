@@ -19,6 +19,7 @@ import EmpyCart from "../../Component/EmpyCart/EmpyCart";
 import Cart from "../../Component/Cart/Cart";
 import { IconCiShoppingCart, IconRiCloseLargeLine } from "../../Component/Icons/Icons";
 import UseCart from "../../Hooks/UseCart";
+
 const Accommodation = () => {
   const {getHotel} = UseHotelActions()
   const [contextShowMenuPeople, setContextShowMenuPeople] = useState(false);
@@ -35,12 +36,9 @@ const Accommodation = () => {
     const {getCartSubtotal,getCartTotalCount} = UseCart()
     const subtotal = getCartSubtotal()
     const totalCount = getCartTotalCount()
-
     const [checkbox,setCheckBox] =useState(false)
-
     const formattedStartDate = moment(state[0].startDate).format('YYYY-MM-DD');
     const formattedEndDate = moment(state[0].endDate).format('YYYY-MM-DD');
-
     const formattedStartDateToString = moment(state[0]?.startDate).format('DD MMM YYYY').toLowerCase();
     const formattedEndDateToString = moment(state[0]?.endDate).format('DD MMM YYYY').toLowerCase();
 
@@ -111,7 +109,7 @@ const Accommodation = () => {
                 }
         return <>  {hotel?.availableRooms?.map((List,index) => <CardAccomodation  key={index} {...List}/>)}</>
     }
-    const monthsToShow = window.innerWidth >= 700 ? 2 : 1; // Cambia 768 según tu punto de ruptura deseado
+    const monthsToShow = window.innerWidth >= 700 ? 2 : 1;
 
     return (<div>
             {subtotal >0 && 
@@ -138,7 +136,6 @@ const Accommodation = () => {
                       <p className="mt-4 text-lg md:text-2xl font-normal">Termina de buscar tu habitacion</p>
                     </div>
             </div>
-            
             <CalenderSearch  HandClickMenuPeople={HandClickMenuPeople} 
                             formattedStartDateToString={formattedStartDateToString}
                             formattedEndDateToString={formattedEndDateToString}
@@ -147,8 +144,6 @@ const Accommodation = () => {
                             onsubmit={PostHotelByIdHotel} 
                             totalCountAdults={totalCountAdults}
                             />
-          
-            
           <div className="hidden lg:block  ">
               {contextMenuPosition && (
                 <DateRange
@@ -227,9 +222,7 @@ const Accommodation = () => {
                 </SectionSearch>
                 <div >
                     {FillContent()}
-                
                 </div>
-              
             </div>
     );
 }

@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from "react"
+import React, { useCallback, useState } from "react"
 import UseCalenderSearch from "../../Hooks/UseCalenderSearch";
 import moment from "moment";
 import { DateRange } from 'react-date-range';
@@ -15,7 +15,7 @@ import Events from "../../Component/Events/Events";
 import RoomDetail from "../../Component/RoomDetail/RoomDetail";
 import RoomPresentaion from "../../Component/RoomPresentation/RoomPresentation";
 import "./home.css"
-import { IconRiCloseLargeLine, IconsFaBanSmoking, IconsFaConciergeBell, IconsFaGlassMartini, IconsFaSquareParking, IconsFaStore, IconsGiForkKnifeSpoon, IconsRiBankFill, IconsTiHome, IconsaCar } from "../../Component/Icons/Icons";
+import { IconRiCloseLargeLine, IconsFaBanSmoking, IconsFaConciergeBell, IconsFaGlassMartini, IconsFaSquareParking, IconsFaStore, IconsGiForkKnifeSpoon, IconsRiBankFill, IconsaCar } from "../../Component/Icons/Icons";
 
 const Home =() =>{
   const navigate = useNavigate();
@@ -120,8 +120,8 @@ const Home =() =>{
 
 
     const rooms = [
-      {  title: 'Room Box Ventilador', price:99000 , image:"https://textycon.com/wp-content/uploads/MG_8599-scaled.jpg", features: ['Cama matrimonial', 'Baño privado con ducha', 'Wi-Fi gratuito', 'Smart TV'] },
-      { title: 'Room Box Aire',price:109000, image: "https://textycon.com/wp-content/uploads/MG_8588-scaled.jpg", features: ['Cama matrimonial', 'Baño privado con ducha', 'Wi-Fi gratuito', 'Smart TV','Aire Acondicionado'] },
+      {  title: 'Room Box Ventilador', price:99000 , image:"https://grupo-hoteles.com/storage/app/4/rooms/203289556-10-rooms-slider-1-habitacion_Estandar_Hotel_en_Medellin_Gallery_Hotel-01.webp", features: ['Cama matrimonial', 'Baño privado con ducha', 'Wi-Fi gratuito', 'Smart TV'] },
+      { title: 'Room Box Aire',price:109000, image: "https://grupo-hoteles.com/storage/app/4/rooms/1046121300-11-rooms-slider-1-habitacion_Aire_Hotel_en_Medellin_Gallery_Hotel-01.webp", features: ['Cama matrimonial', 'Baño privado con ducha', 'Wi-Fi gratuito', 'Smart TV','Aire Acondicionado'] },
       { title: 'Room Box Jacuzzi',price:169000, image: "https://grupo-hoteles.com/storage/app/4/rooms/1563326590-12-rooms-slider-1-habitacion_Jacuzzi_Hotel_en_Medellin_Gallery_Hotel-02.webp", features: ['Cama matrimonial', 'Baño privado con ducha', 'Wi-Fi gratuito', 'Smart TV','Aire Acondicionado','Jacuzzi'] },
     ];
 
@@ -136,7 +136,6 @@ const Home =() =>{
                   <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white">
                   <h1 className="text-4xl md:text-6xl lg:text-6xl font-lora">Gallery Hotel</h1>
                   <p className="mt-2 text-base md:text-xl lg:text-3xl font-lora font-normal">Más que un hotel, una experiencia artística</p>
-
                     <button className="mt-6 bg-orange-500  wordButton text-white px-6 py-3 rounded-lg hover:bg-[#ff7a45]">Ver habitaciones</button>
                   </div>
             </div>
@@ -225,8 +224,6 @@ const Home =() =>{
           <RoomPresentaion />
           <RoomDetail rooms={rooms} />
           <Events  />
-          
-        
           <AccordionAsk faqs={faqs} />
           <Footer />
          

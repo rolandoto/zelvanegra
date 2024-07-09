@@ -7,6 +7,7 @@ import store from './Store/Store';
 import Checkout from './Page/Checkout/Checkout';
 import Home from './Page/Home/Home';
 import { AutoProvider } from './UseContext/UseContext';
+import NoFound from './Page/NoFound/NoFound';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route exact path="/" element={<Home/> } />
         <Route exact path="/Accomodation" element={<Accommodation/> } />
         <Route exact path="/Checkout" element={<Checkout/> } />
+        <Route path='*'  element={<NoFound/> } />
         </Routes> 
       </BrowserRouter>
       </AutoProvider>

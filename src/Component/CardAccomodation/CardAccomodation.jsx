@@ -13,7 +13,7 @@ const CardAccomodation =({ID,room_image,title,description,Price,cantidad,nights,
     
     const {cart} = useSelector(state => state.Cart);
 
-
+   
     const handleAddToCart = () => {
         let roomByID = 0
         Object.values(Room)

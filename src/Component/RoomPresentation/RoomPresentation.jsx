@@ -21,7 +21,7 @@ const RoomPresentaion =() =>{
                     <button onClick={HandNext}  className="text-white bg-orange-500 mt-4  w-[200px] p-3 rounded hover:bg-orange-600"><span className=" text-[20px]" >Reservar</span></button>
                 </div>
                 <div className="md:w-1/2 p-4">
-                    <img src={"https://textycon.com/wp-content/uploads/MG_8585-scaled.jpg"} alt="Reservation" className="w-full rounded-lg shadow-lg" />
+                    <img src={"https://github.com/rolandoto/image-pms/blob/main/MG_8585-scaled.jpg?raw=true"} alt="Reservation" className="w-full rounded-lg shadow-lg" />
                 </div>
                 </div>
             </div>)

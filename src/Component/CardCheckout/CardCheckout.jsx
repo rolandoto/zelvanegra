@@ -9,7 +9,7 @@ const CardCheckout =({ID,room_image,title,Price,cantidad,nights,person,Room,end,
     
 
     return ( <div>
-                <div className="mb-4 flex  justify-between items-end">
+                <div className=" border-b border-y-black mb-4 flex  justify-between items-end">
                     <div className="text-gray-700  mt-3 text-sm">
                             <p className="text-sm  font-semibold">{title}</p>
                             <p className="font-normal text-[13px]" >Entrada: <span className="font-normal text-[13px]">{dateStart}</span></p>
@@ -22,7 +22,7 @@ const CardCheckout =({ID,room_image,title,Price,cantidad,nights,person,Room,end,
                             <span className="text-2xl font-bold">{parseInt(Price).toLocaleString()} COP</span>
                     </div>
                 </div>
-                <div className="bg-black   text-white p-4 rounded-lg">
+                <div className="   text-black rounded-lg">
                     <div className="flex items-center mb-4">
                     <img 
                         src={room_image}

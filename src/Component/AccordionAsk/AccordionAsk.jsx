@@ -18,7 +18,7 @@ const AccordionAsk =({faqs}) =>{
                     </div>
                 </div>
                 <div className="md:w-1/2 px-4 mt-8 md:mt-0">
-                    <img src="https://textycon.com/wp-content/uploads/MG_8648-scaled.jpg" alt="Hotel Building" className="w-[800px] object-cover h-[700px] rounded-md shadow-md" />
+                    <img src="https://github.com/rolandoto/image-pms/blob/main/MG_8648-scaled.jpg?raw=true" alt="Hotel Building" className="w-[800px] object-cover h-[700px] rounded-md shadow-md" />
                 </div>
             </section>)
 }

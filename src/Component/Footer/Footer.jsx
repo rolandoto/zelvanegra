@@ -16,7 +16,7 @@ const Footer =() =>{
             <footer className="bg-black   text-white py-8">
                 <div className="mx-auto max-w-7xl p-4  flex flex-col md:flex-row justify-between items-start md:items-center">
                 <div className="flex ">
-                <img src="https://textycon.com/wp-content/uploads/Logo-Gallery-Colores.png" alt="Gallery Hotel" className=" w-[220px] mb-4" /> {/* Adjust the path accordingly */}   
+                <img src="https://github.com/rolandoto/image-pms/blob/main/Logo-Gallery-Colores.png?raw=true" alt="Gallery Hotel" className=" w-[220px] mb-4" /> {/* Adjust the path accordingly */}   
                 </div>
 
                 <div>
@@ -65,7 +65,7 @@ const Footer =() =>{
                             </div>
                                     <div className=" ">
                                     <div className="flex space-x-4">
-                                    <img src="https://textycon.com/wp-content/uploads/payment.png" alt="" />
+                                    <img src="https://github.com/rolandoto/image-pms/blob/main/payment.png?raw=true" alt="" />
                                     </div>
                             </div>
                         </div>
