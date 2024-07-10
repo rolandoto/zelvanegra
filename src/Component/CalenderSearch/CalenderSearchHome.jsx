@@ -1,5 +1,5 @@
 import React from "react";
-import { BorderInput, BorderInputInitial, ButtonSearch, ContainerButtonSearch, MainAccomodation, MainAccomodationRoomSearch, MainProduct } from "../../Ui/Style/GeneralStyle";
+import { BorderInput, BorderInputInitial, ButtonSearch, ContainerButtonSearch, MainAccomodation, MainProduct } from "../../Ui/Style/GeneralStyle";
 
 const CalenderSearchHome =({HandClickMenuPeople,
                         HandClickMenuEnd

@@ -54,12 +54,12 @@ const FormValues =({handleSubmit,formErrors,handleChange,formValues,loading,Coun
                             {formErrors.phone && <p className="text-red-500 text-xs">{formErrors.phone}</p>}
                         </div>
                         <div>
-                            <label className="block text-sm font-medium text-gray-700">Direccion</label>
+                            <label className="block text-sm font-medium text-gray-700">Dirección</label>
                             <input
                                 name="address"
                                 type="text"
                                 className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2"
-                                placeholder="Direccion"
+                                placeholder="Dirección"
                                 value={formValues.address}
                                 onChange={handleChange}
                             />
@@ -85,6 +85,7 @@ const FormValues =({handleSubmit,formErrors,handleChange,formValues,loading,Coun
                                 value={formValues.country}
                                 onChange={handleChange}
                         >
+                            <option value={""} >País</option>
                             {Country.map((itemCountry) => (
                                 <option key={itemCountry.ID} value={itemCountry.ID}>
                                     {itemCountry.nombre}

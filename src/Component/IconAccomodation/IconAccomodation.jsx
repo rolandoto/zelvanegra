@@ -1,20 +1,17 @@
 import React from "react" 
 import { ContainerIcons } from "../../Ui/Style/GeneralStyle"
-import { IconShower, IconTowels, IconsCheck, IconsSafe, IconsSnow, IconsTv, IconsWifi } from "../Icons/Icons"
+import { IconShower, IconTowels, IconsSnow, IconsTv, IconsWifi } from "../Icons/Icons"
 
-const IconAccomodation =() =>{
-   
+const IconAccomodation =({title}) =>{
+    
+
+
     return (  <ContainerIcons >
-                    
-                    <IconsSnow  />
+                 {title != "Box Ventilador"  &&   <IconsSnow  />}  
                     <IconsWifi />
                     <IconsTv />
-                    <IconsSafe />
                     <IconShower />
                     <IconTowels />
-                    <IconsCheck />
-                    <IconsCheck />
-                    <IconsCheck />
                 </ContainerIcons>)
 
 }

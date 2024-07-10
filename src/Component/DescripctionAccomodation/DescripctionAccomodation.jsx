@@ -1,8 +1,6 @@
 import { TextWidth } from "../../Ui/Style/GeneralStyle"
 import IconAccomodation from "../IconAccomodation/IconAccomodation"
 
-
-
 const DescripctionAccomodation =({title,cantidad,description}) =>{
 
    /* const Cuantity =  cantidad == 1 ?   <span className="bg-red-500  rounded-sm text-[11px]   p-1 text-white">¡ultima habitacion!</span> :
@@ -19,10 +17,9 @@ const DescripctionAccomodation =({title,cantidad,description}) =>{
                     <div>
                   
                     </div>
-                  <IconAccomodation/>
+                  <IconAccomodation title={title}/>
             </div>
-)
-
+    )
 }
 
 export default DescripctionAccomodation
