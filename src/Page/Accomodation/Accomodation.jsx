@@ -50,12 +50,11 @@ const Accommodation = () => {
         setContextMenuPosition(false);
         setContextShowMenuPeople(false)
         await getHotel({ id: 4, desde:formattedStartDate, hasta: formattedEndDate,counPeople:totalCountAdults });
-      }, [formattedStartDate,formattedEndDate,totalCountAdults]);
+    }, [formattedStartDate,formattedEndDate,totalCountAdults]);
 
-
-      useEffect(() =>{
-        PostHotelByIdHotel()
-      },[])
+    useEffect(() =>{
+      PostHotelByIdHotel()
+    },[])
 
     const HandClickMenuPeople =() =>{
       if(contextShowMenuPeople){
@@ -65,7 +64,7 @@ const Accommodation = () => {
       }
       setContextMenuPosition(false)
     }
-  
+
     const HandClickMenu =() =>{
       if(contextMenuPosition){
         setContextMenuPosition(false)
@@ -224,18 +223,18 @@ const Accommodation = () => {
                       </div>
                   </div> 
               </div>} 
-              <div className="hidden lg:block  ">
-                  {contextShowMenuPeople && 
-                    <Search contextShowMenuPeople={contextShowMenuPeople}
-                    top={580}
-                    adults={adults}
-                    childrem={childrem}
-                    handChangeAdults={handChangeAdults}
-                    handDecreaseAdults={handDecreaseAdults}
-                    handChangeChildrem={handChangeChildrem}
-                    handDecreaseChildren={handDecreaseChildren}
-                    setContextShowMenuPeople={setContextShowMenuPeople}  />}
-              </div>              
+                <div className="hidden lg:block  ">
+                    {contextShowMenuPeople && 
+                      <Search contextShowMenuPeople={contextShowMenuPeople}
+                      top={580}
+                      adults={adults}
+                      childrem={childrem}
+                      handChangeAdults={handChangeAdults}
+                      handDecreaseAdults={handDecreaseAdults}
+                      handChangeChildrem={handChangeChildrem}
+                      handDecreaseChildren={handDecreaseChildren}
+                      setContextShowMenuPeople={setContextShowMenuPeople}  />}
+                </div>              
                 </SectionSearch>
                 <div >
                     {FillContent()}

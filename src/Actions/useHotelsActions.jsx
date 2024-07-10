@@ -2,10 +2,16 @@ import { useAppDispatch } from "../Hooks/Redux"
 import { loading,setHotel,setError } from "../reducers/ApiHotelByIdReduccers"
 import HttpClient from "../HttpClient"
 import {toast} from "sonner"
+import  AutoProvider  from "../UseContext/UseContext"
+import { useContext } from "react"
 
 const UseHotelActions =() =>{
 
     const dispatch =  useAppDispatch()
+
+    const { 
+        setContextMenuPosition,
+        } = useContext(AutoProvider)
 
     const getHotel =async({id,desde,hasta,counPeople}) =>{
         dispatch(loading())
@@ -19,10 +25,12 @@ const UseHotelActions =() =>{
                 toast.error(`error en el servicio`)
             }
         } catch (error) {
+            setContextMenuPosition((prevem) =>  true)
             dispatch(setError("no found")) 
             toast.error(`Rango de fecha no disponible` )
         }
     }
+    
     return {
         getHotel
     }
