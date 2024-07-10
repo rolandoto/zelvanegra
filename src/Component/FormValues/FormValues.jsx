@@ -1,6 +1,6 @@
 import React from "react"
 import {Button} from "@nextui-org/react";
-
+import pdf from "../../Image/contracto.pdf"
 const FormValues =({handleSubmit,formErrors,handleChange,formValues,loading,Country})  =>{
 
     return (<form onSubmit={handleSubmit}>
@@ -111,12 +111,9 @@ const FormValues =({handleSubmit,formErrors,handleChange,formValues,loading,Coun
                     
                     
                     <div className=" mx-auto  rounded-md ">
-                        <div className="mb-4">
+                        <div className="mb-4 mt-5">
                         <h2 className="text-xl font-semibold">Método de Pago</h2>
-                        <div className="bg-orange-400 p-3 mt-3 rounded-md">
-                            <p className="text-white font-medium">Prepago</p>
-                            <p className="text-white">El hotel te cargará el importe de la reserva antes de la entrada al hotel</p>
-                        </div>
+                       
                         </div>
                     
                             <div className="mb-4">
@@ -219,7 +216,7 @@ const FormValues =({handleSubmit,formErrors,handleChange,formValues,loading,Coun
                             
                                 className="form-checkbox h-5 w-5 text-gray-600"
                                 />
-                                <span className="ml-2 text-gray-700">He leído y acepto las <a href="https://zelvanegra.co/contratodehospedaje.pdf" className="text-orange-500">condiciones generales</a> (*)</span>
+                                <span className="ml-2 text-gray-700">He leído y acepto las <a target="_blank" href={pdf} className="text-orange-500">condiciones generales</a> (*)</span>
                             </label>
                             {formErrors.termsAccepted && <p className="text-red-500 text-xs">{formErrors.termsAccepted}</p>}
                             </div>
@@ -232,7 +229,7 @@ const FormValues =({handleSubmit,formErrors,handleChange,formValues,loading,Coun
                                 type="checkbox" 
                                 className="form-checkbox h-5 w-5 text-gray-600"
                                 />
-                                <span className="ml-2 text-gray-700">He leído y acepto los <a href="https://zelvanegra.co/contratodehospedaje.pdf" className="text-orange-500">Términos y Condiciones del sitio web</a> (*)</span>
+                                <span className="ml-2 text-gray-700">He leído y acepto los <a  target="_blank" href={pdf} className="text-orange-500">Términos y Condiciones del sitio web</a> (*)</span>
                             </label>
                             {formErrors.siteTermsAccepted && <p className="text-red-500 text-xs">{formErrors.siteTermsAccepted}</p>}
                             </div>
@@ -244,7 +241,7 @@ const FormValues =({handleSubmit,formErrors,handleChange,formValues,loading,Coun
                             {loading ? "Cargando reserva" : " CONFIRMAR RESERVA" } 
                             </Button>
                             <p className=" text-xs text-gray-500 mt-4">
-                            Al completar esta reserva, acuerdo que he leído y aceptado las <a href="https://zelvanegra.co/contratodehospedaje.pdf" className="text-orange-500">Políticas de Propiedad</a>.
+                            Al completar esta reserva, acuerdo que he leído y aceptado las <a target="_blank" href={pdf} className="text-orange-500">Políticas de Propiedad</a>.
                         </p>
                     </div>
                     </form>)

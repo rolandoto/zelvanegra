@@ -37,6 +37,7 @@ const Home =() =>{
       ];
 
       const roomSectionRef = useRef(null);
+      const roomEventsSectionRef = useRef(null);
 
       const scrollToRoomSection = () => {
         if (roomSectionRef.current) {
@@ -44,6 +45,13 @@ const Home =() =>{
         }
     };
   
+
+    const scrollToRoomSectionEvent = () => {
+      if (roomEventsSectionRef.current) {
+          roomEventsSectionRef.current.scrollIntoView({ behavior: 'smooth' });
+      }
+    };
+
       const [contextShowMenuPeople, setContextShowMenuPeople] = useState(false);
       const {handleSelect,state,
             setContextMenuPosition,
@@ -144,7 +152,7 @@ const Home =() =>{
 
     return (
         <div>
-           <Header    />
+           <Header  scrollToRoomSectionEvent={scrollToRoomSectionEvent}   />
            <div className="relative bg-cover bg-center h-[650px]" style={{ 
                 backgroundImage: `url(https://raw.githubusercontent.com/rolandoto/image-pms/main/1155970062-4-page-slider-1-Habitacion-todos-jacuzzi-ventilador-centro-de-medellin-antioquia-colombia.webp)`,}}>
             <div className="absolute inset-0 bg-black opacity-50"></div>
@@ -282,7 +290,9 @@ const Home =() =>{
           <div ref={roomSectionRef} >   
             <RoomDetail ref={roomSectionRef}  rooms={rooms} />
           </div>
-          <Events  />
+          <div ref={roomEventsSectionRef} >
+            <Events  />
+          </div>
           <AccordionAsk faqs={faqs} />
           <Footer />
           </div>
