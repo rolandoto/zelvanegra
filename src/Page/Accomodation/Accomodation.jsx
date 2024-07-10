@@ -169,11 +169,9 @@ const Accommodation = () => {
                           minDate={new Date()}
                           onChange={handleSelect}
                           editableDateInputs={true}
-                        
                           months={monthsToShow}
                           dayContentRenderer={(date) => {
                             const className = getClassNameForDate(date);
-                          
                             return (
                               <div className={className}>
                                 {date.getDate()}
