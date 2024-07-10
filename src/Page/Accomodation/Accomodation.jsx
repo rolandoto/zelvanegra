@@ -34,7 +34,8 @@ const Accommodation = () => {
     handDecreaseChildren,
     totalCountAdults,
     adults,
-    childrem } =  UseCalenderSearch()
+    childrem ,
+    getClassNameForDate} =  UseCalenderSearch()
 
     const {getCartSubtotal,getCartTotalCount} = UseCart()
     const subtotal = getCartSubtotal()
@@ -54,7 +55,7 @@ const Accommodation = () => {
 
       useEffect(() =>{
         PostHotelByIdHotel()
-      },[PostHotelByIdHotel])
+      },[])
 
     const HandClickMenuPeople =() =>{
       if(contextShowMenuPeople){
@@ -132,14 +133,25 @@ const Accommodation = () => {
               {contextMenuPosition && (
                 <DateRange
                   className="flex calender-search-Acoomodation lg:hidden"
-                  rangeColors={["#f97316"]}
+                  rangeColors={["rgb(255 104 0 / 36%);"]}
                   minDate={new Date()}
                   onChange={handleSelect}
                   editableDateInputs={true}
-                  moveRangeOnFirstSelection={false}
-                  showSelectionPreview={false}
                   months={2}
-                  showDateDisplay={false}
+                  dayContentRenderer={(date) => {
+                    const className = getClassNameForDate(date);
+                 
+                    return (
+                      <div className={className}>
+                        {date.getDate()}
+                      </div>
+                    );
+                  }}
+                  autoFocus
+                  moveRangeOnFirstSelection={false} // No mueve el rango en la primera selección
+                  showSelectionPreview={false} // Muestra la selección previa
+                  startDatePlaceholder="Early"
+                  showDateDisplay={true}
                   ranges={state}
                   direction="horizontal"
                   locale={esLocale}
@@ -154,18 +166,42 @@ const Accommodation = () => {
                     <h2 class="text-center text-2xl font-semibold mb-4">Selecionar fecha</h2>
                     <DateRange 
                           className="flex calender-search-Acoomodation lg:hidden"
-                          rangeColors={["#f97316"]}
+                          rangeColors={["rgb(255 104 0 / 36%);"]}
                           minDate={new Date()}
                           onChange={handleSelect}
                           editableDateInputs={true}
-                          moveRangeOnFirstSelection={false}
-                          showSelectionPreview={false}
+                        
                           months={monthsToShow}
-                          showDateDisplay={false}
+                          dayContentRenderer={(date) => {
+                            const className = getClassNameForDate(date);
+                          
+                            return (
+                              <div className={className}>
+                                {date.getDate()}
+                              </div>
+                            );
+                          }}
+                          autoFocus
+                          moveRangeOnFirstSelection={false} // No mueve el rango en la primera selección
+                          showSelectionPreview={false} // Muestra la selección previa
+                          startDatePlaceholder="Early"
+                          showDateDisplay={true}
                           ranges={state}
                           direction="horizontal"
                           locale={esLocale}
                       />
+                     <button
+                      className="mt-6 bg-orange-500 text-white px-6 py-3 rounded-lg hover:bg-[#ff7a45]"
+                      onClick={(e) => setContextMenuPosition(false) }
+                      style={{
+                        position: 'absolute',
+                        bottom: '20px',  // Ajusta esta propiedad según la distancia que desees del borde inferior
+                        left: '50%',     // Centra el botón horizontalmente
+                        transform: 'translateX(-50%)', // Ajusta la posición centrada
+                      }}
+                    >
+                      Continuar
+                    </button>
                     </div>
                  </div> 
             </div>} 

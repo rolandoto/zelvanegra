@@ -36,7 +36,7 @@ const CardAccomodation =({ID,room_image,title,description,Price,cantidad,nights,
             <MainProduct className="lg:flex block bg-white shadow-md"    >
                         <Fragment>
                             <TitleDinner />
-                            <ImginProduct  className="w-auto " src={room_image}  alt="Hotel Image"/>
+                            <ImginProduct   className="w-auto" src={room_image}  alt="Hotel Image"/>
                         </Fragment>
                         <DescripctionAccomodation cantidad={cantidad}  description={description} title={title}  />
                         <ButtonAccomodation 

@@ -15,11 +15,11 @@ const CalenderSearch =({HandClickMenuPeople,
                            
                             <BorderInputInitial className="flex flex-col hover-punter "  onClick={HandClickMenu}>
                                     <span className="mb-2 font-medium" >Llegada :</span>
-                                    <span> {formattedStartDateToString}</span>
+                                    <span>  {formattedStartDateToString === 'fecha inválida' ? '-- / -- / --' : formattedStartDateToString}</span>
                             </BorderInputInitial>
                             <BorderInput className="flex flex-col  hover-punter" onClick={HandClickMenuEnd}>
                                     <span className="mb-2 font-medium">Salida:</span>
-                                    <span>{formattedEndDateToString}</span>
+                                    <span>{formattedEndDateToString === 'fecha inválida' ? '-- / -- / --' : formattedEndDateToString}</span>
                             </BorderInput>
 
                             <BorderInput className="flex flex-col hover-punter" onClick={HandClickMenuPeople}  >

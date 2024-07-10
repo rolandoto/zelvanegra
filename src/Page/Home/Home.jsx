@@ -1,6 +1,5 @@
-import React, { useCallback, useState } from "react"
+import React, { useCallback, useRef, useState } from "react"
 import UseCalenderSearch from "../../Hooks/UseCalenderSearch";
-import moment from "moment";
 import { DateRange } from 'react-date-range';
 import esLocale from 'date-fns/locale/es';
 import Search from "../../Component/Search/Search";
@@ -16,9 +15,14 @@ import RoomDetail from "../../Component/RoomDetail/RoomDetail";
 import RoomPresentaion from "../../Component/RoomPresentation/RoomPresentation";
 import "./home.css"
 import { IconRiCloseLargeLine, IconsFaBanSmoking, IconsFaConciergeBell, IconsFaGlassMartini, IconsFaSquareParking, IconsFaStore, IconsGiForkKnifeSpoon, IconsRiBankFill, IconsaCar } from "../../Component/Icons/Icons";
+import 'react-date-range/dist/styles.css'; // import the default styles
+import 'react-date-range/dist/theme/default.css'; // import the default theme
+import moment from 'moment';
+import 'moment/locale/es';
 
 const Home =() =>{
   const navigate = useNavigate();
+  moment.locale('es');
  
     const features = [
         { icon: <IconsFaGlassMartini/>, title: 'Cóctel de bienvenida' },
@@ -32,7 +36,14 @@ const Home =() =>{
         { icon: <IconsFaBanSmoking/>, title: 'Espacios libre de humo', description: "" },
       ];
 
-    
+      const roomSectionRef = useRef(null);
+
+      const scrollToRoomSection = () => {
+        if (roomSectionRef.current) {
+            roomSectionRef.current.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+  
       const [contextShowMenuPeople, setContextShowMenuPeople] = useState(false);
       const {handleSelect,state,
             setContextMenuPosition,
@@ -43,12 +54,15 @@ const Home =() =>{
             handDecreaseChildren,
             totalCountAdults,
             adults,
-            childrem  } =  UseCalenderSearch()
+            childrem ,
+            getClassNameForDate } =  UseCalenderSearch()
         
       
     const formattedStartDateToString = moment(state?.[0]?.startDate ?? '').format('DD MMM YYYY').toLowerCase();
+
     const formattedEndDateToString = moment(state?.[0]?.endDate ?? '').format('DD MMM YYYY').toLowerCase();
-            
+    
+
     const PostHotelByIdHotel = useCallback(async () => {
       setContextMenuPosition(false);
       navigate("/Accomodation");
@@ -126,28 +140,26 @@ const Home =() =>{
     ];
 
     const monthsToShow = window.innerWidth >= 700 ? 2 : 1; // Cambia 768 según tu punto de ruptura deseado
-      
+
 
     return (
         <div>
            <Header    />
            <div className="relative bg-cover bg-center h-[650px]" style={{ 
-    backgroundImage: `url(https://raw.githubusercontent.com/rolandoto/image-pms/main/1155970062-4-page-slider-1-Habitacion-todos-jacuzzi-ventilador-centro-de-medellin-antioquia-colombia.webp)`,
-}}>
-    <div className="absolute inset-0 bg-black opacity-50"></div>
-
-    <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white">
-        <h1 className="text-4xl md:text-6xl lg:text-6xl font-lora">
-            Gallery Hotel
-        </h1>
-        <p className="mt-2 text-base md:text-xl lg:text-3xl font-lora font-normal">
-            Más que un hotel, una experiencia artística
-        </p>
-        <button className="mt-6 bg-orange-500 text-white px-6 py-3 rounded-lg hover:bg-[#ff7a45]">
-            Ver habitaciones
-        </button>
-    </div>
-</div>
+                backgroundImage: `url(https://raw.githubusercontent.com/rolandoto/image-pms/main/1155970062-4-page-slider-1-Habitacion-todos-jacuzzi-ventilador-centro-de-medellin-antioquia-colombia.webp)`,}}>
+            <div className="absolute inset-0 bg-black opacity-50"></div>
+            <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white">
+                <h1 className="text-4xl md:text-6xl lg:text-6xl font-lora">
+                    Gallery Hotel
+                </h1>
+                <p className="mt-2 text-base md:text-xl lg:text-3xl font-lora font-normal">
+                    Más que un hotel, una experiencia artística
+                </p>
+                <button className="mt-6 bg-orange-500 text-white px-6 py-3 rounded-lg hover:bg-[#ff7a45]" onClick={scrollToRoomSection}>
+                    Ver habitaciones
+                </button>
+            </div>
+        </div>
 
             <CalenderSearchHome HandClickMenuPeople={HandClickMenuPeople} 
                                  formattedStartDateToString={formattedStartDateToString}
@@ -161,14 +173,25 @@ const Home =() =>{
               {contextMenuPosition && (
                 <DateRange
                   className="flex  calender-search-home lg:hidden"
-                  rangeColors={["#f97316"]}
+                  rangeColors={["rgb(255 104 0 / 36%);"]}
                   minDate={new Date()}
                   onChange={handleSelect}
                   editableDateInputs={true}
-                  moveRangeOnFirstSelection={false}
-                  showSelectionPreview={false}
                   months={2}
-                  showDateDisplay={false}
+                  dayContentRenderer={(date) => {
+                    const className = getClassNameForDate(date);
+                  
+                    return (
+                      <div className={className}>
+                        {date.getDate()}
+                      </div>
+                    );
+                  }}
+                  autoFocus
+                  moveRangeOnFirstSelection={false} // No mueve el rango en la primera selección
+                  showSelectionPreview={false} // Muestra la selección previa
+                  startDatePlaceholder="Early"
+                  showDateDisplay={true}
                   ranges={state}
                   direction="horizontal"
                   locale={esLocale}
@@ -183,19 +206,43 @@ const Home =() =>{
                     <h2 class="text-center text-2xl font-semibold mb-4">Selecionar fecha</h2>
                     <DateRange 
                           className="flex calender-search-home lg:hidden"
-                          rangeColors={["#f97316"]}
+                          rangeColors={["rgb(255 104 0 / 36%);"]}
                           minDate={new Date()}
                           onChange={handleSelect}
                           editableDateInputs={true}
-                          moveRangeOnFirstSelection={false}
-                          showSelectionPreview={false}
                           months={monthsToShow}
-                          showDateDisplay={false}
+                          dayContentRenderer={(date) => {
+                            const className = getClassNameForDate(date);
+                          
+                            return (
+                              <div className={className}>
+                                {date.getDate()}
+                              </div>
+                            );
+                          }}
+                          autoFocus
+                          moveRangeOnFirstSelection={false} // No mueve el rango en la primera selección
+                          showSelectionPreview={false} // Muestra la selección previa
+                          startDatePlaceholder="Early"
+                          showDateDisplay={true}
                           ranges={state}
                           direction="horizontal"
                           locale={esLocale}
                       />
+                     
                     </div>
+                    <button
+                      className="mt-6 bg-orange-500 text-white px-6 py-3 rounded-lg hover:bg-[#ff7a45]"
+                      onClick={(e) => setContextMenuPosition(false) }
+                      style={{
+                        position: 'absolute',
+                        bottom: '20px',  // Ajusta esta propiedad según la distancia que desees del borde inferior
+                        left: '50%',     // Centra el botón horizontalmente
+                        transform: 'translateX(-50%)', // Ajusta la posición centrada
+                      }}
+                    >
+                      Continuar
+                    </button>
                  </div> 
             </div>} 
             {contextShowMenuPeople &&
@@ -232,11 +279,12 @@ const Home =() =>{
           <TitleWelcome />
           <Features features={features} />
           <RoomPresentaion />
-          <RoomDetail rooms={rooms} />
+          <div ref={roomSectionRef} >   
+            <RoomDetail ref={roomSectionRef}  rooms={rooms} />
+          </div>
           <Events  />
           <AccordionAsk faqs={faqs} />
           <Footer />
-         
           </div>
     )
     

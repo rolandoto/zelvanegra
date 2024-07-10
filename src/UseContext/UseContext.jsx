@@ -33,37 +33,59 @@ export const AutoProvider =({children}) =>{
     }
   
     const [state, setState] = useState([
+      {
+        startDate: null,
+        endDate: null,
+        key: 'selection',
+        showDateDisplay: true,
+        color: 'transparent',
+      }
+    ]);
+  
+    const handleSelect = (ranges) => {
+      const { startDate, endDate } = ranges.selection;
+      setState([
         {
-          startDate: new Date(),
-          endDate: addDays(new Date(), 1),
-          key: "selection",
-        },  
+          startDate,
+          endDate,
+          key: 'selection',
+          color: startDate && endDate ? '#f97316' : 'transparent', // Solo asigna color si ambas fechas son válidas
+        },
       ]);
-
-      const handleSelect = (ranges) => {
-        const { startDate, endDate } = ranges.selection;
-        // Check if end date is the same as start date
-        if (moment(endDate).isSame(startDate, 'day')) {
-          // Reset the endDate to be the next day of startDate
-          setState([
-            {
-              startDate: startDate,
-              endDate: addDays(startDate, 1),
-              key: 'selection',
-            },
-          ]);
-        
-        } else {
-          setState([ranges.selection]);
-          setContextMenuPosition(prevState => false);
+    
+      
+      if (startDate && !endDate) {
+        console.log("Seleccione fecha inicio");
+      } else if (startDate && endDate) {
+        console.log("Seleccione fecha final");
+      }
+    };
+  
+    const getClassNameForDate = (date) => {
+      const { startDate, endDate } = state[0];
+      
+      // Define las clases para el texto
+      if (startDate && endDate) {
+        if (date >= startDate && date <= endDate) {
+          return 'text-white'; // Color de texto blanco y fondo azul, ajusta según tu estilo
         }
-      };
+      } else if (startDate && date.getTime() === startDate.getTime()) {
+        return 'text-white '; // Color de texto blanco y fondo azul, ajusta según tu estilo
+      } else if (endDate && date.getTime() === endDate.getTime()) {
+        return 'text-white '; // Color de texto blanco y fondo azul, ajusta según tu estilo
+      }
+    
+      return 'text-black'; // Color de texto negro predeterminado
+    };
+    
+    
   
     return <Autoconext.Provider value={{  
                                     state,
                                     handleSelect,
                                     setContextMenuPosition,
                                     contextMenuPosition,
+                                    getClassNameForDate,
                                     adults,
                                     childrem,
                                     handChangeAdults,

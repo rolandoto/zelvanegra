@@ -149,11 +149,15 @@
 } 
   
   .border-header{
-    border-bottom: 1px solid rgb(224, 224, 224);
-    
+    border-bottom: 1px solid rgb(224, 224, 224);  
   }
   
+  .rdrStartEdge{
+    background-color: #f97316;
+   
+  }
 
-
- 
+  .rdrEndEdge{
+    background-color: #f97316;
   
+  }

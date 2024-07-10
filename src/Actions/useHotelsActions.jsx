@@ -20,7 +20,7 @@ const UseHotelActions =() =>{
             }
         } catch (error) {
             dispatch(setError("no found")) 
-            toast.error(`error en el servicio  ${error}` )
+            toast.error(`Rango de fecha no disponible` )
         }
     }
     return {
