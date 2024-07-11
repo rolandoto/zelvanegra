@@ -23,7 +23,59 @@ import 'moment/locale/es';
 const Home =() =>{
   const navigate = useNavigate();
   moment.locale('es');
- 
+  
+  const reviews = [
+    {
+      id: 1,
+      name: "Cielo Agudelo",
+      date: "hace un mes",
+      rating: 4,
+      text: "Un ambiente tranquilo, buena ubicación!",
+      avatar: "https://lh3.googleusercontent.com/a-/ALV-UjWJPNCMHC35vE7mix619p9I292X-WgPjCO2omHJkl2-CVV9odd2cw=s56-c0x00000000-cc-rp-mo-ba4", // Add the path to the avatar image if available
+    },
+    {
+      id: 2,
+      name: "Robinson Vasquez",
+      date: "hace 5 meses",
+      rating: 5,
+      text: "Un poquito lejos del centro, sobre la iluminación es perfecta para descansar y la ubicación estratégica para encender las luces por zonas me parece muy bueno para el precio! Más amabilidad es lo único que podría pedir, con esto no digo que son groseros, mejor dicho son intermedio! 👍",
+      avatar: "https://lh3.googleusercontent.com/a-/ALV-UjWJPNCMHC35vE7mix619p9I292X-WgPjCO2omHJkl2-CVV9odd2cw=s56-c0x00000000-cc-rp-mo-ba4",
+    },
+    {
+      id: 3,
+      name: "Angie gil",
+      date: "hace un mes",
+      rating: 5,
+      text: "Es un lugar muy agradable, con un restaurante encantador, buena atención al cliente, las habitaciones aseadas y ordenadas; el único defecto es que las habitaciones no cuentan con agua caliente y no hay TV por cable, pero por lo demás todo está súper bien.      ",
+      avatar: "https://lh3.googleusercontent.com/a-/ALV-UjWJPNCMHC35vE7mix619p9I292X-WgPjCO2omHJkl2-CVV9odd2cw=s56-c0x00000000-cc-rp-mo-ba4",
+    },
+    {
+      id: 3,
+      name: "Bárbara Pérez",
+      date: "hace un mes",
+      rating: 5,
+      text: "",
+      avatar: "https://lh3.googleusercontent.com/a-/ALV-UjWJPNCMHC35vE7mix619p9I292X-WgPjCO2omHJkl2-CVV9odd2cw=s56-c0x00000000-cc-rp-mo-ba4",
+    },
+    {
+      id: 4,
+      name: "Bárbara Pérez",
+      date: "hace un mes",
+      rating: 5,
+      text: "",
+      avatar: "https://lh3.googleusercontent.com/a-/ALV-UjWJPNCMHC35vE7mix619p9I292X-WgPjCO2omHJkl2-CVV9odd2cw=s56-c0x00000000-cc-rp-mo-ba4",
+    },
+    {
+      id: 5,
+      name: "Bárbara Pérez",
+      date: "hace un mes",
+      rating: 5,
+      text: "",
+      avatar: "https://lh3.googleusercontent.com/a-/ALV-UjWJPNCMHC35vE7mix619p9I292X-WgPjCO2omHJkl2-CVV9odd2cw=s56-c0x00000000-cc-rp-mo-ba4",
+    },
+  ];
+  
+
     const features = [
         { icon: <IconsFaGlassMartini/>, title: 'Cóctel de bienvenida' },
         { icon: <IconsGiForkKnifeSpoon/>, title: 'Desayuno incluido' },
@@ -290,6 +342,36 @@ const Home =() =>{
           <div ref={roomSectionRef} >   
             <RoomDetail ref={roomSectionRef}  rooms={rooms} />
           </div>
+          <div className="max-w-7xl mx-auto py-8">
+              <h2 className="text-2xl font-semibold text-center mb-6">Lo que opinan nuestros clientes</h2>
+              <div className="flex overflow-x-scroll space-x-4">
+                {reviews.map((review) => (
+                  <div key={review.id} className="min-w-[250px] max-w-[250px] p-4 bg-white shadow rounded-lg">
+                    <div className="flex items-center space-x-2 mb-4">
+                      <img src={review.avatar} alt={review.name} className="w-10 h-10 rounded-full" />
+                      <div>
+                        <h3 className="font-semibold">{review.name}</h3>
+                        <p className="text-sm text-gray-500">{review.date}</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center mb-2">
+                      {[...Array(5)].map((star, index) => (
+                        <svg
+                          key={index}
+                          className={`w-5 h-5 ${index < review.rating ? 'text-yellow-400' : 'text-gray-300'}`}
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                        >
+                          <path d="M9.049 2.927C9.3 2.61 9.7 2.61 9.951 2.927l1.668 2.286c.166.227.436.37.725.388l2.659.264c.38.038.534.514.268.773l-1.897 1.893c-.184.184-.27.45-.223.709l.646 2.742c.085.359-.299.652-.648.475L10 13.1l-2.569 1.34c-.348.177-.733-.116-.648-.475l.646-2.742c.047-.259-.04-.525-.223-.709L4.309 6.64c-.266-.259-.112-.735.268-.773l2.659-.264c.289-.018.559-.161.725-.388l1.668-2.286z" />
+                        </svg>
+                      ))}
+                    </div>
+                    <p className="text-gray-700">{review.text}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
           <div ref={roomEventsSectionRef} >
             <Events  />
           </div>
