@@ -343,7 +343,7 @@ const Home =() =>{
             <RoomDetail ref={roomSectionRef}  rooms={rooms} />
           </div>
           <div className="max-w-7xl mx-auto py-8">
-              <h2 className="text-2xl font-semibold text-center mb-6">Lo que opinan nuestros clientes</h2>
+              <h2 className="text-[30px] text-center text-orange-500  font-lora  mb-6">Lo que opinan nuestros clientes</h2>
               <div className="flex overflow-x-scroll space-x-4">
                 {reviews.map((review) => (
                   <div key={review.id} className="min-w-[250px] max-w-[250px] p-4 bg-white shadow rounded-lg">

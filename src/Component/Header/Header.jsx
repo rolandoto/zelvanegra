@@ -26,7 +26,7 @@ const Header =({scrollToRoomSectionEvent}) =>{
 
                     <div className=" hidden lg:block   space-x-4">
                         <Link to="/" className="text-white cursor-pointer text-[16px] font-normal  hover:text-[#ff7a45]"  >Inicio</Link>
-                        <Link to="/" className="text-white cursor-pointer text-[16px] font-normal hover:text-[#ff7a45]" onClick={scrollToRoomSectionEvent}  >Próximos eventos</Link>
+                        <Link to="/Events" className="text-white cursor-pointer text-[16px] font-normal hover:text-[#ff7a45]"   >Próximos eventos</Link>
                         <Link to="/Accomodation" className="text-white  cursor-pointer text-[16px] font-normal hover:text-[#ff7a45]"  >Reservas</Link>
                     </div>
                     <div className="hidden lg:block " >
@@ -66,7 +66,7 @@ const Header =({scrollToRoomSectionEvent}) =>{
                             <Link to="/" className="text-white text-[16px] font-normal  hover:text-[#ff7a45]" >
                                 Inicio
                             </Link>
-                            <Link to="/" className="text-white text-[16px] font-normal  hover:text-[#ff7a45]" onClick={scrollToRoomSectionEvent}  >
+                            <Link to="/Events" className="text-white text-[16px] font-normal  hover:text-[#ff7a45]"  >
                                 Próximos eventos
                             </Link>
                             <Link  to="/Accomodation" className="text-white text-[16px] font-normal  hover:text-[#ff7a45]" >

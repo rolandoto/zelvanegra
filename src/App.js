@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Accommodation from './Page/Accomodation/Accomodation';
@@ -9,6 +8,7 @@ import Home from './Page/Home/Home';
 import { AutoProvider } from './UseContext/UseContext';
 import NoFound from './Page/NoFound/NoFound';
 import DetailEvents from './Page/DetailEvents/DetailEvents';
+import EventsNext from './Page/Events/EventsNext';
 
 
 function App() {
@@ -20,7 +20,9 @@ function App() {
           <Route exact path="/" element={<Home/> } />
           <Route exact path="/Accomodation" element={<Accommodation/> } />
           <Route exact path="/Checkout" element={<Checkout/> } />
-          <Route path="DetailEvents/:userId" element={<DetailEvents />} />
+          <Route exact path="/Events" element={<EventsNext />} />
+          <Route  exact path="Events/DetailEvents/:userId" element={<DetailEvents />} />
+          <Route  exact path="/DetailEvents/:userId" element={<DetailEvents />} />
           <Route path='/*'  element={<NoFound/> } />
         </Routes> 
       </BrowserRouter>
