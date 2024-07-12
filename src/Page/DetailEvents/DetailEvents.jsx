@@ -85,15 +85,15 @@ const DetailEvents =() =>{
                         <span className="text-2xl font-mono text-black mb-4" >{SearFindEvents.subtitle}: </span>
                         <div className=" md:pl-6 mt-8 md:mt-3">
                             <p className="text-gray-700 text-justify	 mb-4">{SearFindEvents.descriptionFull}</p>
-                            <ul className="list-disc list-inside text-gray-700 mb-4">
+                            <ul className="list-disc list-inside  text-justify text-gray-700 mb-4">
                             {SearFindEvents.highlights.map((highlight, index) => (
                                 <li key={index}>{highlight}</li>
                             ))}
                             </ul>
-                            <p className="text-gray-700 text-justify	 mb-4">
+                            <p className="text-gray-700  text-justify	 mb-4">
                                 {SearFindEvents.breveDescriptions}
                             </p>
-                            <ul className="list-disc list-inside text-gray-700 mb-4">
+                            <ul className="list-disc list-inside  text-justify text-gray-700 mb-4">
                             {SearFindEvents.hotelDetails.map((detail, index) => (
                                 <li key={index}>{detail}</li>
                             ))}
