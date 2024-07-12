@@ -12,6 +12,7 @@ import useFetchData from '../../Hooks/useFetchData';
 import useValidation from '../../Hooks/ValidateFormValues';
 import HeaderCheckout from '../../Component/HeaderCheckout/HeaderCheckout';
 import FormCheckout from '../../Component/FormCheckout/FormCheckout';
+import Footer from '../../Component/Footer/Footer';
 
 const Checkout  =() =>{
     useFetchData();
@@ -77,6 +78,7 @@ const Checkout  =() =>{
         <HeaderCheckout />
         <Toaster position="bottom-right"  richColors   />  
             {FillContent()}
+            <Footer />
             </>)
 
 }

@@ -8,6 +8,7 @@ import Checkout from './Page/Checkout/Checkout';
 import Home from './Page/Home/Home';
 import { AutoProvider } from './UseContext/UseContext';
 import NoFound from './Page/NoFound/NoFound';
+import DetailEvents from './Page/DetailEvents/DetailEvents';
 
 
 function App() {
@@ -16,10 +17,11 @@ function App() {
       <AutoProvider>
       <BrowserRouter> 
         <Routes>
-        <Route exact path="/" element={<Home/> } />
-        <Route exact path="/Accomodation" element={<Accommodation/> } />
-        <Route exact path="/Checkout" element={<Checkout/> } />
-        <Route path='/*'  element={<NoFound/> } />
+          <Route exact path="/" element={<Home/> } />
+          <Route exact path="/Accomodation" element={<Accommodation/> } />
+          <Route exact path="/Checkout" element={<Checkout/> } />
+          <Route path="DetailEvents/:userId" element={<DetailEvents />} />
+          <Route path='/*'  element={<NoFound/> } />
         </Routes> 
       </BrowserRouter>
       </AutoProvider>

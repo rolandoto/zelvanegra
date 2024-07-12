@@ -21,6 +21,7 @@ import { IconCiShoppingCart, IconRiCloseLargeLine } from "../../Component/Icons/
 import UseCart from "../../Hooks/UseCart";
 import LoadingOverlay from "../../Component/LoadingCreateReserva/LoadingOverlay";
 import HeaderAccomodation from "../../Component/HeaderAccomodation/HeaderAccomodation";
+import Footer from "../../Component/Footer/Footer";
 
 const Accommodation = () => {
   const {getHotel} = UseHotelActions()
@@ -237,6 +238,7 @@ const Accommodation = () => {
                 <div >
                     {FillContent()}
                 </div>
+                <Footer />
             </div>
     );
 }
