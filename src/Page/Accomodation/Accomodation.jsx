@@ -24,6 +24,13 @@ import HeaderAccomodation from "../../Component/HeaderAccomodation/HeaderAccomod
 import Footer from "../../Component/Footer/Footer";
 
 const Accommodation = () => {
+
+
+  useEffect(() => {
+    // Scrolls to the top of the document on component mount
+    window.scrollTo(0, 0);
+}, []);
+
   const {getHotel} = UseHotelActions()
   const [contextShowMenuPeople, setContextShowMenuPeople] = useState(false);
   const {error,hotel,loading}= useSelector((state) => state.Hotel)

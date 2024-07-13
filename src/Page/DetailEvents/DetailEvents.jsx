@@ -1,10 +1,14 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { useParams } from "react-router-dom";
 import Header from "../../Component/Header/Header";
 import Footer from "../../Component/Footer/Footer";
 
 const DetailEvents =() =>{
 
+    useEffect(() => {
+        // Scrolls to the top of the document on component mount
+        window.scrollTo(0, 0);
+    }, []);
     let { userId } = useParams();
 
     const eventData = [

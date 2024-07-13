@@ -17,7 +17,7 @@ const CardEvents =({id, highlights,imageUrl,description,title,hotelDetails}) =>{
             />
             </div>
             <div className="md:w-2/3 md:pl-6 mt-4 md:mt-0">
-            <h2 className="text-2xl font-mono text-black mb-4">{title}</h2>
+            <h2 className="text-2xl  font-lora text-black mb-4">{title}</h2>
             <p className="text-gray-500 mb-4">{description}</p>
             
             </div>

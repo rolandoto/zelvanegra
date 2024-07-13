@@ -1,9 +1,14 @@
-import React  from "react";
+import React, { useEffect }  from "react";
 import Events from "../../Component/Events/Events";
 import Header from "../../Component/Header/Header";
 
 const EventsNext =()  =>{
 
+  
+    useEffect(() => {
+        // Scrolls to the top of the document on component mount
+        window.scrollTo(0, 0);
+    }, []);
     return (<>
              <Header/>
                <div className="relative bg-cover bg-center h-[310px]" style={{ 

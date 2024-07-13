@@ -1,4 +1,4 @@
-import React, { useCallback, useRef, useState } from "react"
+import React, { useCallback, useEffect, useRef, useState } from "react"
 import UseCalenderSearch from "../../Hooks/UseCalenderSearch";
 import { DateRange } from 'react-date-range';
 import esLocale from 'date-fns/locale/es';
@@ -24,6 +24,11 @@ const Home =() =>{
   const navigate = useNavigate();
   moment.locale('es');
   
+
+  useEffect(() => {
+    // Scrolls to the top of the document on component mount
+    window.scrollTo(0, 0);
+}, []);
   const reviews = [
     {
       id: 1,
@@ -35,11 +40,11 @@ const Home =() =>{
     },
     {
       id: 2,
-      name: "Robinson Vasquez",
+      name: "IMPORT JHEYSSI SAS",
       date: "hace 5 meses",
       rating: 5,
       text: "Un poquito lejos del centro, sobre la iluminación es perfecta para descansar y la ubicación estratégica para encender las luces por zonas me parece muy bueno para el precio! Más amabilidad es lo único que podría pedir, con esto no digo que son groseros, mejor dicho son intermedio! 👍",
-      avatar: "https://lh3.googleusercontent.com/a-/ALV-UjWJPNCMHC35vE7mix619p9I292X-WgPjCO2omHJkl2-CVV9odd2cw=s56-c0x00000000-cc-rp-mo-ba4",
+      avatar: "https://github.com/rolandoto/image-pms/blob/main/unnamed%20(1).png?raw=true",
     },
     {
       id: 3,
@@ -47,32 +52,8 @@ const Home =() =>{
       date: "hace un mes",
       rating: 5,
       text: "Es un lugar muy agradable, con un restaurante encantador, buena atención al cliente, las habitaciones aseadas y ordenadas; el único defecto es que las habitaciones no cuentan con agua caliente y no hay TV por cable, pero por lo demás todo está súper bien.      ",
-      avatar: "https://lh3.googleusercontent.com/a-/ALV-UjWJPNCMHC35vE7mix619p9I292X-WgPjCO2omHJkl2-CVV9odd2cw=s56-c0x00000000-cc-rp-mo-ba4",
-    },
-    {
-      id: 3,
-      name: "Bárbara Pérez",
-      date: "hace un mes",
-      rating: 5,
-      text: "",
-      avatar: "https://lh3.googleusercontent.com/a-/ALV-UjWJPNCMHC35vE7mix619p9I292X-WgPjCO2omHJkl2-CVV9odd2cw=s56-c0x00000000-cc-rp-mo-ba4",
-    },
-    {
-      id: 4,
-      name: "Bárbara Pérez",
-      date: "hace un mes",
-      rating: 5,
-      text: "",
-      avatar: "https://lh3.googleusercontent.com/a-/ALV-UjWJPNCMHC35vE7mix619p9I292X-WgPjCO2omHJkl2-CVV9odd2cw=s56-c0x00000000-cc-rp-mo-ba4",
-    },
-    {
-      id: 5,
-      name: "Bárbara Pérez",
-      date: "hace un mes",
-      rating: 5,
-      text: "",
-      avatar: "https://lh3.googleusercontent.com/a-/ALV-UjWJPNCMHC35vE7mix619p9I292X-WgPjCO2omHJkl2-CVV9odd2cw=s56-c0x00000000-cc-rp-mo-ba4",
-    },
+      avatar: "https://github.com/rolandoto/image-pms/blob/main/unnamed.png?raw=true",
+    }
   ];
   
 

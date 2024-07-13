@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import Header from "../../Component/Header/Header"
 import UseCart from "../../Hooks/UseCart"
 import useReservationCreate from '../../Actions/useReservationCreate';
@@ -16,6 +16,12 @@ import Footer from '../../Component/Footer/Footer';
 
 const Checkout  =() =>{
     useFetchData();
+
+
+    useEffect(() => {
+        // Scrolls to the top of the document on component mount
+        window.scrollTo(0, 0);
+    }, []);
     const [formErrors, setFormErrors] = useState({});
     const [formValues, handleChange] = useFormValues();
     const {cart,getCartSubtotal} = UseCart()
