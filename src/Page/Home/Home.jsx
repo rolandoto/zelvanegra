@@ -36,7 +36,7 @@ const Home =() =>{
       date: "hace un mes",
       rating: 4,
       text: "Un ambiente tranquilo, buena ubicación!",
-      avatar: "https://lh3.googleusercontent.com/a-/ALV-UjWJPNCMHC35vE7mix619p9I292X-WgPjCO2omHJkl2-CVV9odd2cw=s56-c0x00000000-cc-rp-mo-ba4", // Add the path to the avatar image if available
+      avatar: "https://github.com/rolandoto/image-pms/blob/main/miguel(2).png?raw=true", // Add the path to the avatar image if available
     },
     {
       id: 2,

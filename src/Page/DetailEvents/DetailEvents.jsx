@@ -9,14 +9,15 @@ const DetailEvents =() =>{
         // Scrolls to the top of the document on component mount
         window.scrollTo(0, 0);
     }, []);
+
     let { userId } = useParams();
 
     const eventData = [
         {    
-         id:1,
+         id:2,
          title: "¡Vive la cultura y tradición en Expoartesano 2024 en Medellín!",
          description: "Un encuentro con la artesanía, la memoria y las costumbres ancestrales de Colombia te espera en Expoartesano 2024, del 5 al 14 de julio en Plaza Mayor Medellín",
-         imageUrl: "https://github.com/rolandoto/image-pms/blob/main/WhatsApp%20Image%202024-07-12%20at%209.26.10%20AM.jpeg?raw=true",
+         imageUrl: "https://github.com/rolandoto/image-pms/blob/main/WhatsApp%20Image%202024-07-12%20at%209.26.10%20AM%20(1).jpeg?raw=true",
          descriptionFull:"Un encuentro con la artesanía, la memoria y las costumbres ancestrales de Colombia te espera en Expoartesano 2024, del 5 al 14 de julio en Plaza Mayor Medellín. Sumérgete en un universo de colores, texturas y saberes populares donde más de 500 artesanos de todo el país exhiben sus creaciones únicas y llenas de historia. Descubre la maestría de las técnicas tradicionales y déjate sorprender por la innovación y el talento de los nuevos artistas.",
          subtitle:"Expoartesano",
          finally:"¡Vive al máximo Expoartesano en Hotel Gallery!",
@@ -38,7 +39,7 @@ const DetailEvents =() =>{
            breveDescriptions:"Y para completar tu experiencia en Medellín, te invitamos a hospedarte en el Gallery Hotel "
         },
         {
-         id:2,
+         id:1,
          title: "¡Sumérgete en el universo de la moda en Colombiamoda 2024!",
          description: "Del 23 al 25 de julio, Medellín se convierte en el epicentro de la moda latinoamericana con Colombiamoda 2024, un evento imperdible para diseñadores, empresarios, amantes de la moda y el público en general.",
          descriptionFull:"Del 23 al 25 de julio, Medellín se convierte en el epicentro de la moda latinoamericana con Colombiamoda 2024, un evento imperdible para diseñadores, empresarios, amantes de la moda y el público en general.",
@@ -58,7 +59,7 @@ const DetailEvents =() =>{
              "Atención personalizada y servicio de recepción las 24 horas o	arqueadero (Sujeto a disponibilidad)",
            ],
         breveDescriptions:"Y para completar tu experiencia en Medellín, te invitamos a hospedarte en el Gallery Hotel ",
-         imageUrl: "https://github.com/rolandoto/image-pms/blob/main/WhatsApp%20Image%202024-07-12%20at%209.26.10%20AM%20(1).jpeg?raw=true"
+         imageUrl: "https://github.com/rolandoto/image-pms/blob/main/WhatsApp%20Image%202024-07-12%20at%209.26.10%20AM.jpeg?raw=true"
         }
      ];
 
