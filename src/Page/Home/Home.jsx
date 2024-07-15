@@ -56,7 +56,6 @@ const Home =() =>{
     }
   ];
   
-
     const features = [
         { icon: <IconsFaGlassMartini/>, title: 'Cóctel de bienvenida' },
         { icon: <IconsGiForkKnifeSpoon/>, title: 'Desayuno incluido' },
