@@ -244,8 +244,9 @@ const Accommodation = () => {
                 </SectionSearch>
                 <div >
                     {FillContent()}
+                    <Footer />
                 </div>
-                <Footer />
+               
             </div>
     );
 }

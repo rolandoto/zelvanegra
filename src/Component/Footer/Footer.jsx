@@ -12,7 +12,7 @@ const Footer =() =>{
     };
 
     return (
-            <footer className="bg-black   text-white py-8">
+            <footer className="bg-black  h-full  text-white py-8">
                 <div className="mx-auto max-w-7xl p-4  flex flex-col md:flex-row justify-between items-start md:items-center">
                 <div className="flex">
                     <img

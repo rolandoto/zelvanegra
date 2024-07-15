@@ -44,7 +44,7 @@ const Home =() =>{
       date: "hace 5 meses",
       rating: 5,
       text: "Un poquito lejos del centro, sobre la iluminación es perfecta para descansar y la ubicación estratégica para encender las luces por zonas me parece muy bueno para el precio! Más amabilidad es lo único que podría pedir, con esto no digo que son groseros, mejor dicho son intermedio! 👍",
-      avatar: "https://github.com/rolandoto/image-pms/blob/main/unnamed%20(1).png?raw=true",
+      avatar: "https://github.com/rolandoto/image-pms/blob/main/importadora(2).png?raw=true",
     },
     {
       id: 3,
@@ -52,7 +52,7 @@ const Home =() =>{
       date: "hace un mes",
       rating: 5,
       text: "Es un lugar muy agradable, con un restaurante encantador, buena atención al cliente, las habitaciones aseadas y ordenadas; el único defecto es que las habitaciones no cuentan con agua caliente y no hay TV por cable, pero por lo demás todo está súper bien.      ",
-      avatar: "https://github.com/rolandoto/image-pms/blob/main/unnamed.png?raw=true",
+      avatar: "https://github.com/rolandoto/image-pms/blob/main/angie(2).png?raw=true",
     }
   ];
   
