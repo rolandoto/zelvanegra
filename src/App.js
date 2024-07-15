@@ -9,6 +9,7 @@ import { AutoProvider } from './UseContext/UseContext';
 import NoFound from './Page/NoFound/NoFound';
 import DetailEvents from './Page/DetailEvents/DetailEvents';
 import EventsNext from './Page/Events/EventsNext';
+import Login from './Page/Login/Login';
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
           <Route exact path="/Events" element={<EventsNext />} />
           <Route  exact path="Events/DetailEvents/:userId" element={<DetailEvents />} />
           <Route  exact path="/DetailEvents/:userId" element={<DetailEvents />} />
+          <Route  exact path="/Login" element={<Login />} />
           <Route path='/*'  element={<NoFound/> } />
         </Routes> 
       </BrowserRouter>

@@ -1,6 +1,7 @@
 import React, { useEffect }  from "react";
 import Events from "../../Component/Events/Events";
 import Header from "../../Component/Header/Header";
+import Footer from "../../Component/Footer/Footer";
 
 const EventsNext =()  =>{
 
@@ -21,6 +22,7 @@ const EventsNext =()  =>{
                     </div>
                 </div>
             <Events />
+            <Footer/>
         </>)
 
 }
