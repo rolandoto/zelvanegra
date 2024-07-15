@@ -24,22 +24,42 @@ const Home =() =>{
   const navigate = useNavigate();
   moment.locale('es');
   
-
   useEffect(() => {
     // Scrolls to the top of the document on component mount
     window.scrollTo(0, 0);
 }, []);
+
+
+
   const reviews = [
+
     {
       id: 1,
-      name: "Cielo Agudelo",
+      name: "Robinson Vasquez",
       date: "hace un mes",
       rating: 4,
       text: "Un ambiente tranquilo, buena ubicación!",
-      avatar: "https://github.com/rolandoto/image-pms/blob/main/miguel(2).png?raw=true", // Add the path to the avatar image if available
+      avatar: "https://github.com/rolandoto/image-pms/blob/main/Robinson(3).png?raw=true", // Add the path to the avatar image if available
+    },
+    {
+      id: 1,
+      name: "Bárbara Pérez",
+      date: "hace un mes",
+      rating: 5,
+      text: "",
+      avatar: "https://github.com/rolandoto/image-pms/blob/main/Cielo.png?raw=true", // Add the path to the avatar image if available
     },
     {
       id: 2,
+      name: "Esleidy Largo",
+      date: "",
+      rating: 5,
+      text: "",
+      avatar: "https://github.com/rolandoto/image-pms/blob/main/Esleidy(3).png?raw=true", // Add the path to the avatar image if available
+    },
+   
+    {
+      id: 5,
       name: "IMPORT JHEYSSI SAS",
       date: "hace 5 meses",
       rating: 5,
@@ -47,7 +67,7 @@ const Home =() =>{
       avatar: "https://github.com/rolandoto/image-pms/blob/main/importadora(2).png?raw=true",
     },
     {
-      id: 3,
+      id: 6,
       name: "Angie gil",
       date: "hace un mes",
       rating: 5,
@@ -171,7 +191,6 @@ const Home =() =>{
         answer: 'Puede cambiar divisas en casas de cambio ubicadas en centros comerciales, en el aeropuerto, y en diversas partes del centro de la ciudad.',
       },
     ];
-
 
     const rooms = [
       {  title: 'Room Box Ventilador', price:99000 , image:"https://grupo-hoteles.com/storage/app/4/rooms/203289556-10-rooms-slider-1-habitacion_Estandar_Hotel_en_Medellin_Gallery_Hotel-01.webp", features: ['Cama matrimonial', 'Baño privado con ducha', 'Wi-Fi gratuito', 'Smart TV'] },

@@ -15,8 +15,8 @@ const CardCheckout =({room_image,title,Price,nights,person,end,start,Price_nigth
                             <p className="font-normal text-[13px]" >Entrada: <span className="font-normal text-[13px]">{dateStart}</span></p>
                             <p className="font-normal text-[13px]" >Salida: <span className="font-normal text-[13px]">{dateEnd}</span></p>
                             <p className="font-normal text-[13px]" >Regimen/plan: <span className="font-normal text-[13px]">Alojamiento y Desayuno</span></p>
-                            <p className="font-normal text-[13px]">Ocupacion: <span className="font-normal text-[13px]">{person} Adultos</span></p>
-                            <p className="font-normal text-[13px]">Noche: <span className="font-normal text-[13px]">{nights} </span></p>
+                            <p className="font-normal text-[13px]">ocupación: <span className="font-normal text-[13px]">{person} Adultos</span></p>
+                            <p className="font-normal text-[13px]">Noches: <span className="font-normal text-[13px]">{nights} </span></p>
                     </div>
                     <div className=" text-right">
                             <span className="text-2xl font-bold">{parseInt(Price).toLocaleString()} COP</span>
@@ -31,7 +31,7 @@ const CardCheckout =({room_image,title,Price,nights,person,end,start,Price_nigth
                     />
                     <div>
                         <p>{title}</p>
-                        <p className="font-bold">{parseInt(Price_nigth).toLocaleString()} COP  más por noche.</p>
+                        <p className="font-bold">{parseInt(Price_nigth).toLocaleString()} COP.</p>
                     </div>
                     </div>
                 </div>

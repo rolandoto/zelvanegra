@@ -4,7 +4,7 @@ const ButtonAccomodation =({price,nights,person,handleAddToCart})=>{
         return (
             <ContaineButton >
                 <div className="p-2" >
-                    <h2     className="text-1xl font-normal mb-2">{nights} noche  {person}  adulto</h2>
+                    <h2     className="text-1xl font-normal mb-2">{nights} noches  {person}  adultos</h2>
                     <h2 className="text-2xl font-normal mb-2" >${parseInt(price).toLocaleString()}</h2>
                     <h2  className="text-1xl font-semibold mb-2"></h2>
                 </div>

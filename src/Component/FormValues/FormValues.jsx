@@ -238,7 +238,7 @@ const FormValues =({handleSubmit,formErrors,handleChange,formValues,loading,Coun
                             type="submit" 
                             className={`w-full text-white py-2 bg-black px-4 rounded hover:bg-gray-800`} 
                             >
-                            {loading ? "Cargando reserva" : " CONFIRMAR RESERVA" } 
+                            {loading ? "Cargando reserva" : "Finaliza tu reserva" } 
                             </Button>
                             <p className=" text-xs text-gray-500 mt-4">
                             Al completar esta reserva, acuerdo que he leído y aceptado las <a target="_blank" href={pdf} className="text-orange-500">Políticas de Propiedad</a>.

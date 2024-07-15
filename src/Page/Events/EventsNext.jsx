@@ -4,8 +4,6 @@ import Header from "../../Component/Header/Header";
 import Footer from "../../Component/Footer/Footer";
 
 const EventsNext =()  =>{
-
-  
     useEffect(() => {
         // Scrolls to the top of the document on component mount
         window.scrollTo(0, 0);
