@@ -134,3 +134,8 @@ code {
   overflow-y: scroll;
   scroll-behavior: smooth;
 }
+
+.cart-shadow{
+  background: white;
+  box-shadow: 17px 20px 40px rgba(0, 0, 0, .21) ;
+}

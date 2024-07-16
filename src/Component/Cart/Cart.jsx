@@ -4,7 +4,7 @@ import { IconRiCloseLargeLine } from "../Icons/Icons";
 import UseCart from "../../Hooks/UseCart";
 import { useNavigate } from "react-router-dom";
 
-const Cart = ({handClickCart,checkbox}) => {
+const Cart = () => {
 
     const {cart,getCartSubtotal,getCartTotalCount} = UseCart()
     const subtotal = getCartSubtotal()
@@ -19,8 +19,11 @@ const Cart = ({handClickCart,checkbox}) => {
 
     //{numOfProductsInCart ==0 ? <EmpyCart title={"Tu carrito esta vacio"}  /> 
     //fixed top-20 z-50 cart let-0 right-0 bg-white transition duration-200  border rounded-md shadow-md w-80 mx-auto mt-10
-    return (
-      <aside className={`fixed top-20 z-50  cart  ${checkbox ? "active" : ""}  let-0 right-0 bg-white transition duration-200  border rounded-md shadow-md w-80 mx-auto mt-10`}>
+
+      
+    /**
+     * 
+     * <aside className={`fixed top-20 z-50  cart  ${checkbox ? "active" : ""}  let-0 right-0 bg-white transition duration-200  border rounded-md shadow-md w-80 mx-auto mt-10`}>
         <button className="absolute right-0  top-2"  onClick={handClickCart} >
             <IconRiCloseLargeLine />
         </button>
@@ -49,6 +52,27 @@ const Cart = ({handClickCart,checkbox}) => {
                 </div>
             </Fragment>
       </aside>
+     * 
+     */
+    return (
+        <div className="fixed z-50 cart-shadow   bottom-0 left-0 right-0 flex flex-col md:flex-row items-center justify-between  p-4  rounded-t-lg">
+        <div className="flex items-center">
+          <div className="ml-4">
+            <h2 className="text-2xl font-lora">Ha seleccionado:</h2>
+            <h3 className="text-2xl font-lora">{totalCount} habitaciones</h3> {/* Update this line with the number of rooms */}
+          </div>
+        </div>
+        <div >
+        <div className="flex items-center">
+            <h2 className="text-2xl font-lora">Total:</h2>
+            <h3 className="text-2xl font-lora"> {subtotal.toLocaleString('es-CO')} COP</h3> {/* Update this line with the number of rooms */}
+          </div>
+        </div>
+        <button onClick={PostHotelByIdHotel} className=" Button-Search w-full rounded md:w-auto ml-0 md:ml-4 px-6 py-2 font-lora bg-orange-500 text-white">
+          Continuar con tu reserva
+        </button>
+      </div>
+      
     );
   };
   export default Cart

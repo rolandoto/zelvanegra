@@ -19,15 +19,13 @@ const UseHotelActions =() =>{
             const response  = await   HttpClient.PostHotelByIdHotel({id,desde,hasta,counPeople})
             if(response){
                 dispatch(setHotel(response)) 
-                toast.success(`Exitoso`)
             }else{
                 dispatch(setError("no found")) 
-                toast.error(`error en el servicio`)
             }
         } catch (error) {
             setContextMenuPosition((prevem) =>  true)
             dispatch(setError("no found")) 
-            toast.error(`Rango de fecha no disponible` )
+         
         }
     }
     

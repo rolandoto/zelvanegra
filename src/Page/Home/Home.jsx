@@ -19,6 +19,8 @@ import 'react-date-range/dist/styles.css'; // import the default styles
 import 'react-date-range/dist/theme/default.css'; // import the default theme
 import moment from 'moment';
 import 'moment/locale/es';
+import UseCart from "../../Hooks/UseCart";
+import Cart from "../../Component/Cart/Cart";
 
 const Home =() =>{
   const navigate = useNavigate();
@@ -30,6 +32,8 @@ const Home =() =>{
 }, []);
 
 
+const {getCartSubtotal,getCartTotalCount} = UseCart()
+const subtotal = getCartSubtotal()
 
   const reviews = [
 
@@ -193,7 +197,8 @@ const Home =() =>{
     ];
 
     const rooms = [
-      {  title: 'Room Box Ventilador', price:99000 , image:"https://grupo-hoteles.com/storage/app/4/rooms/203289556-10-rooms-slider-1-habitacion_Estandar_Hotel_en_Medellin_Gallery_Hotel-01.webp", features: ['Cama matrimonial', 'Baño privado con ducha', 'Wi-Fi gratuito', 'Smart TV'] },
+      {  title: 'Room Box Ventilador', price:99000 , image:"https://grupo-hoteles.com/storage/app/4/rooms/203289556-10-rooms-slider-1-habitacion_Estandar_Hotel_en_Medellin_Gallery_Hotel-01.webp", 
+          features: ['Cama matrimonial', 'Baño privado con ducha', 'Wi-Fi gratuito', 'Smart TV'] },
       { title: 'Room Box Aire',price:109000, image: "https://grupo-hoteles.com/storage/app/4/rooms/1046121300-11-rooms-slider-1-habitacion_Aire_Hotel_en_Medellin_Gallery_Hotel-01.webp", features: ['Cama matrimonial', 'Baño privado con ducha', 'Wi-Fi gratuito', 'Smart TV','Aire Acondicionado'] },
       { title: 'Room Box Jacuzzi',price:169000, image: "https://grupo-hoteles.com/storage/app/4/rooms/1563326590-12-rooms-slider-1-habitacion_Jacuzzi_Hotel_en_Medellin_Gallery_Hotel-02.webp", features: ['Cama matrimonial', 'Baño privado con ducha', 'Wi-Fi gratuito', 'Smart TV','Aire Acondicionado','Jacuzzi'] },
     ];
@@ -374,6 +379,10 @@ const Home =() =>{
           <div ref={roomEventsSectionRef} >
             <Events  />
           </div>
+
+          {subtotal >0 &&<Cart    
+                          /> } 
+
           <AccordionAsk faqs={faqs} />
           <Footer />
     

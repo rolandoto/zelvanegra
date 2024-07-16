@@ -138,21 +138,20 @@ const Accommodation = () => {
      * 
      */
 
+      /**
+       * 
+       * 
+                  
+       * 
+       */
+
     return (<div>
-            {subtotal >0 && 
-              <button className="cartIcon  cursor-pointer "   onClick={handClickCart}   >
-                        <div className="cartIcon-Number">
-                            <span className="md:text-1xl font-normal">{totalCount}</span>
-              
-                        </div>
-                        <IconCiShoppingCart  />
-                </button>
-              }
+           
             <Toaster position="bottom-right"  richColors   />
             {loadingCart && <LoadingOverlay title={"Cargando..."} />}
             <Header/>
             {subtotal >0 &&<Cart    
-                            checkbox={checkbox} 
+                            checkbxo={checkbox} 
                             handClickCart={handClickCart} /> } 
             <SectionSearch  >
             <HeaderAccomodation />
@@ -194,11 +193,11 @@ const Accommodation = () => {
               )}
           </div>
           {contextMenuPosition &&
-              <div class="  lg:hidden fixed inset-0 bg-white flex items-start justify-center z-50  md:shadow-[17px_20px_40px_rgba(0,0,0,0.21)] md:rounded-[1.25rem] md:!font-size[16px] md:!user-select-none">
-                <div class="bg-white p-4  rounded-lg shadow-lg w-full h-full md:w-auto md:h-auto">
-                  <button class="absolute top-4 right-4 text-black text-lg" onClick={() =>setContextMenuPosition(false)} ><IconRiCloseLargeLine />;</button>
+              <div className="  lg:hidden fixed inset-0 bg-white flex items-start justify-center z-50  md:shadow-[17px_20px_40px_rgba(0,0,0,0.21)] md:rounded-[1.25rem] md:!font-size[16px] md:!user-select-none">
+                <div className="bg-white p-4  rounded-lg shadow-lg w-full h-full md:w-auto md:h-auto">
+                  <button className="absolute top-4 right-4 text-black text-lg" onClick={() =>setContextMenuPosition(false)} ><IconRiCloseLargeLine />;</button>
                  <div>
-                    <h2 class="text-center text-2xl font-semibold mb-4">Selecionar fecha</h2>
+                    <h2 className="text-center text-2xl font-semibold mb-4">Selecionar fecha</h2>
                     <DateRange 
                           className="flex calender-search-Acoomodation lg:hidden"
                           rangeColors={["rgb(255 104 0 / 36%);"]}
@@ -272,8 +271,7 @@ const Accommodation = () => {
                 </SectionSearch>
                 <div >
                     {FillContent()}
-         
-
+                  
                     <Footer />
                 </div>
                

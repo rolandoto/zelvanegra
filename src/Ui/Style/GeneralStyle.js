@@ -190,7 +190,7 @@ export const SectionSearch = styled.section`
 border-bottom: 1px solid rgb(224, 224, 224);
 `
 export const ContainerIcons = styled.div`
-display: flex;
+display: block;
 margin-top:9px;
 justify-content: space-between;
 `

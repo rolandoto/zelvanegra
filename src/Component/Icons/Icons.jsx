@@ -29,6 +29,7 @@ import { FaConciergeBell } from "react-icons/fa";
 import { RiBankFill } from "react-icons/ri";
 import { MdOutlineEmail } from "react-icons/md";
 import { Tooltip } from "react-tooltip";
+import { PiBedThin } from "react-icons/pi";
 
 
 export const IconsSnow =() =>{
@@ -45,6 +46,23 @@ export const IconsSnow =() =>{
      
             <PiSnowflakeThin   data-tooltip-id="my-tooltip"
                                 data-tooltip-content="Aire acondicionado" data-for={key} data-tip fontSize={35}  />
+            </>
+}
+
+
+export const IconsPiBedThin =() =>{
+    const key = `my-tooltip`;
+   
+    return <>
+            <Tooltip 
+                    id={key} 
+                    place="top"
+                    style={{ backgroundColor: "black", color: "white" }} 
+                    variant="info"  >
+                    Hello
+            </Tooltip>
+            <PiBedThin   data-tooltip-id="my-tooltip"
+                                data-tooltip-content="Cama matrimonial" data-for={key} data-tip fontSize={35}  />
             </>
 }
 
