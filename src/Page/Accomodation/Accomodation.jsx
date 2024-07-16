@@ -110,6 +110,34 @@ const Accommodation = () => {
     }
     const monthsToShow = window.innerWidth >= 700 ? 2 : 1;
 
+    /**
+     * 
+     *                  
+          <div className="fixed bottom-0 left-0 right-0 flex flex-col md:flex-row items-center justify-between bg-gray-100 p-4 shadow-md rounded-t-lg">
+            <div className="flex items-center mb-4 md:mb-0">
+                <img
+                  src="https://grupo-hoteles.com/storage/app/4/rooms/203289556-10-rooms-slider-1-habitacion_Estandar_Hotel_en_Medellin_Gallery_Hotel-01.webp"
+                  alt="Room"
+                  className="w-24 h-24 rounded-lg object-cover"
+                />
+                <div className="ml-4">
+                  <h2 className="text-lg font-bold">Ha seleccionado:</h2>
+                  <h3 className="text-xl font-bold text-orange-500">SUITE</h3>
+                  <p className="text-gray-500">Flexible WiFi, Desayuno, Cancelación Gratuita</p>
+                </div>
+            </div>
+            <div className="text-center md:text-right mb-4 md:mb-0">
+                <p className="text-2xl font-bold text-orange-500">$3,472,000</p>
+                <p className="text-sm text-gray-500">$868,000 x 4 Noches</p>
+                <p className="text-sm text-gray-500">$164,920 impuestos y tasas adicionales por noche</p>
+            </div>
+            <button className="w-full md:w-auto ml-0 md:ml-4 px-6 py-2 font-lora bg-orange-500 text-white rounded-sm ">
+              IR AL CHECKOUT
+            </button>
+          </div>
+     * 
+     */
+
     return (<div>
             {subtotal >0 && 
               <button className="cartIcon  cursor-pointer "   onClick={handClickCart}   >
@@ -244,6 +272,8 @@ const Accommodation = () => {
                 </SectionSearch>
                 <div >
                     {FillContent()}
+         
+
                     <Footer />
                 </div>
                

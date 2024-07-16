@@ -31,7 +31,7 @@ const CardCheckout =({room_image,title,Price,nights,person,end,start,Price_nigth
                     />
                     <div>
                         <p>{title}</p>
-                        <p className="font-bold">{parseInt(Price_nigth).toLocaleString()} COP.</p>
+                        <p className="font-bold">{parseInt(Price_nigth).toLocaleString()} COP</p>
                     </div>
                     </div>
                 </div>

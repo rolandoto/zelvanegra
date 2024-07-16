@@ -376,6 +376,7 @@ const Home =() =>{
           </div>
           <AccordionAsk faqs={faqs} />
           <Footer />
+    
           </div>
     )
     

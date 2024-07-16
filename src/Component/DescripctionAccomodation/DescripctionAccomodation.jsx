@@ -12,7 +12,7 @@ const DescripctionAccomodation =({title,cantidad,description}) =>{
                 </TextWidth>
                 <div className="text-sm text-gray-600 "></div>
                     <TextWidth >
-                        <p className="text-[13px] text-gray-600  text-justify" > {description}</p>
+                        <p className="text-[17px] md:text-[13px]  text-gray-600  text-justify" > {description}</p>
                     </TextWidth>
                     <div>
                   

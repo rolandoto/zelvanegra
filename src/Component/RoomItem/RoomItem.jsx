@@ -57,7 +57,7 @@ const RoomItem = ({ title,Price,person,start,end,roomByID }) => {
                         </div>
                         <div className="flex justify-between items-center">
                             <span className="font-normal text-[13px]   ">Precio:</span>
-                            <span className="font-normal text-[13px] ">${parseInt(Price).toLocaleString()}</span>
+                            <span className="font-normal text-[13px] ">{parseInt(Price).toLocaleString()} COP</span>
                         </div>
                     </div>
         ) }
