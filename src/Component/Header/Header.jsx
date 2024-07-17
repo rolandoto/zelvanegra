@@ -11,7 +11,7 @@ const Header =({scrollToRoomSectionEvent}) =>{
 
     return (
             <nav className=" w-full z-40 items-center fixed p-3 bg-black shadow-md">
-                    <div  className="  mx-auto flex items-center   justify-between   max-w-7xl" > 
+                    <div  className="  mx-auto  max-w-7xl flex items-center   justify-between  " > 
                     <div className="text-3xl font-bold text-indigo-600">
                     <Link to="/">
                         <img 

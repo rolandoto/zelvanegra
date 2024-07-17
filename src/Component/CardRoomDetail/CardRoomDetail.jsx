@@ -20,7 +20,7 @@ const CardRoomDetail =({features,image,title,price}) =>{
                 </ul>        
                 <div className="PriceRoomDetail">
                     <div >
-                        <strong className=" text-[20px] " >Desde {parseInt(price).toLocaleString()} COP</strong>
+                        <strong className=" text-[20px] " >Desde {parseInt(price).toLocaleString('es-CO')} COP</strong>
                     </div>
                 </div>
                                 
