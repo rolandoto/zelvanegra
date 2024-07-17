@@ -58,18 +58,17 @@ const Cart = () => {
         <div className="fixed z-50 cart-shadow   bottom-0 left-0 right-0 flex flex-col md:flex-row items-center justify-between  p-4  rounded-t-lg">
         <div className="flex items-center">
           <div className="ml-4">
-            <h2 className="text-2xl font-lora">Ha seleccionado:</h2>
-            <h3 className="text-2xl font-lora">{totalCount} habitaciones</h3> {/* Update this line with the number of rooms */}
+            <h3 className="text-2xl font-lora">Habitaciones: {totalCount} </h3> {/* Update this line with the number of rooms */}
           </div>
         </div>
         <div >
         <div className="flex items-center">
             <h2 className="text-2xl font-lora">Total:</h2>
-            <h3 className="text-2xl font-lora"> {subtotal.toLocaleString('es-CO')} COP</h3> {/* Update this line with the number of rooms */}
+            <h3 className="text-2xl font-lora"> {subtotal.toLocaleString('es-CO')} cop</h3> {/* Update this line with the number of rooms */}
           </div>
         </div>
         <button onClick={PostHotelByIdHotel} className=" Button-Search w-full rounded md:w-auto ml-0 md:ml-4 px-6 py-2 font-lora bg-orange-500 text-white">
-          Continuar con tu reserva
+        Confirmar la reserva
         </button>
       </div>
       

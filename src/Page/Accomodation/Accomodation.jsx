@@ -104,7 +104,7 @@ const Accommodation = () => {
                 </div> 
        ) 
       }if(error){
-        return    <EmpyCart title={"Habitacion no encontrada"} />
+        return    <EmpyCart title={"No tenemos habitaciones disponibles para esta ocupación"} />
                 }
         return <>  {hotel?.availableRooms?.map((List,index) => <CardAccomodation  key={index} {...List}/>)}</>
     }
@@ -150,6 +150,8 @@ const Accommodation = () => {
             <Toaster position="bottom-right"  richColors   />
             {loadingCart && <LoadingOverlay title={"Cargando..."} />}
             <Header/>
+
+          
             {subtotal >0 &&<Cart    
                             checkbxo={checkbox} 
                             handClickCart={handClickCart} /> } 
@@ -271,6 +273,7 @@ const Accommodation = () => {
                 </SectionSearch>
                 <div >
                     {FillContent()}
+                  
                     <Footer />
                 </div>
                

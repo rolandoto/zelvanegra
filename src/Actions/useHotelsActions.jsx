@@ -23,7 +23,6 @@ const UseHotelActions =() =>{
                 dispatch(setError("no found")) 
             }
         } catch (error) {
-            setContextMenuPosition((prevem) =>  true)
             dispatch(setError("no found")) 
          
         }

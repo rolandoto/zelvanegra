@@ -11,7 +11,7 @@ const DescripctionAccomodation =({title,cantidad,description}) =>{
 
     return (  <div className="p-2" >  
                 <TextWidth>
-                <h2 className="text-lg font-normal ">{title}</h2>
+                <h2 className="text-[23px] font-normal ">{title}</h2>
                 </TextWidth>
                 <div className="text-sm text-gray-600  "></div>
                     <IconAccomodation title={title}/>

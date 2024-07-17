@@ -46,7 +46,7 @@ const subtotal = getCartSubtotal()
       avatar: "https://github.com/rolandoto/image-pms/blob/main/Robinson(3).png?raw=true", // Add the path to the avatar image if available
     },
     {
-      id: 1,
+      id: 2,
       name: "Bárbara Pérez",
       date: "hace un mes",
       rating: 5,
@@ -54,7 +54,7 @@ const subtotal = getCartSubtotal()
       avatar: "https://github.com/rolandoto/image-pms/blob/main/Cielo.png?raw=true", // Add the path to the avatar image if available
     },
     {
-      id: 2,
+      id: 3,
       name: "Esleidy Largo",
       date: "",
       rating: 5,
@@ -63,7 +63,7 @@ const subtotal = getCartSubtotal()
     },
    
     {
-      id: 5,
+      id: 4,
       name: "IMPORT JHEYSSI SAS",
       date: "hace 5 meses",
       rating: 5,
@@ -71,7 +71,7 @@ const subtotal = getCartSubtotal()
       avatar: "https://github.com/rolandoto/image-pms/blob/main/importadora(2).png?raw=true",
     },
     {
-      id: 6,
+      id: 5,
       name: "Angie gil",
       date: "hace un mes",
       rating: 5,
@@ -348,6 +348,47 @@ const subtotal = getCartSubtotal()
           </div>
           <div className="max-w-7xl mx-auto py-8">
               <h2 className="text-[30px] text-center text-orange-500  font-lora  mb-6">Lo que opinan nuestros clientes</h2>
+              <div className="block md:flex" >
+                    <div className="flex items-center justify-center ">
+                      <div className="max-w-sm p-6">
+                        <div className="flex items-center">
+                          <img
+                            className="w-12 h-12 rounded-full"
+                            src="https://github.com/rolandoto/image-pms/blob/main/2020-06-27.jpg?raw=true"
+                            alt="Hotel"
+                          />
+                          <div className="ml-4">
+                            <h2 className="text-lg font-semibold">Gallery Hotel Medellín</h2>
+                            <div className="flex items-center">
+                              <span className="text-orange-500 text-lg font-bold">4.0</span>
+                              <div className="flex ml-1">
+                                <svg className="w-5 h-5 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+                                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.374 4.223a1 1 0 00.95.69h4.455c.969 0 1.371 1.24.588 1.81l-3.6 2.61a1 1 0 00-.364 1.118l1.374 4.223c.3.921-.755 1.688-1.54 1.118l-3.6-2.61a1 1 0 00-1.176 0l-3.6 2.61c-.784.57-1.838-.197-1.54-1.118l1.374-4.223a1 1 0 00-.364-1.118l-3.6-2.61c-.783-.57-.381-1.81.588-1.81h4.455a1 1 0 00.95-.69l1.374-4.223z" />
+                                </svg>
+                                <svg className="w-5 h-5 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+                                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.374 4.223a1 1 0 00.95.69h4.455c.969 0 1.371 1.24.588 1.81l-3.6 2.61a1 1 0 00-.364 1.118l1.374 4.223c.3.921-.755 1.688-1.54 1.118l-3.6-2.61a1 1 0 00-1.176 0l-3.6 2.61c-.784.57-1.838-.197-1.54-1.118l1.374-4.223a1 1 0 00-.364-1.118l-3.6-2.61c-.783-.57-.381-1.81.588-1.81h4.455a1 1 0 00.95-.69l1.374-4.223z" />
+                                </svg>
+                                <svg className="w-5 h-5 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+                                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.374 4.223a1 1 0 00.95.69h4.455c.969 0 1.371 1.24.588 1.81l-3.6 2.61a1 1 0 00-.364 1.118l1.374 4.223c.3.921-.755 1.688-1.54 1.118l-3.6-2.61a1 1 0 00-1.176 0l-3.6 2.61c-.784.57-1.838-.197-1.54-1.118l1.374-4.223a1 1 0 00-.364-1.118l-3.6-2.61c-.783-.57-.381-1.81.588-1.81h4.455a1 1 0 00.95-.69l1.374-4.223z" />
+                                </svg>
+                                <svg className="w-5 h-5 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+                                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.374 4.223a1 1 0 00.95.69h4.455c.969 0 1.371 1.24.588 1.81l-3.6 2.61a1 1 0 00-.364 1.118l1.374 4.223c.3.921-.755 1.688-1.54 1.118l-3.6-2.61a1 1 0 00-1.176 0l-3.6 2.61c-.784.57-1.838-.197-1.54-1.118l1.374-4.223a1 1 0 00-.364-1.118l-3.6-2.61c-.783-.57-.381-1.81.588-1.81h4.455a1 1 0 00.95-.69l1.374-4.223z" />
+                                </svg>
+                                <svg className="w-5 h-5 text-gray-300" fill="currentColor" viewBox="0 0 20 20">
+                                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.374 4.223a1 1 0 00.95.69h4.455c.969 0 1.371 1.24.588 1.81l-3.6 2.61a1 1 0 00-.364 1.118l1.374 4.223c.3.921-.755 1.688-1.54 1.118l-3.6-2.61a1 1 0 00-1.176 0l-3.6 2.61c-.784.57-1.838-.197-1.54-1.118l1.374-4.223a1 1 0 00-.364-1.118l-3.6-2.61c-.783-.57-.381-1.81.588-1.81h4.455a1 1 0 00.95-.69l1.374-4.223z" />
+                                </svg>
+                              </div>
+                            </div>
+                            <p className="text-sm text-gray-600">Basado en 600 reseñas.</p>
+                            <p className="text-sm text-gray-500 mt-2">powered by <span className="text-gray-700 font-semibold">Google</span></p>
+                          </div>
+                        </div>
+                        <a target="_blank" href="https://www.google.com/search?hl=en-CO&gl=co&q=Gallery+Hotel+Medell%C3%ADn,+Cl.+47+%2341-55,+La+Candelaria,+Medell%C3%ADn,+La+Candelaria,+Medell%C3%ADn,+Antioquia&ludocid=13557792269951917256&lsig=AB86z5Xi3QsXtAp5vxVbKW_n47sq#lrd=0x8e4428575a0dc0d1:0xbc26f43cbd055cc8,3" className="mt-4 w-full py-2 bg-blue-600 text-white rounded-lg flex items-center justify-center">
+
+                          valóranos en <span className="ml-1 font-semibold"><svg viewBox="0 0 512 512" height="18" width="18"><g fill="none" fill-rule="evenodd"><path d="M482.56 261.36c0-16.73-1.5-32.83-4.29-48.27H256v91.29h127.01c-5.47 29.5-22.1 54.49-47.09 71.23v59.21h76.27c44.63-41.09 70.37-101.59 70.37-173.46z" fill="#4285f4"></path><path d="M256 492c63.72 0 117.14-21.13 156.19-57.18l-76.27-59.21c-21.13 14.16-48.17 22.53-79.92 22.53-61.47 0-113.49-41.51-132.05-97.3H45.1v61.15c38.83 77.13 118.64 130.01 210.9 130.01z" fill="#34a853"></path><path d="M123.95 300.84c-4.72-14.16-7.4-29.29-7.4-44.84s2.68-30.68 7.4-44.84V150.01H45.1C29.12 181.87 20 217.92 20 256c0 38.08 9.12 74.13 25.1 105.99l78.85-61.15z" fill="#fbbc05"></path><path d="M256 113.86c34.65 0 65.76 11.91 90.22 35.29l67.69-67.69C373.03 43.39 319.61 20 256 20c-92.25 0-172.07 52.89-210.9 130.01l78.85 61.15c18.56-55.78 70.59-97.3 132.05-97.3z" fill="#ea4335"></path><path d="M20 20h472v472H20V20z"></path></g></svg></span>
+                        </a>
+                      </div>
+                            </div>
               <div className="flex overflow-x-scroll space-x-4">
                 {reviews.map((review) => (
                   <div key={review.id} className="min-w-[250px] max-w-[250px] p-4 bg-white shadow rounded-lg">
@@ -360,21 +401,21 @@ const subtotal = getCartSubtotal()
                     </div>
                     <div className="flex items-center mb-2">
                       {[...Array(5)].map((star, index) => (
-                        <svg
-                          key={index}
-                          className={`w-5 h-5 ${index < review.rating ? 'text-yellow-400' : 'text-gray-300'}`}
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
-                        >
-                          <path d="M9.049 2.927C9.3 2.61 9.7 2.61 9.951 2.927l1.668 2.286c.166.227.436.37.725.388l2.659.264c.38.038.534.514.268.773l-1.897 1.893c-.184.184-.27.45-.223.709l.646 2.742c.085.359-.299.652-.648.475L10 13.1l-2.569 1.34c-.348.177-.733-.116-.648-.475l.646-2.742c.047-.259-.04-.525-.223-.709L4.309 6.64c-.266-.259-.112-.735.268-.773l2.659-.264c.289-.018.559-.161.725-.388l1.668-2.286z" />
-                        </svg>
+                        
+                        <svg className={`w-5 h-5  ${index < review.rating ?" text-orange-500" :"text-gray-300"} `} fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.374 4.223a1 1 0 00.95.69h4.455c.969 0 1.371 1.24.588 1.81l-3.6 2.61a1 1 0 00-.364 1.118l1.374 4.223c.3.921-.755 1.688-1.54 1.118l-3.6-2.61a1 1 0 00-1.176 0l-3.6 2.61c-.784.57-1.838-.197-1.54-1.118l1.374-4.223a1 1 0 00-.364-1.118l-3.6-2.61c-.783-.57-.381-1.81.588-1.81h4.455a1 1 0 00.95-.69l1.374-4.223z" />
+                      </svg>
+                       
                       ))}
                     </div>
                     <p className="text-gray-700">{review.text}</p>
                   </div>
                 ))}
               </div>
+
+
             </div>
+          </div>
 
           <div ref={roomEventsSectionRef} >
             <Events  />

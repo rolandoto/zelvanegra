@@ -34,7 +34,7 @@ const FormCheckout=({Country,handleSubmit,loading,formErrors,handleChange,formVa
                                 <div className=" border-gray-300 rounded-lg">
                                 <div className="text-right items-center">
                                     <p className="text-sm text-gray-600 mb-1">Total de la reserva</p>
-                                    <p className="text-2xl font-bold mb-2">{parseInt(subtotal).toLocaleString()} COP</p>
+                                    <p className="text-2xl font-bold mb-2">{parseInt(subtotal).toLocaleString('es-CO')} cop</p>
                                 </div>
                             </div>
                         </div>
