@@ -243,7 +243,7 @@ export const IconsRiBankFill =() =>{
 }
 
 
-export const IconsMdEmail =() =>{
-    return <MdOutlineEmail   color="white" className="mr-2" fontSize={30}  />
+export const IconsMdEmail =({color}) =>{
+    return <MdOutlineEmail   color={color} className="mr-2" fontSize={30}  />
 }
 

@@ -1,17 +1,10 @@
 import { useAppDispatch } from "../Hooks/Redux"
-import { loading,setHotel,setError } from "../reducers/ApiHotelByIdReduccers"
+import { loading,setHotel,setError,setListHotel,setlistoHotelError,loadingHotel } from "../reducers/ApiHotelByIdReduccers"
 import HttpClient from "../HttpClient"
-import {toast} from "sonner"
-import  AutoProvider  from "../UseContext/UseContext"
-import { useContext } from "react"
 
 const UseHotelActions =() =>{
 
     const dispatch =  useAppDispatch()
-
-    const { 
-        setContextMenuPosition,
-        } = useContext(AutoProvider)
 
     const getHotel =async({id,desde,hasta,counPeople}) =>{
         dispatch(loading())
@@ -27,9 +20,26 @@ const UseHotelActions =() =>{
          
         }
     }
+
+    const getListHotel = async() =>{
+        dispatch(loadingHotel())
+        try {
+            const response  = await   HttpClient.getListoHotel()
+            if(response){
+                dispatch(setListHotel(response)) 
+            }else{
+                dispatch(setlistoHotelError("no found")) 
+            }
+        } catch (error) {
+            dispatch(setlistoHotelError("no found")) 
+         
+        }
+    }
+
     
     return {
-        getHotel
+        getHotel,
+        getListHotel
     }
 
 }

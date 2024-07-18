@@ -17,7 +17,7 @@ import UseCalenderSearch from "../../Hooks/UseCalenderSearch";
 import Header from "../../Component/Header/Header";
 import EmpyCart from "../../Component/EmpyCart/EmpyCart";
 import Cart from "../../Component/Cart/Cart";
-import { IconCiShoppingCart, IconRiCloseLargeLine } from "../../Component/Icons/Icons";
+import { IconRiCloseLargeLine } from "../../Component/Icons/Icons";
 import UseCart from "../../Hooks/UseCart";
 import LoadingOverlay from "../../Component/LoadingCreateReserva/LoadingOverlay";
 import HeaderAccomodation from "../../Component/HeaderAccomodation/HeaderAccomodation";
@@ -45,9 +45,8 @@ const Accommodation = () => {
     childrem ,
     getClassNameForDate} =  UseCalenderSearch()
 
-    const {getCartSubtotal,getCartTotalCount} = UseCart()
+    const {getCartSubtotal} = UseCart()
     const subtotal = getCartSubtotal()
-    const totalCount = getCartTotalCount()
     const [checkbox,setCheckBox] =useState(false)
     const formattedStartDate = moment(state[0].startDate).format('YYYY-MM-DD');
     const formattedEndDate = moment(state[0].endDate).format('YYYY-MM-DD');
@@ -57,7 +56,7 @@ const Accommodation = () => {
     const PostHotelByIdHotel = useCallback(async () => {
         setContextMenuPosition(false);
         setContextShowMenuPeople(false)
-        await getHotel({ id: 4, desde:formattedStartDate, hasta: formattedEndDate,counPeople:totalCountAdults });
+        await getHotel({ id: 10, desde:formattedStartDate, hasta: formattedEndDate,counPeople:totalCountAdults });
     }, [formattedStartDate,formattedEndDate,totalCountAdults]);
 
     useEffect(() =>{

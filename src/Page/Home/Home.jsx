@@ -21,6 +21,8 @@ import moment from 'moment';
 import 'moment/locale/es';
 import UseCart from "../../Hooks/UseCart";
 import Cart from "../../Component/Cart/Cart";
+import UseHotelActions from "../../Actions/useHotelsActions";
+import { useSelector } from "react-redux";
 
 const Home =() =>{
   const navigate = useNavigate();
@@ -31,8 +33,31 @@ const Home =() =>{
     window.scrollTo(0, 0);
 }, []);
 
+  const {getCartSubtotal} = UseCart()
+  const {hotelList,loadingHotel,errorHotel}= useSelector((state) => state.Hotel)
+  const {getListHotel} =UseHotelActions()
 
-const {getCartSubtotal,getCartTotalCount} = UseCart()
+  const fetchDate =async() =>{
+    await getListHotel()
+  }
+
+  useEffect(() =>{
+    fetchDate()
+  },[])
+
+  const FillContent =()=>{
+    if(errorHotel){
+      return   <h1>Error en el servicio</h1>
+              }
+  }
+
+  const FindIdHotel=(hotel) =>{
+		return hotel.id_hotel ==4
+	}
+	
+	const hotel = hotelList.find(FindIdHotel)
+
+
 const subtotal = getCartSubtotal()
 
   const reviews = [
@@ -80,17 +105,17 @@ const subtotal = getCartSubtotal()
     }
   ];
   
-    const features = [
-        { icon: <IconsFaGlassMartini/>, title: 'Cóctel de bienvenida' },
-        { icon: <IconsGiForkKnifeSpoon/>, title: 'Desayuno incluido' },
-        { icon: <IconsFaConciergeBell/>, title: 'Recepción 24 horas' },
-        { icon: <IconsaCar/>, title: 'Variedad de transporte', description: 'Metro, tranvía, autobús, taxi' },
-        { icon: <IconsRiBankFill/>, title: 'Vida cultural y nocturna', description: 'Bares, museos, restaurantes' },
-        { icon: <IconsFaSquareParking/>, title: 'Parqueadero gratis*', description: 'Sujeto a disponibilidad' },
-        { icon: <IconsGiForkKnifeSpoon/>, title: 'Restaurante - Bar  ', description: ' con vista panorámica' },
-        { icon: <IconsFaStore/>, title: 'Alianzas comerciales', description: 'Servicio de taxi, gimnasio, tours, médico, comunicaciones.' },
-        { icon: <IconsFaBanSmoking/>, title: 'Espacios libre de humo', description: "" },
-      ];
+  const features = [
+      { icon: <IconsFaGlassMartini/>, title: 'Cóctel de bienvenida' },
+      { icon: <IconsGiForkKnifeSpoon/>, title: 'Desayuno incluido' },
+      { icon: <IconsFaConciergeBell/>, title: 'Recepción 24 horas' },
+      { icon: <IconsaCar/>, title: 'Variedad de transporte', description: 'Metro, tranvía, autobús, taxi' },
+      { icon: <IconsRiBankFill/>, title: 'Vida cultural y nocturna', description: 'Bares, museos, restaurantes' },
+      { icon: <IconsFaSquareParking/>, title: 'Parqueadero gratis*', description: 'Sujeto a disponibilidad' },
+      { icon: <IconsGiForkKnifeSpoon/>, title: 'Restaurante - Bar  ', description: ' con vista panorámica' },
+      { icon: <IconsFaStore/>, title: 'Alianzas comerciales', description: 'Servicio de taxi, gimnasio, tours, médico, comunicaciones.' },
+      { icon: <IconsFaBanSmoking/>, title: 'Espacios libre de humo', description: "" },
+    ];
 
       const roomSectionRef = useRef(null);
       const roomEventsSectionRef = useRef(null);
@@ -208,13 +233,14 @@ const subtotal = getCartSubtotal()
 
     return (
         <div>
+          {FillContent}
            <Header  scrollToRoomSectionEvent={scrollToRoomSectionEvent}   />
            <div className="relative bg-cover bg-center h-[650px]" style={{ 
                 backgroundImage: `url(https://raw.githubusercontent.com/rolandoto/image-pms/main/1155970062-4-page-slider-1-Habitacion-todos-jacuzzi-ventilador-centro-de-medellin-antioquia-colombia.webp)`,}}>
             <div className="absolute inset-0 bg-black opacity-50"></div>
             <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white">
                 <h1 className="text-4xl md:text-6xl lg:text-6xl font-lora">
-                    Gallery Hotel
+                  {loadingHotel ?"cargando " :hotel?.nombre}  
                 </h1>
                 <p className="mt-2 text-base md:text-xl lg:text-3xl font-lora font-normal">
                     Más que un hotel, una experiencia artística

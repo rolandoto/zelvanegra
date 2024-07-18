@@ -18,7 +18,7 @@ const IconAccomodation =({title}) =>{
 
                 {title != "Box Ventilador"  &&  
                     <div className="flex items-center" >
-                    <IconsSnow  /> <span span className="ml-2">Aire Acondicionado</span>
+                    <IconsSnow  /> <span span className="ml-2">Aire acondicionado</span>
                     </div> }  
                     <div className="flex items-center" >
                         <IconsPiBedThin /> <span span className="ml-2">Cama matrimonial</span>

@@ -26,7 +26,7 @@ const FormCheckout=({Country,handleSubmit,loading,formErrors,handleChange,formVa
                                 <h2 className="text-xl font-bold mb-4">Resumen de tu reserva</h2>
                                     <div className="mb-4">
                                         <h3 className="text-lg font-semibold">Hotel Gallery Medellín</h3>
-                                        <p className="text-gray-600">Cra. 37 #10A 29 - Medellín</p>
+                                        <p className="text-gray-600">Cl. 47 #41 - 55, Medellín, Colombia</p>
                                     </div>
                                     {cart.map((itemCardRoom,e) =>(
                                     <CardCheckout key={e}   {...itemCardRoom} />
@@ -44,7 +44,6 @@ const FormCheckout=({Country,handleSubmit,loading,formErrors,handleChange,formVa
                     </div>
                     </div>
             </div>)
-
 }
 
 export default FormCheckout

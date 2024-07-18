@@ -17,7 +17,6 @@ import Footer from '../../Component/Footer/Footer';
 const Checkout  =() =>{
     useFetchData();
 
-
     useEffect(() => {
         // Scrolls to the top of the document on component mount
         window.scrollTo(0, 0);
@@ -60,10 +59,10 @@ const Checkout  =() =>{
 
     const [isOpen, setIsOpen] = useState(false);
 
-    const togglePanel = () => {
+    /*const togglePanel = () => {
       setIsOpen(!isOpen);
     };
-
+*/
 
     const FillContent =() =>{
         if(!subtotal > 0){
@@ -85,7 +84,6 @@ const Checkout  =() =>{
 
     return (<>
         <Header />
-        
         {loadingCart && <LoadingOverlay title={"Cargando..."} />}
         {loading && <LoadingOverlay title={"Creando reserva..."} />}  
         <HeaderCheckout />
