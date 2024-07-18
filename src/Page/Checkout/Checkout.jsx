@@ -28,6 +28,7 @@ const Checkout  =() =>{
     const subtotal = getCartSubtotal()
     const {PostCreateHotel} =useReservationCreate()
     const {Country,loading}= useSelector(state => state.Reservation);
+    const {loadingCart} = useSelector(state => state.Cart);
     const cardNumberArray = formValues.cardNumber.split(" ");
     const cardNumberString = cardNumberArray.join("");
     const now = moment().format('YYYY-MM-DD');
@@ -57,7 +58,11 @@ const Checkout  =() =>{
         } 
     };
 
-   
+    const [isOpen, setIsOpen] = useState(false);
+
+    const togglePanel = () => {
+      setIsOpen(!isOpen);
+    };
 
 
     const FillContent =() =>{
@@ -80,10 +85,14 @@ const Checkout  =() =>{
 
     return (<>
         <Header />
+        
+        {loadingCart && <LoadingOverlay title={"Cargando..."} />}
         {loading && <LoadingOverlay title={"Creando reserva..."} />}  
         <HeaderCheckout />
         <Toaster position="bottom-right"  richColors   />  
             {FillContent()}
+
+          
             <Footer />
             </>)
 

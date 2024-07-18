@@ -145,7 +145,7 @@ const Accommodation = () => {
        * 
        */
 
-    return (<div>
+    return (<div >
            
             <Toaster position="bottom-right"  richColors   />
             {loadingCart && <LoadingOverlay title={"Cargando..."} />}
@@ -273,7 +273,6 @@ const Accommodation = () => {
                 </SectionSearch>
                 <div >
                     {FillContent()}
-                  
                     <Footer />
                 </div>
                

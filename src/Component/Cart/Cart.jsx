@@ -54,6 +54,8 @@ const Cart = () => {
       </aside>
      * 
      */
+
+      
     return (
         <div className="fixed z-50 cart-shadow   bottom-0 left-0 right-0 flex flex-col md:flex-row items-center justify-between  p-4  rounded-t-lg">
         <div className="flex items-center">
