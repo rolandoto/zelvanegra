@@ -37,7 +37,7 @@ top:${(props) => `${props.top}px`};
 position: absolute;
 left:  400px;
 width: 300px;
-height: 170px;
+height: 120px;
 right: 0px;
 margin: auto;
 z-index: 1000;

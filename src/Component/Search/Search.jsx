@@ -26,16 +26,7 @@ const Search =({contextShowMenuPeople,
                     </StyleGroup>
                   </StyledMenuItem>
 
-                  <StyledMenuItem>
-                    <StyleTitleHotel>Niños</StyleTitleHotel>
-                    <StyleGroup>
-                    <StyledMenuItemNumber>
-                      <StyleSpan  onClick={handDecreaseChildren} > <CiCircleMinus color="#f97316"  fontSize={50} /> </StyleSpan>
-                        <StyleNumberPeople  value={childrem}  disabled={true}  maxlength="30" minLength={2} min="0"  placeholder="0" />
-                        <StyleSpan onClick={handChangeChildrem} > <CiCirclePlus color="#f97316" fontSize={50} /> </StyleSpan>
-                        </StyledMenuItemNumber>
-                    </StyleGroup>
-                  </StyledMenuItem>
+                  
                   <StyledMenuItemButton>
                       <button
                           onClick={() => setContextShowMenuPeople(false)}
