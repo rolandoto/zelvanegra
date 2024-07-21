@@ -19,18 +19,16 @@ const Search =({contextShowMenuPeople,
                     <StyleTitleHotel>Adultos</StyleTitleHotel>
                     <StyleGroup>
                     <StyledMenuItemNumber>
-                      <StyleSpan onClick={handDecreaseAdults} > <CiCircleMinus color="#16813d"  fontSize={50} /> </StyleSpan>
+                      <StyleSpan onClick={handDecreaseAdults} > <CiCircleMinus color="black"  fontSize={50} /> </StyleSpan>
                         <StyleNumberPeople maxlength="30" disabled={true} value={adults} minLength={2} min="0" placeholder="0" />
-                        <StyleSpan onClick={handChangeAdults}  > <CiCirclePlus color="#16813d" fontSize={50} /> </StyleSpan>
+                        <StyleSpan onClick={handChangeAdults}  > <CiCirclePlus color="black" fontSize={50} /> </StyleSpan>
                         </StyledMenuItemNumber>
                     </StyleGroup>
                   </StyledMenuItem>
-
-                  
                   <StyledMenuItemButton>
                       <button
                           onClick={() => setContextShowMenuPeople(false)}
-                          className=" Button-Search w-[150px] bg-green-700 text-white py-2  rounded hover:bg-green-600 transition duration-200">
+                          className=" Button-Search w-[150px] bg-black text-white py-2  rounded hover:bg-black transition duration-200">
                           Buscar
                       </button>
                   </StyledMenuItemButton>   

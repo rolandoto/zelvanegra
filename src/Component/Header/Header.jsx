@@ -16,7 +16,7 @@ const Header =({scrollToRoomSectionEvent}) =>{
                     <Link to="/">
                         <img 
                         className="w-[100px]" 
-                        src="https://raw.githubusercontent.com/rolandoto/image-pms/main/Logos/Hotel%20Natural-03.png" 
+                        src="https://github.com/rolandoto/image-pms/blob/main/Logos/47-street.png?raw=true" 
                         alt="Logo de Gallery Hotel" 
                         width="100" 
                         height="100"
@@ -32,8 +32,8 @@ const Header =({scrollToRoomSectionEvent}) =>{
                     <div className="hidden lg:block " >
                         <a 
                          target="_blank"
-                         href="https://www.google.com/maps?ll=6.247562,-75.564675&z=16&t=m&hl=es&gl=CO&mapclient=embed&cid=8506320743423922893"
-                        className="text-white bg-green-700 w-[150px] p-4 rounded hover:bg-green-700">Cómo llegar</a>
+                         href="https://www.google.com/maps/place/Mystic+loft+37/@6.208239,-75.56752,15z/data=!4m9!3m8!1s0x8e4429eddf1b0131:0x3bfecc3b68c5468d!5m2!4m1!1i2!8m2!3d6.2082389!4d-75.5675204!16s%2Fg%2F11jyjhqc95?hl=es-419&entry=ttu"
+                        className="text-white bg-black w-[150px] p-4 rounded hover:bg-black">Cómo llegar</a>
                     </div>
 
                     <div className="lg:hidden" >
@@ -66,15 +66,15 @@ const Header =({scrollToRoomSectionEvent}) =>{
                             <Link to="/" className="text-black text-[16px] font-normal  hover:text-blakc" >
                                 Inicio
                             </Link>
-                            <Link to="/Events" className="text-black text-[16px] font-normal  hover:text-green-700"  >
+                            <Link to="/Events" className="text-black text-[16px] font-normal  hover:text-black"  >
                                 Próximos eventos
                             </Link>
-                            <Link  to="/Accomodation" className="text-black text-[16px] font-normal  hover:text-green-700" >
+                            <Link  to="/Accomodation" className="text-black text-[16px] font-normal  hover:text-blakc" >
                                 Reservas
                             </Link>
                             <a  target="_blank"
-                                href="https://www.google.com/maps?ll=6.247562,-75.564675&z=16&t=m&hl=es&gl=CO&mapclient=embed&cid=8506320743423922893"
-                                className="text-white bg-green-700 w-full p-4 rounded hover:bg-green-700"   
+                                href="https://www.google.com/maps/place/Mystic+loft+37/@6.208239,-75.56752,15z/data=!4m9!3m8!1s0x8e4429eddf1b0131:0x3bfecc3b68c5468d!5m2!4m1!1i2!8m2!3d6.2082389!4d-75.5675204!16s%2Fg%2F11jyjhqc95?hl=es-419&entry=ttu"
+                                className="text-white bg-black w-full p-4 rounded hover:bg-black"   
                             >
                                 Cómo llegar
                             </a>

@@ -52,7 +52,7 @@ const Home =() =>{
   }
 
   const FindIdHotel=(hotel) =>{
-		return hotel.id_hotel ==3
+		return hotel.id_hotel ==2
 	}
 	
 	const hotel = hotelList.find(FindIdHotel)
@@ -222,18 +222,19 @@ const subtotal = getCartSubtotal()
     ];
 
     const rooms = [
-      {  title: 'Room Clásica', price:75000 , image:"https://grupo-hoteles.com/storage/app/3/rooms/1104968326-7-rooms-slider-1-clasica_habitacion_hotel_natural_medellin_centro_antioquia_colombia.webp", 
-          features: ['Cama grande', 'Baño privado con ducha', 'Wi-Fi gratuito', 'Smart TV'] },
-      { title: 'Room Grupal Camarote Doble',price:250000, image: "https://grupo-hoteles.com/storage/app/3/rooms/309469919-8-rooms-slider-1-IMG_3679-b.JPG", 
-        features: ['Camarote', 'Baño privado con ducha', 'Wi-Fi gratuito', 'Smart TV','ventilador'] },
-      { title: 'Room Bañera',price:99000, image: "https://grupo-hoteles.com/storage/app/3/rooms/1984005543-9-rooms-slider-1-253037086-7-rooms-slider-2-habitacion%20clasica_natural_hotel_medellin_centro_antioquia_colombia.png", 
-      features: ['Cama para dos personas', 'Baño privado con ducha', 'Wi-Fi gratuito', 'Smart TV','Ventilador'] },
-      { title: 'Room Familiar Camarote',price:150000, image: "https://grupo-hoteles.com/storage/app/3/rooms/888042367-74-rooms-slider-1-habitacion%20triple4.jpg", 
-      features: ["Cama familiar", 'Baño privado con ducha', 'Wi-Fi gratuito', 'Smart TV','Ventilador'] },
-      { title: 'Room Twin',price:89000, image: "https://grupo-hoteles.com/storage/app/3/rooms/845929305-75-rooms-slider-1-1771014290-75-rooms-slider-2-WhatsApp%20Image%202023-06-07%20at%201.58.42%20PM%20(1).jpeg", 
-      features: ["Cama dos personas", 'Baño privado con ducha', 'Wi-Fi gratuito', 'Smart TV','Ventilador'] },
-      { title: 'Room Deluxe',price:130000, image: "https://grupo-hoteles.com/storage/app/3/rooms/1477877824-88-rooms-slider-1-WhatsApp%20Image%202023-10-02%20at%209.23.01%20AM%20(2).jpeg", 
-      features: ["Cama dos personas", 'Baño privado con ducha', 'Wi-Fi gratuito', 'Smart TV','Ventilador'] },
+      {title: 'Room Deluxe', price:350000 , image:"https://grupo-hoteles.com/storage/app/2/rooms/149724843-6-rooms-slider-1-Habitacion-Delux-Hotel-en-Medellin-Street-47-Hotel-c1-01.webp", 
+          features: ['Cama grande', 'Baño privado con ducha', 'Wi-Fi gratuito', 'Smart TV',"jacuzzi"] },
+      {title: 'Room Clásica Ventilador',price:119000, image: "https://grupo-hoteles.com/storage/app/2/rooms/1703605246-1-rooms-slider-1-habitacion-Clasica-hoteles-en-Medellin-02-01.webp", 
+        features: ['Camarote', 'Baño privado con ducha', 'Wi-Fi gratuito', 'Smart TV','Ventilador'] },
+      {title: 'Room Estandar Aire',price:129000, image: "https://grupo-hoteles.com/storage/app/2/rooms/1860922523-2-rooms-slider-2-habitacion-bussines-hoteles-en-Medellin-Slider-1.webp", 
+        features: ['Camarote', 'Baño privado con ducha', 'Wi-Fi gratuito', 'Smart TV','Aire Acondicionado']},
+       {title: 'Room Jacuzzi',price:170000, image: "https://grupo-hoteles.com/storage/app/2/rooms/489465130-4-rooms-slider-2-Habitacion-Jacuzzi-Hotel-en-Medellin-Street-Slider-2.webp", 
+       features: ['Camarote', 'Baño privado con ducha', 'Wi-Fi gratuito', 'Smart TV','Aire Acondicionado']},
+      {title: 'Room Familiar',price:210000, image: "https://grupo-hoteles.com/storage/app/2/rooms/1587970644-3-rooms-slider-1-Habitacion-Grupal-Hotel-en-Medellin-Street-47-Hotel-01.webp", 
+       features: ['Camarote', 'Baño privado con ducha', 'Wi-Fi gratuito', 'Smart TV','Aire Acondicionado']},
+      {title: 'Room VIP',price:280000, image: "https://grupo-hoteles.com/storage/app/2/rooms/1579559628-5-rooms-slider-1-Habitacion-VIP-Hotel-en-Medellin-Street-47-Hotel-c1-01.webp", 
+       features: ['Cama matrimonial', 'Baño privado con ducha', 'Wi-Fi gratuito', 'Smart TV','Aire Acondicionado']
+      },
     ];
 
     const monthsToShow = window.innerWidth >= 700 ? 2 : 1; // Cambia 768 según tu punto de ruptura deseado
@@ -317,7 +318,7 @@ const subtotal = getCartSubtotal()
           {FillContent}
            <Header  scrollToRoomSectionEvent={scrollToRoomSectionEvent}   />
            <div className="relative bg-cover bg-center h-[650px]" style={{ 
-                backgroundImage: `url(https://grupo-hoteles.com/storage/app/3/page/2135632044-3-page-slider-1-zona_comun_habitacion_natural_hotel_medellin_centro_antioquia.webp)`,}}>
+                backgroundImage: `url(https://grupo-hoteles.com/storage/app/2/page/1205002298-2-page-slider-1-habitacion-deluxe-centro-de-medellin-antioquia-colombia.webp)`,}}>
             <div className="absolute inset-0 bg-black opacity-15"></div>
             <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white">
                 <h1 className="text-4xl md:text-6xl lg:text-6xl font-lora">
@@ -326,7 +327,7 @@ const subtotal = getCartSubtotal()
                 <p className="mt-2 text-base md:text-xl lg:text-3xl font-lora font-normal">
                     Más que un hotel, una experiencia artística
                 </p>
-                <button className="mt-6 bg-green-700 text-white px-6 py-3 rounded-lg hover:bg-green-700" onClick={scrollToRoomSection}>
+                <button className="mt-6 bg-black text-white px-6 py-3 rounded-lg hover:bg-black" onClick={scrollToRoomSection}>
                     Ver habitaciones
                 </button>
             </div>
@@ -403,7 +404,7 @@ const subtotal = getCartSubtotal()
                      
                     </div>
                     <button
-                      className="mt-6 bg-green-700 text-white px-6 py-3 rounded-lg hover:bg-green-700"
+                      className="mt-6 bg-black text-white px-6 py-3 rounded-lg hover:bg-black"
                       onClick={(e) => setContextMenuPosition(false) }
                       style={{
                         position: 'absolute',

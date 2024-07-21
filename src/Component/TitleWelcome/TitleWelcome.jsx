@@ -7,13 +7,13 @@ const TitleWelcome  =() =>{
             <div className="flex flex-col  mt-[260px] lg:mt-24  mx-auto max-w-7xl  md:flex-row items-center my-12 p-4">
                <div className="md:w-1/2 p-4">
                <img
-                    src="https://grupo-hoteles.com/storage/app/3/rooms/1104968326-7-rooms-slider-1-clasica_habitacion_hotel_natural_medellin_centro_antioquia_colombia.webp"
+                    src="https://grupo-hoteles.com/storage/app/2/rooms/1703605246-1-rooms-slider-1-habitacion-Clasica-hoteles-en-Medellin-02-01.webp"
                     alt="Room"
                     className="w-full h-auto rounded-lg shadow-lg"
                 />
                     </div>
                 <div className="md:w-1/2 p-4">
-                    <h2 className="text-3xl font-normal text-green-700 mb-4 font-lora text-[30px] text-center ">¡Donde el arte y la hospitalidad se unen!</h2>
+                    <h2 className="text-3xl font-normal text-black mb-4 font-lora text-[30px] text-center ">¡Donde el arte y la hospitalidad se unen!</h2>
                 <p className="text-gray-700 text-justify	 mb-4">
                     Bienvenido a Gallery Hotel, ubicado en el corazón del vibrante centro de Medellín. Inspirado en la rica cultura callejera de la ciudad, nuestro hotel ofrece un espacio único donde podrás conectarte con el arte urbano y disfrutar de una experiencia memorable.
                 </p>

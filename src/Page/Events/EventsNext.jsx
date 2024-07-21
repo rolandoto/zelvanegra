@@ -11,7 +11,7 @@ const EventsNext =()  =>{
     return (<>
              <Header/>
                <div className="relative bg-cover bg-center h-[410px]" style={{ 
-                backgroundImage: `url(https://grupo-hoteles.com/storage/app/3/page/2135632044-3-page-slider-1-zona_comun_habitacion_natural_hotel_medellin_centro_antioquia.webp)`,}}>
+                backgroundImage: `url(https://grupo-hoteles.com/storage/app/2/page/1205002298-2-page-slider-1-habitacion-deluxe-centro-de-medellin-antioquia-colombia.webp)`,}}>
                     <div className="absolute inset-0 bg-black opacity-15"></div>
                     <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white">
                         <h1 className="text-4xl md:text-6xl lg:text-6xl font-lora">

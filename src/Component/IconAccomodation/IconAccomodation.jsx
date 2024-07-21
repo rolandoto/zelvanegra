@@ -20,7 +20,10 @@ const IconAccomodation =({title}) =>{
        */
 
     return (  <ContainerIcons  >
-
+                        {title != "Clásica Ventilador"  &&  
+                    <div className="flex items-center" >
+                    <IconsSnow  /> <span span className="ml-2">Aire acondicionado</span>
+                    </div> }
                 
                     <div className="flex items-center" >
                         <IconsPiBedThin /> <span span className="ml-2">Cama</span>

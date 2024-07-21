@@ -69,7 +69,7 @@ const DetailEvents =() =>{
 
     return (<>
                <Header/>
-               <div className="relative bg-cover bg-center h-[310px]" style={{ 
+               <div className="relative bg-cover bg-center h-[410px]" style={{ 
                 backgroundImage: `url(https://grupo-hoteles.com/storage/app/3/page/2135632044-3-page-slider-1-zona_comun_habitacion_natural_hotel_medellin_centro_antioquia.webp)`,}}>
                     <div className="absolute inset-0 bg-black opacity-15"></div>
                     <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white">
@@ -81,7 +81,7 @@ const DetailEvents =() =>{
 
                 {SearFindEvents ? 
                 <div className="mx-auto max-w-4xl p-6 mb-24">
-                    <h1 className="text-[30px] text-center text-green-700  font-lora  mb-6">{SearFindEvents.title}</h1>
+                    <h1 className="text-[30px] text-center text-black-700  font-lora  mb-6">{SearFindEvents.title}</h1>
                         <div className=" w-full p-4">
                             <img
                                     src={SearFindEvents.imageUrl}
