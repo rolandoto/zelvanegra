@@ -6,7 +6,7 @@ const AccordionAsk =({faqs}) =>{
 
     return ( <section className=" flex flex-col items-center  max-w-7xl md:flex-row container mx-auto py-12">
                 <div className="md:w-1/2 px-4 ">
-                    <h2 className="text-[30px] text-center  font-lora text-orange-500 mb-6">Preguntas frecuentes</h2>
+                    <h2 className="text-[30px] text-center  font-lora text-green-700 mb-6">Preguntas frecuentes</h2>
                     <div>
                         {faqs.map((faq, index) => (
                         <AccordionItem
@@ -18,7 +18,7 @@ const AccordionAsk =({faqs}) =>{
                     </div>
                 </div>
                 <div className="md:w-1/2 px-4 mt-8 md:mt-0">
-                    <img src="https://github.com/rolandoto/image-pms/blob/main/MG_8648-scaled.jpg?raw=true" alt="Hotel Building" className="w-[800px] object-cover h-[700px] rounded-md shadow-md" />
+                    <img src="https://grupo-hoteles.com/storage/app/3/page/2135632044-3-page-slider-1-zona_comun_habitacion_natural_hotel_medellin_centro_antioquia.webp" alt="Hotel Building" className="w-[800px] object-cover h-[700px] rounded-md shadow-md" />
                 </div>
             </section>)
 }

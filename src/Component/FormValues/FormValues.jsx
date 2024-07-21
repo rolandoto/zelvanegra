@@ -216,7 +216,7 @@ const FormValues =({handleSubmit,formErrors,handleChange,formValues,loading,Coun
                             
                                 className="form-checkbox h-5 w-5 text-gray-600"
                                 />
-                                <span className="ml-2 text-gray-700">He leído y acepto las <a target="_blank" href={pdf} className="text-orange-500">condiciones generales</a> (*)</span>
+                                <span className="ml-2 text-gray-700">He leído y acepto las <a target="_blank" href={pdf} className="text-green-700">condiciones generales</a> (*)</span>
                             </label>
                             {formErrors.termsAccepted && <p className="text-red-500 text-xs">{formErrors.termsAccepted}</p>}
                             </div>
@@ -229,7 +229,7 @@ const FormValues =({handleSubmit,formErrors,handleChange,formValues,loading,Coun
                                 type="checkbox" 
                                 className="form-checkbox h-5 w-5 text-gray-600"
                                 />
-                                <span className="ml-2 text-gray-700">He leído y acepto los <a  target="_blank" href={pdf} className="text-orange-500">Términos y Condiciones del sitio web</a> (*)</span>
+                                <span className="ml-2 text-gray-700">He leído y acepto los <a  target="_blank" href={pdf} className="text-green-700">Términos y Condiciones del sitio web</a> (*)</span>
                             </label>
                             {formErrors.siteTermsAccepted && <p className="text-red-500 text-xs">{formErrors.siteTermsAccepted}</p>}
                             </div>
@@ -241,7 +241,7 @@ const FormValues =({handleSubmit,formErrors,handleChange,formValues,loading,Coun
                             {loading ? "Cargando reserva" : "Finaliza tu reserva" } 
                             </Button>
                             <p className=" text-xs text-gray-500 mt-4">
-                            Al completar esta reserva, acuerdo que he leído y aceptado las <a target="_blank" href={pdf} className="text-orange-500">Políticas de Propiedad</a>.
+                            Al completar esta reserva, acuerdo que he leído y aceptado las <a target="_blank" href={pdf} className="text-green-700">Políticas de Propiedad</a>.
                         </p>
                     </div>
                     </form>)

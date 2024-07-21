@@ -10,13 +10,13 @@ const Header =({scrollToRoomSectionEvent}) =>{
     };
 
     return (
-            <nav className=" w-full z-40 items-center fixed p-3 bg-black shadow-md">
+            <nav className=" w-full z-40 items-center fixed p-3 bg-white shadow-md">
                     <div  className="  mx-auto flex items-center   justify-between   max-w-7xl" > 
                     <div className="text-3xl font-bold text-indigo-600">
                     <Link to="/">
                         <img 
                         className="w-[100px]" 
-                        src="https://github.com/rolandoto/image-pms/blob/main/Logo-Gallery-Colores.png?raw=true" 
+                        src="https://raw.githubusercontent.com/rolandoto/image-pms/main/Logos/Hotel%20Natural-03.png" 
                         alt="Logo de Gallery Hotel" 
                         width="100" 
                         height="100"
@@ -25,20 +25,20 @@ const Header =({scrollToRoomSectionEvent}) =>{
                     </div>
 
                     <div className=" hidden lg:block   space-x-4">
-                        <Link to="/" className="text-white cursor-pointer text-[16px] font-normal  hover:text-[#ff7a45]"  >Inicio</Link>
-                        <Link to="/Events" className="text-white cursor-pointer text-[16px] font-normal hover:text-[#ff7a45]"   >Próximos eventos</Link>
-                        <Link to="/Accomodation" className="text-white  cursor-pointer text-[16px] font-normal hover:text-[#ff7a45]"  >Reservas</Link>
+                        <Link to="/" className="text-black cursor-pointer text-[16px] font-normal  hover:text-black"  >Inicio</Link>
+                        <Link to="/Events" className="text-black cursor-pointer text-[16px] font-normal hover:text-black"   >Próximos eventos</Link>
+                        <Link to="/Accomodation" className="text-black  cursor-pointer text-[16px] font-normal hover:text-black"  >Reservas</Link>
                     </div>
                     <div className="hidden lg:block " >
                         <a 
                          target="_blank"
-                         href="https://www.google.com/maps/dir//Gallery+Hotel+Medell%C3%ADn,+Cl.+47+%2341-55,+La+Candelaria,+Medell%C3%ADn,+La+Candelaria,+Medell%C3%ADn,+Antioquia/@6.2405494,-75.5638233,14z/data=!4m9!4m8!1m0!1m5!1m1!1s0x8e4428575a0dc0d1:0xbc26f43cbd055cc8!2m2!1d-75.5631796!2d6.2437756!3e0?entry=ttu"
-                        className="text-white bg-orange-500 w-[150px] p-4 rounded hover:bg-orange-600">Cómo llegar</a>
+                         href="https://www.google.com/maps?ll=6.247562,-75.564675&z=16&t=m&hl=es&gl=CO&mapclient=embed&cid=8506320743423922893"
+                        className="text-white bg-green-700 w-[150px] p-4 rounded hover:bg-green-700">Cómo llegar</a>
                     </div>
 
                     <div className="lg:hidden" >
                     <button
-                        className="text-white focus:outline-none"
+                        className="text-black focus:outline-none"
                         onClick={toggleMenu}
                         aria-label="Toggle Menu"
                     >
@@ -63,18 +63,18 @@ const Header =({scrollToRoomSectionEvent}) =>{
             </div>
 
            {menuOpen &&  <div className="lg:hidden flex flex-col mt-4 space-y-2">
-                            <Link to="/" className="text-white text-[16px] font-normal  hover:text-[#ff7a45]" >
+                            <Link to="/" className="text-black text-[16px] font-normal  hover:text-blakc" >
                                 Inicio
                             </Link>
-                            <Link to="/Events" className="text-white text-[16px] font-normal  hover:text-[#ff7a45]"  >
+                            <Link to="/Events" className="text-black text-[16px] font-normal  hover:text-green-700"  >
                                 Próximos eventos
                             </Link>
-                            <Link  to="/Accomodation" className="text-white text-[16px] font-normal  hover:text-[#ff7a45]" >
+                            <Link  to="/Accomodation" className="text-black text-[16px] font-normal  hover:text-green-700" >
                                 Reservas
                             </Link>
                             <a  target="_blank"
-                                href="https://www.google.com/maps/dir//Gallery+Hotel+Medell%C3%ADn,+Cl.+47+%2341-55,+La+Candelaria,+Medell%C3%ADn,+La+Candelaria,+Medell%C3%ADn,+Antioquia/@6.2405494,-75.5638233,14z/data=!4m9!4m8!1m0!1m5!1m1!1s0x8e4428575a0dc0d1:0xbc26f43cbd055cc8!2m2!1d-75.5631796!2d6.2437756!3e0?entry=ttu"
-                                className="text-white bg-orange-500 w-full p-4 rounded hover:bg-orange-600"   
+                                href="https://www.google.com/maps?ll=6.247562,-75.564675&z=16&t=m&hl=es&gl=CO&mapclient=embed&cid=8506320743423922893"
+                                className="text-white bg-green-700 w-full p-4 rounded hover:bg-green-700"   
                             >
                                 Cómo llegar
                             </a>

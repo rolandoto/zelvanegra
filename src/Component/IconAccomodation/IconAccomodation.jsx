@@ -12,16 +12,18 @@ const IconAccomodation =({title}) =>{
         { title: 'Room Box Jacuzzi',price:169000, image: "https://grupo-hoteles.com/storage/app/4/rooms/1563326590-12-rooms-slider-1-habitacion_Jacuzzi_Hotel_en_Medellin_Gallery_Hotel-02.webp", features: ['Cama matrimonial', 'Baño privado con ducha', 'Wi-Fi gratuito', 'Smart TV','Aire Acondicionado','Jacuzzi'] },
       ];
 
-
-
-    return (  <ContainerIcons  >
-
-                {title != "Box Ventilador"  &&  
+      /**
+       * {title != "Box Ventilador"  &&  
                     <div className="flex items-center" >
                     <IconsSnow  /> <span span className="ml-2">Aire acondicionado</span>
                     </div> }  
+       */
+
+    return (  <ContainerIcons  >
+
+                
                     <div className="flex items-center" >
-                        <IconsPiBedThin /> <span span className="ml-2">Cama matrimonial</span>
+                        <IconsPiBedThin /> <span span className="ml-2">Cama</span>
                     </div>
                     <div className="flex items-center" >
                     <IconShower  /> <span className="ml-2">Baño privado con ducha</span>
