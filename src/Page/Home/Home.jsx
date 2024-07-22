@@ -52,7 +52,7 @@ const Home =() =>{
   }
 
   const FindIdHotel=(hotel) =>{
-		return hotel.id_hotel ==7
+		return hotel.id_hotel ==23
 	}
 	
 	const hotel = hotelList.find(FindIdHotel)
@@ -224,16 +224,15 @@ const subtotal = getCartSubtotal()
 
 
     const rooms = [
-      {title: 'Room Estándar superior', price:240000 , image:"https://grupo-hoteles.com/storage/app/7/rooms/702137671-37-rooms-slider-1-estandar_superior_lleras_park_concept_medellin_poblado_medellin_economico_colombia_antioquia.webp", 
+      {title: 'Room Sencilla', price:380000 , image:"https://grupo-hoteles.com/storage/app/23/rooms/1904843090-83-rooms-slider-2-IMG_5980.jpeg", 
         features: ['Cama matrimonial', 'Baño privado con ducha', 'Wi-Fi gratuito', 'Smart TV',"Aire Acondicionado"] },
-      {title: 'Room Estándar',price:218000, image: "https://grupo-hoteles.com/storage/app/7/rooms/1353190353-38-rooms-slider-2-Habitacion-Estandar-Hotel-lleras-park-concept-hotel-poblado-economico-slider-principal-1.webp", 
+      {title: 'Room Ventana',price:420000, image: "https://grupo-hoteles.com/storage/app/23/rooms/682184610-84-rooms-slider-1-IMG_9576.JPG", 
         features: ['Cama matrimonial', 'Baño privado con ducha', 'Wi-Fi gratuito', 'Smart TV',"Aire Acondicionado"] },
-      {title: 'Room Doble superior twin',price:260000, image: "https://grupo-hoteles.com/storage/app/7/rooms/585930631-39-rooms-slider-2-slider_1_doble_superior_twin_lleras_park_concept_medellin_poblado_medellin_economica_antioquia_colombia_med.webp", 
-        features: ['Cama matrimonial', 'Baño privado con ducha', 'Wi-Fi gratuito', 'Smart TV','Aire Acondicionado']},
-      {title: 'Room Suite junior',price:312000, image: "https://grupo-hoteles.com/storage/app/7/rooms/286234936-40-rooms-slider-1-rooms-slider-1-superior_junior_jacuzzi_lleras_park_concept_medellin_poblado_medellin_economica_antioquia_colombia..webp", 
+      {title: 'Room VIP Jacuzzi',price:700000, image: "https://grupo-hoteles.com/storage/app/23/rooms/1573050561-85-rooms-slider-1-IMG_9879.JPG", 
+        features: ['Cama matrimonial', 'Baño privado con ducha', 'Wi-Fi gratuito', 'Smart TV','Aire Acondicionado',"Jacuzzi"]},
+      {title: 'Room Balcón Calle',price:500000, image: "https://grupo-hoteles.com/storage/app/23/rooms/1882808639-86-rooms-slider-1-IMG_0216.JPG", 
        features: ['Cama matrimonial', 'Baño privado con ducha', 'Wi-Fi gratuito', 'Smart TV','Aire Acondicionado']},
-      {title: 'Room Familiar',price:720000, image: "https://grupo-hoteles.com/storage/app/7/rooms/625520311-42-rooms-slider-1-one_million_lleras_park_concept_medellin_poblado_medellin_economica_antioquia_colombia_zona_rosa.webp", 
-       features: ['Cama matrimonial', 'Baño privado con ducha', 'Wi-Fi gratuito', 'Smart TV','Aire Acondicionado']},
+     
     ];
 
     const monthsToShow = window.innerWidth >= 700 ? 2 : 1; // Cambia 768 según tu punto de ruptura deseado
@@ -317,7 +316,7 @@ const subtotal = getCartSubtotal()
           {FillContent}
            <Header  scrollToRoomSectionEvent={scrollToRoomSectionEvent}   />
               <div className="relative bg-cover bg-center h-[650px]" style={{ 
-                    backgroundImage: `url(https://grupo-hoteles.com/storage/app/7/page/261391203-7-page-slider-1-suite-poblado-medellin-antioquia-colombia.png)`,}}>
+                    backgroundImage: `url(https://grupo-hoteles.com/storage/app/23/page/1746688908-23-page-slider-1-_MG_4609-HDR.jpg)`,}}>
                 <div className="absolute inset-0 bg-black opacity-15"></div>
                 <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white">
                     <h1 className="text-4xl md:text-6xl lg:text-6xl font-lora">
