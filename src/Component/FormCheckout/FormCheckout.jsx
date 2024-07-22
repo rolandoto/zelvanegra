@@ -1,8 +1,41 @@
-import React from "react"
+import React, { useEffect } from "react"
 import CardCheckout from "../CardCheckout/CardCheckout"
 import FormValues from "../FormValues/FormValues"
+import { useSelector } from "react-redux"
+import UseHotelActions from "../../Actions/useHotelsActions"
 
 const FormCheckout=({Country,handleSubmit,loading,formErrors,handleChange,formValues,cart,subtotal}) =>{
+
+    
+    const {hotelList,loadingHotel,errorHotel}= useSelector((state) => state.Hotel)
+    const {getListHotel} =UseHotelActions()
+
+    const fetchDate =async() =>{
+      await getListHotel()
+    }
+  
+    useEffect(() =>{
+      fetchDate()
+    },[])
+
+    
+    const FindIdHotel=(hotel) =>{
+        return hotel.id_hotel ==7
+    }
+    
+    const hotel = hotelList.find(FindIdHotel) 
+  
+    const FillContent =()=>{
+        if(loadingHotel){
+                return <p>cargando</p>
+        }
+
+        if(errorHotel){
+            return   <h1>Error en el servicio</h1>
+        }
+        return  hotel?.nombre
+    }
+    
 
     return (<div className= "bg-gray-100 " >
                 <div className="flex justify-center   min-h-screen">
@@ -25,7 +58,7 @@ const FormCheckout=({Country,handleSubmit,loading,formErrors,handleChange,formVa
                             <div className="p-6 border border-gray-300 rounded-lg">
                                 <h2 className="text-xl font-bold mb-4">Resumen de tu reserva</h2>
                                     <div className="mb-4">
-                                        <h3 className="text-lg font-semibold">Hotel Gallery Medellín</h3>
+                                        <h3 className="text-lg font-semibold">Hotel {FillContent()}</h3>
                                         <p className="text-gray-600">Cl. 47 #41 - 55, Medellín, Colombia</p>
                                     </div>
                                     {cart.map((itemCardRoom,e) =>(

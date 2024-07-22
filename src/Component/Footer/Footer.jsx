@@ -16,7 +16,7 @@ const Footer =() =>{
                 <div className="mx-auto max-w-7xl p-4  flex flex-col md:flex-row justify-between items-start md:items-center">
                 <div className="flex">
                     <img
-                        src="https://github.com/rolandoto/image-pms/blob/main/Logos/47-street.png?raw=true"
+                        src="https://github.com/rolandoto/image-pms/blob/main/Logos/logo%202000x2000.png?raw=true"
                         alt="Logo de Gallery Hotel" 
                         width="100" 
                         height="100"
@@ -27,9 +27,9 @@ const Footer =() =>{
                 <div>
                     <div className="">
                         <ul className="space-y-2">
-                            <li className="flex items-center"> <IconFaWhatsapp />+57 310 365 16 61</li>
-                            <li className="flex items-center mr-6">  <IconsMdEmail />reservas@medellin47.com </li>
-                            <li className="flex items-center"> <IconFaMapMarkerAlt/>  CLL 47 # 45 - 47 Medellín, Colombia</li>
+                            <li className="flex items-center"> <IconFaWhatsapp />+57 305 289 77 66</li>
+                            <li className="flex items-center mr-6">  <IconsMdEmail />reservas@lleraspark.com	 </li>
+                            <li className="flex items-center"> <IconFaMapMarkerAlt/>  Cra. 38 #8 - 83 </li>
                         </ul>
                     
                     </div>

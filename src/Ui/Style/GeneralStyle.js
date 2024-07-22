@@ -287,7 +287,7 @@ margin-left: -20px;
 
 export const Label = styled.div`
   display: inline-block;
-  background-color: black;
+  background-color: #919191;
   color: white;
   padding: 5px 10px;
   font-size: 14px;
@@ -307,7 +307,7 @@ export const Label = styled.div`
     height: 0;
     border-top: 10px solid transparent;
     border-bottom: 10px solid transparent;
-    border-right: 10px solid black;
+    border-right: 10px solid #919191;
     transform: translateY(-50%);
   }
 `;

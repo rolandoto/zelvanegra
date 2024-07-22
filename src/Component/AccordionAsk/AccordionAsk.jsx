@@ -18,7 +18,7 @@ const AccordionAsk =({faqs}) =>{
                     </div>
                 </div>
                 <div className="md:w-1/2 px-4 mt-8 md:mt-0">
-                    <img src="https://grupo-hoteles.com/storage/app/2/page/2069054393-2-page-slider-1-habitacion-jacuzzi-promocion-centro-de-medellin-antioquia-colombia.webp" alt="Hotel Building" className="w-[800px] object-cover h-[700px] rounded-md shadow-md" />
+                    <img src="https://grupo-hoteles.com/storage/app/7/page/543762282-7-page-slider-1-one-million-poblado-medellin-antioquia-colombia.png" />
                 </div>
             </section>)
 }
