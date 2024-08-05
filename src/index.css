@@ -114,10 +114,8 @@ code {
   border-radius: 26px;
   padding: 4px;
   position: absolute;
-  bottom: 1px;
+  bottom: -48px;
 }
-
-
 
 .font-lora{
   font-family: 'Lora', Georgia, "Times New Roman", serif;

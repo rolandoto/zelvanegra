@@ -31,7 +31,7 @@ import { MdOutlineEmail } from "react-icons/md";
 import { Tooltip } from "react-tooltip";
 import { PiBedThin } from "react-icons/pi";
 import { FaCheckCircle } from "react-icons/fa";
-
+import { FaUser } from "react-icons/fa";
 
 
 export const IconsSnow =() =>{
@@ -251,4 +251,9 @@ export const IconsMdEmail =({color}) =>{
 export const IconFaCheckCircle  =({color}) =>{
     return <FaCheckCircle    color={color} className="mr-2" fontSize={70}  />
 }
+
+export const IconFaUser  =({color}) =>{
+    return <FaUser   color={color} fontSize={25}  />
+}
+
 
