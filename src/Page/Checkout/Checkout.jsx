@@ -36,7 +36,6 @@ const Checkout  =() =>{
     const validate = useValidation();
 
     
-    
 
     const handleSubmit = async(e) => {
         e.preventDefault();
@@ -49,6 +48,7 @@ const Checkout  =() =>{
                                   email:formValues.email,
                                   city:formValues.city,
                                   country:formValues.country,
+                                  phone:formValues.phone,
                                   fecha:now,
                                   number:cardNumberString,
                                   exp_month:formValues.expiryMonth,
