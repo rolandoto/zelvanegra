@@ -13,3 +13,7 @@ export const config = {
     //serverRoute:"http://localhost:3001"
  }
  
+export const Environment ={
+   propertyID:"315192",
+   Token:"cbat_4tqwuCWLXrW6Hy7NrBqMgVvqFcCJqboG"
+ }
