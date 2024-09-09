@@ -53,14 +53,11 @@ const Checkout  =() =>{
         "quantity": 0
     }));
 
-
-    
     const night = cart.map(item => ({
         startDate: item?.startDate,
         endDate: item?.endDate,
         price: item?.Price
     }));
-
    
     const subtotalPayment =  night[0]?.price
     const StartDate = night[0]?.startDate

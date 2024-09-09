@@ -19,7 +19,8 @@ const useFormValues = () => {
     termsAccepted: false,
     siteTermsAccepted: false,
   });
-
+  
+  
   
   const handleChange = (e) => {
     const { name, value } = e.target;
