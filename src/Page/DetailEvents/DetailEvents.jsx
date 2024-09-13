@@ -5,6 +5,7 @@ import Footer from "../../Component/Footer/Footer";
 import { useSelector } from "react-redux";
 import UseEventsActions from "../../Actions/useEventsActions";
 import WhatsappButton from "../../Component/WhatsappButton/WhatsappButton";
+import Usetitle from "../../Hooks/Usetitle";
 
 const DetailEvents =() =>{
 
@@ -26,6 +27,10 @@ const DetailEvents =() =>{
           fetchDate()
       },[])
  
+
+            
+    Usetitle({title:geteventsDetail.Name})
+
    const FillContent =() =>{
     if(loadinggetEventsDetail){
         return <p>...cargando</p>
@@ -56,7 +61,7 @@ const DetailEvents =() =>{
     return (<>
                <Header/>
                <div className="relative bg-cover bg-center h-[410px]" style={{ backgroundImage: `url(https://grupo-hoteles.com/storage/app/23/page/1746688908-23-page-slider-1-_MG_4609-HDR.jpg)`,}}>
-                    <div className="absolute inset-0 bg-black opacity-50"></div>
+                    <div className="absolute inset-0 bg-black opacity-20"></div>
                     <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white">
                         <h1 className="text-4xl md:text-6xl lg:text-6xl font-lora">
                            Eventos
@@ -65,9 +70,8 @@ const DetailEvents =() =>{
                 </div>
                 <WhatsappButton/>
                 {FillContent()}
-              <Footer/>
+                <Footer/>
             </>)
-
 }
 
 export default  DetailEvents

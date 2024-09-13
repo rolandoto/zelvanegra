@@ -270,7 +270,7 @@ const Accommodation = () => {
                   rangeColors={["rgb(255 104 0 / 36%);"]}
                   minDate={new Date()}
                   onChange={handleSelect}
-                  editableDateInputs={true}
+                  editableDateInputs={false}
                   months={2}
                   dayContentRenderer={(date) => {
                     const className = getClassNameForDate(date);
@@ -285,7 +285,7 @@ const Accommodation = () => {
                   moveRangeOnFirstSelection={false} // No mueve el rango en la primera selección
                   showSelectionPreview={false} // Muestra la selección previa
                   startDatePlaceholder="Early"
-                  showDateDisplay={true}
+                  showDateDisplay={false}
                   ranges={state}
                   direction="horizontal"
                   locale={esLocale}
@@ -303,7 +303,7 @@ const Accommodation = () => {
                           rangeColors={["rgb(255 104 0 / 36%);"]}
                           minDate={new Date()}
                           onChange={handleSelect}
-                          editableDateInputs={true}
+                          editableDateInputs={false}
                           months={monthsToShow}
                           dayContentRenderer={(date) => {
                             const className = getClassNameForDate(date);
@@ -317,7 +317,7 @@ const Accommodation = () => {
                           moveRangeOnFirstSelection={false} // No mueve el rango en la primera selección
                           showSelectionPreview={false} // Muestra la selección previa
                           startDatePlaceholder="Early"
-                          showDateDisplay={true}
+                          showDateDisplay={false}
                           ranges={state}
                           direction="horizontal"
                           locale={esLocale}
