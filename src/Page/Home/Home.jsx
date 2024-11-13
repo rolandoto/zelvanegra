@@ -112,9 +112,8 @@ const subtotal = getCartSubtotal()
       { icon: <IconsFaConciergeBell/>, title: 'Recepción 24 horas' },
       { icon: <IconsaCar/>, title: 'Variedad de transporte', description: 'Metro, tranvía, autobús, taxi' },
       { icon: <IconsRiBankFill/>, title: 'Vida cultural y nocturna', description: 'Bares, museos, restaurantes' },
-      { icon: <IconsFaSquareParking/>, title: 'Parqueadero gratis*', description: 'Sujeto a disponibilidad' },
-      { icon: <IconsGiForkKnifeSpoon/>, title: 'Restaurante - Bar  ', description: ' con vista panorámica' },
-      { icon: <IconsFaStore/>, title: 'Alianzas comerciales', description: 'Servicio de taxi, gimnasio, tours, médico, comunicaciones.' },
+      { icon: <IconsGiForkKnifeSpoon/>, title: 'Restaurante - Bar  ', description: '' },
+      { icon: <IconsFaStore/>, title: 'Alianzas comerciales', description: 'Servicio de taxi, tours, médico, comunicaciones.' },
       { icon: <IconsFaBanSmoking/>, title: 'Espacios libre de humo', description: "" },
     ];
 
@@ -225,14 +224,14 @@ const subtotal = getCartSubtotal()
 
 
     const rooms = [
-      {title: 'Room Sencilla', price:380000 , image:"https://grupo-hoteles.com/storage/app/23/rooms/1904843090-83-rooms-slider-2-IMG_5980.jpeg", 
-        features: ['Cama matrimonial', 'Baño privado con ducha', 'Wi-Fi gratuito', 'Smart TV',"Aire Acondicionado"] },
-      {title: 'Room Ventana',price:420000, image: "https://grupo-hoteles.com/storage/app/23/rooms/682184610-84-rooms-slider-1-IMG_9576.JPG", 
-        features: ['Cama matrimonial', 'Baño privado con ducha', 'Wi-Fi gratuito', 'Smart TV',"Aire Acondicionado"] },
-      {title: 'Room VIP Jacuzzi',price:700000, image: "https://grupo-hoteles.com/storage/app/23/rooms/1573050561-85-rooms-slider-1-IMG_9879.JPG", 
-        features: ['Cama matrimonial', 'Baño privado con ducha', 'Wi-Fi gratuito', 'Smart TV','Aire Acondicionado',"Jacuzzi"]},
-      {title: 'Room Balcón Calle',price:500000, image: "https://grupo-hoteles.com/storage/app/23/rooms/1882808639-86-rooms-slider-1-IMG_0216.JPG", 
-       features: ['Cama matrimonial', 'Baño privado con ducha', 'Wi-Fi gratuito', 'Smart TV','Aire Acondicionado']},
+      {title: 'Room Sencilla', price:250000 , image:"https://grupo-hoteles.com/storage/app/23/rooms/1904843090-83-rooms-slider-2-IMG_5980.jpeg", 
+        features: ['Cama doble', 'Baño privado con ducha', 'Wi-Fi gratuito', 'Smart TV',"Aire Acondicionado"] },
+      {title: 'Room Ventana',price:250000, image: "https://grupo-hoteles.com/storage/app/23/rooms/682184610-84-rooms-slider-1-IMG_9576.JPG", 
+        features: ['Cama doble', 'Baño privado con ducha', 'Wi-Fi gratuito', 'Smart TV',"Aire Acondicionado"] },
+      {title: 'Room VIP Jacuzzi',price:480000, image: "https://grupo-hoteles.com/storage/app/23/rooms/1573050561-85-rooms-slider-1-IMG_9879.JPG", 
+        features: ['Cama doble', 'Baño privado con ducha', 'Wi-Fi gratuito', 'Smart TV','Aire Acondicionado',"Jacuzzi"]},
+      {title: 'Room Balcón Calle',price:320000, image: "https://grupo-hoteles.com/storage/app/23/rooms/1882808639-86-rooms-slider-1-IMG_0216.JPG", 
+       features: ['Cama doble', 'Baño privado con ducha', 'Wi-Fi gratuito', 'Smart TV','Aire Acondicionado']},
      
     ];
 
@@ -324,7 +323,7 @@ const subtotal = getCartSubtotal()
                       {loadingHotel ?"cargando " :hotel?.nombre}  
                     </h1>
                     <p className="mt-2 text-base md:text-xl lg:text-3xl font-lora font-normal">
-                        Más que un hotel, una experiencia artística
+                    ¿Buscas un oasis de tranquilidad en el vibrante Parque del Poblado? 
                     </p>
                     <button className="mt-6 bg-black text-white px-6 py-3 rounded-lg hover:bg-black" onClick={scrollToRoomSection}>
                         Ver habitaciones

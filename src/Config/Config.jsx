@@ -15,5 +15,5 @@ export const config = {
  
 export const Environment ={
    propertyID:"315192",
-   Token:"cbat_4tqwuCWLXrW6Hy7NrBqMgVvqFcCJqboG"
+   Token:"cbat_zpoAadZV5NdnwzPqbfWJTdk5sPlDBwi4"
  }

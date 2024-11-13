@@ -13,13 +13,12 @@ const TitleWelcome  =() =>{
                 />
                     </div>
                 <div className="md:w-1/2 p-4">
-                    <h2 className="text-3xl font-normal text-black mb-4 font-lora text-[30px] text-center ">¡Donde el arte y la hospitalidad se unen!</h2>
+                    <h2 className="text-3xl font-normal text-black mb-4 font-lora text-[30px] text-center "> THE NATURAL  PLACE IS YOUR HOME</h2>
                 <p className="text-gray-700 text-justify	 mb-4">
-                    Bienvenido a Gallery Hotel, ubicado en el corazón del vibrante centro de Medellín. Inspirado en la rica cultura callejera de la ciudad, nuestro hotel ofrece un espacio único donde podrás conectarte con el arte urbano y disfrutar de una experiencia memorable.
+                El Hotel Zelva Negra, ubicado en una posición privilegiada en el Parque del Poblado de Medellín, es un oasis de confort en el corazón de la ciudad. Rodeado de vibrantes restaurantes y locales nocturnos, ofrece lo mejor de la cultura y la vida nocturna de Medellín en un ambiente tranquilo y seguro.  
+Las modernas habitaciones están equipadas con cama doble, escritorio, Smart TV, nevera, aire acondicionado, Wi-Fi gratuito, desayuno incluido y demás implementos necesarios para su estancia. Los huéspedes pueden disfrutar de un chapuzón en la piscina interior o relajarse en la terraza. El restaurante del hotel deleita con comida Fingers food, mientras que el bar ofrece una amplia selección de cócteles y bebidas. Es la opción ideal para aquellos que buscan una experiencia de alojamiento confortable, elegante y llena de experiencias en Medellín. 
                 </p>
-                <p className="text-gray-700 text-justify	 ">
-                    Nuestras habitaciones están decoradas con obras de artistas locales, creando un ambiente estimulante y acogedor. Además, contamos con una terraza en la azotea con impresionantes vistas de la ciudad, un bar donde podrás disfrutar de cócteles artesanales y un restaurante que sirve cocina local con un toque moderno.
-                </p>
+               
                 </div>
             </div>)
 

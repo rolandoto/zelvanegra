@@ -13,12 +13,12 @@ const AccordionItem = ({ question, answer }) => {
           className="w-full text-left px-4 py-2 flex  items-center justify-between"
           onClick={toggleAccordion}
         >
-          <span className="font-" >{question}</span>
+          <span className="font-" ></span>
           <span className="text-xl">{isOpen ? '-' : '+'}</span>
         </button>
           {isOpen && (
             <div className=" ease-in duration-300 px-4 py-2 text-gray-600">
-              {answer}
+             
             </div>
           )}
       </div>

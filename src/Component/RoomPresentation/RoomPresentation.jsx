@@ -13,10 +13,10 @@ const RoomPresentaion =() =>{
                 <div className="md:w-1/2 p-4 text-">
                     <h2 className="text-3xl font-normal text-center  text-black-700 text-[30px] font-lora ">Reserva tu habitación hoy mismo</h2>
                     <p className="text-gray-700 text-justify mt-8 mb-4">
-                    Nuestras habitaciones están diseñadas para ofrecer comodidad y estilo, a la vez que te sumergen en la vibrante escena artística de Medellín. Cada habitación está decorada con obras de artistas locales, creando un ambiente único e inspirador.
+                    Nuestras habitaciones ofrecen distintas opciones que se adaptan a cada huésped. Desde la acogedora Habitación Sencilla, ideal para quienes buscan tranquilidad, hasta la lujosa Habitación VIP, con balcón, jacuzzi privado y vistas espectaculares de la ciudad, cada espacio está equipado con cama doble, escritorio, smart TV, nevera, aire acondicionado y Wi-Fi gratuito. Cada mañana podrás disfrutar de un desayuno incluido, y para momentos de relajación, contamos con una piscina interior y una terraza perfecta para desconectar. 
                     </p>
                     <p className="text-gray-700 text-justify mb-4">
-                    Gallery Hotel está ubicado en el corazón del centro de Medellín, a solo unos pasos de las principales atracciones turísticas, restaurantes y bares. La ubicación perfecta para explorar la ciudad y descubrir todo lo que tiene para ofrecer.
+                    En el Hotel Zelva Negra, el confort, el diseño moderno y la tranquilidad se unen para brindarte una experiencia única en el corazón de Medellín. 
                     </p>
                     <button onClick={HandNext}  className="text-white bg-black mt-4  w-[200px] p-3 rounded hover:bg-black"><span className=" text-[20px]" >Reservar</span></button>
                 </div>
