@@ -2,8 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
+body{
+  background-color: #f0dfcd !important; 
+}
+.container {
+  height: 100vh;
+  overflow: scroll; /* Permite el scroll */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE y Edge */
+}
+
+.container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.content {
+  height: 200vh; /* Más alto que el viewport para probar el scroll */
+  background: linear-gradient(#e66465, #9198e5);
+}
+
 .App {
   text-align: center;
+}
+
+.font-textKiinBrewfine {
+  font-family: TRJN DaVinci Text, sans-serif;
 }
 
 .App-logo {
@@ -41,7 +64,6 @@
   }
 }
 
-
 .live-whata{
   z-index: 1000;
   border-radius: 50%;
@@ -63,13 +85,62 @@
   }
 }
 
-.letra{
-  font-size: 14px;
-    /* font-weight: 400; */
-    overflow: hidden;
-    /* text-align: center; */
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    width: auto;
-    height: 200px;
+.border-chose{
+  background: #817c70;
+  width: 47%;
+  border-radius: 44px;
+  justify-content: center;
 }
+
+.border-confirme{
+
+  border-radius: 44px;
+  width: 47%;
+  justify-content: center;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.accomodation{
+  border-radius:35px;
+}
+
+.animation{
+  animation: fadeIn 0.8s ease forwards;
+}
+
+
+.spinner {
+width: 36px;
+height: 36px;
+
+border:5px solid #fffc;
+border-top-color:#09f;
+border-radius: 100%;
+animation: spin 1s infinite;
+} 
+
+@keyframes spin {
+  to {
+    transform:  rotate(360deg);
+  }
+}
+
+
+/*
+‹div
+class="spinner"
+role="status"
+aria-live="polite"
+aria-label="Cargando"
+‹/div>
+*/

@@ -12,6 +12,7 @@ const UseHotelActions =() =>{
             const response  = await  HttpClient.getAvailableRoomTypes({propertyID,startDate,endDate,token,counPeople})
             if(response){
                 dispatch(setHotel(response)) 
+                window.scrollTo({ top: 500, behavior: "smooth" });
             }else{
                 dispatch(setError("no found")) 
             }
