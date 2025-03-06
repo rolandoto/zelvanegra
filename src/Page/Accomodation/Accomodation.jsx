@@ -57,7 +57,10 @@ const Accommodation = () => {
     const formattedEndDateToString = moment(state[0]?.endDate).format('DD MMM YYYY').toLowerCase();
     const formattedEnd = moment(state[0]?.endDate).format('DD MMM').toLowerCase();
     const formattedStart = moment(state[0]?.startDate).format('DD MMM').toLowerCase();
-
+    const [coupon, setCoupon] = useState(); // Estado para el cupón
+    const [isVisible, setIsVisible] = useState(true); // Estado para mostrar/ocultar el banner
+  
+   
     const [scrolledbook, setScrolledBook] = useState(false);
     
     useEffect(() => {
@@ -80,14 +83,14 @@ const Accommodation = () => {
     }, []);
 
     const PostHotelByIdHotel = useCallback(async () => {
-        setContextMenuPosition(false);
-        setContextShowMenuPeople(false)
-        await getHotel({propertyID:Environment.propertyID,startDate:formattedStartDate, endDate: formattedEndDate,token:Environment.Token,counPeople:totalCountAdults });
-    }, [formattedStartDate,formattedEndDate,totalCountAdults]);
+      setContextMenuPosition(false);
+      setContextShowMenuPeople(false)
+      await getHotel({propertyID:Environment.propertyID,startDate:formattedStartDate, endDate: formattedEndDate,token:Environment.Token,counPeople:totalCountAdults,promoCode:coupon });
+  }, [formattedStartDate,formattedEndDate,totalCountAdults,isVisible]);
 
     useEffect(() =>{
       PostHotelByIdHotel()
-    },[])
+    },[isVisible])
 
     const HandClickMenuPeople =() =>{
       if(contextShowMenuPeople){
@@ -149,8 +152,11 @@ const Accommodation = () => {
          {hotel?.data?.map((List,index) => <CardAccomodation  
                                                               counPeople={hotel.counPeople}
                                                               endDate={hotel.endDate}
+                                                              validPromotion={hotel.valid}
                                                               startDate={hotel.startDate}
                                                               nightsToday={hotel.nights}
+                                                              validCode={hotel.validCode}
+                                                           
                                                               totalCountAdults={totalCountAdults}
                                                               key={index} {...List}/>)}</>
     }
@@ -192,7 +198,7 @@ const Accommodation = () => {
                 </div>
               </MainProduct>
             </div>
-
+              
       
             <div className="lg:hidden flex  p-2 lg:px-8" >
               <MainProduct className="m-auto ">
@@ -204,7 +210,47 @@ const Accommodation = () => {
                
               </MainProduct>
             </div>
+            {isVisible && <div className="fixed top-48 left-0 right-4 flex justify-center z-40">
+              <div className="w-[90%] md:w-full max-w-md bg-black text-white rounded-3xl shadow-lg overflow-hidden flex">
+                
+                {/* Contenedor de la Oferta */}
+                <div className="p-4 flex-1">
+                  <h2 className="text-sm md:text-base font-bold mb-2">
+                    ¡OFERTA EXCLUSIVA SOLO PARA TI! APLICA TU CUPÓN
+                  </h2>
+                  <input
+                    type="text"
+                    placeholder="Ingresa tu cupón"
+                    value={coupon}
+                    onChange={(e) => setCoupon(e.target.value)}
+                    className="w-full text-black p-2  rounded-lg mb-2  focus:outline-none focus:ring-2 focus:ring-gray-400"
+                  />
+                  <button  onClick={() => setIsVisible(false)} className="bg-white w-full text-gray-800 px-4 py-2 rounded-lg text-sm font-semibold hover:bg-gray-200 transition-colors">
+                    APLICAR
+                  </button>
+                </div>
 
+                {/* Imagen de la Habitación */}
+                <div className="w-1/2 relative">
+                  <img
+                    src="https://h-img1.cloudbeds.com/uploads/315192/img_8940_featured~~668c14a5a25aa.jpg"
+                    alt="Luxury Suite"
+                    className="object-cover h-full w-full"
+                  />
+
+                  {/* Botón para cerrar la oferta */}
+                  <button
+                    onClick={() => setIsVisible(false)}
+                    aria-label="Cerrar oferta"
+                    className="absolute w-6 h-6 top-2 right-2 bg-gray-800 rounded-full flex items-center justify-center text-white hover:bg-gray-600 transition-colors"
+                  >
+                    ×
+                  </button>
+                </div>
+              </div>
+            </div>}
+
+        
           <div className="hidden lg:block  ">
               {contextMenuPosition && (
                 <DateRange

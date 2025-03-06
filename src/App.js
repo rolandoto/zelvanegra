@@ -17,7 +17,7 @@ function App() {
   return (
     <Provider  store={store}>
       <AutoProvider>
-      <BrowserRouter> 
+      <BrowserRouter  > 
         <Routes>
           <Route exact path="/" element={<Accommodation/> } />
           <Route exact path="/Accomodation" element={<Accommodation/> } />

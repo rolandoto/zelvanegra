@@ -25,8 +25,12 @@ const CardAccomodation =({  roomTypeName,
                             roomsAvailable,
                             roomTypeID,
                             nightsToday,
+                            validPromotion,
                             roomTypeDescription,
-                            roomTypeFeatures}) =>{
+                            roomTypeFeatures,
+                            
+                            validCode
+                          }) =>{
 
    
     const {cart} = useSelector(state => state.Cart);
@@ -34,12 +38,11 @@ const CardAccomodation =({  roomTypeName,
     const discountRate = 0.19; // 19% de descuento
     const discountedPrice = originalPrice * (1 - discountRate);   
     const validPromotions =promotion ? discountedPrice :  roomRate
-         
+
+
     const {AddCart } =useCartActions()
 
     const [activeTab, setActiveTab] = useState('Detalle');
-
-    console.log(cart)
 
     const handleAddToCart = () => {
         const existingRoom = cart.find(item => item.roomTypeID === roomTypeID);
@@ -47,10 +50,10 @@ const CardAccomodation =({  roomTypeName,
             if(existingRoom.quantity +1 > roomsAvailable){
                 toast.error("no hay habitaciones")
             }else{
-                AddCart({ roomTypeID, roomTypeName,quantity: 1,Price:roomRate,roomsAvailable,startDate,endDate,room_image:roomTypePhotos[0].image,nights:nightsToday,person:counPeople,persontotal:counPeople}); 
+                AddCart({ roomTypeID, roomTypeName,quantity: 1,Price:roomRate,roomsAvailable,startDate,endDate,room_image:roomTypePhotos[0].image,nights:nightsToday,person:counPeople,persontotal:counPeople,validCode}); 
             }
         }else{
-            AddCart({ roomTypeID, roomTypeName,quantity: 1,Price:roomRate,roomsAvailable,startDate,endDate,room_image:roomTypePhotos[0].image,nights:nightsToday,person:counPeople,persontotal:counPeople}); 
+            AddCart({ roomTypeID, roomTypeName,quantity: 1,Price:roomRate,roomsAvailable,startDate,endDate,room_image:roomTypePhotos[0].image,nights:nightsToday,person:counPeople,persontotal:counPeople,validCode}); 
         }
     };
 
@@ -150,8 +153,9 @@ const CardAccomodation =({  roomTypeName,
     return (   
     <MainAccomodationSection>
     <div className="max-w-5xl  mx-auto p-4 sm:p-6 lg:p-8">
-      <div className="bg-[#f7efe7]  shadow-lg accomodation overflow-hidden">
+      <div className="bg-white border shadow-lg accomodation overflow-hidden">
         {/* Upper section with image and details */}
+       
         <div className="flex flex-col md:flex-row items-start md:items-center">
           <div className="w-full md:w-1/2 p-4">
             <img
@@ -167,18 +171,19 @@ const CardAccomodation =({  roomTypeName,
                   <div
                     key={index}
                     className={`h-2 w-2 mx-1 rounded-full ${
-                      index === currentIndex ? "bg-gray-800" : "bg-gray-300"
+                      index === currentIndex ? "bg-gray-800" : "bg-gray-400"
                     }`}
                   />
                 ))}
               </div>
             </div>
           </div>
+        
           <div className="w-full md:w-1/2 p-4">
             <h2 className="text-xl sm:text-2xl font-bold text-center mb-4">{roomTypeName}</h2>
             <div className="flex flex-col pr-4 sm:flex-row justify-between mt-4">
               <div className="text-center mb-4 sm:mb-0">
-                <p className="text-black">Máxima ocupación</p>
+                <p className="text-gray-600">Máxima ocupación</p>
                 <div className="flex justify-center">
                   {[...Array(counPeople)].map((_, i) => (
                     <IconFaUser key={i} color="black" />
@@ -191,14 +196,17 @@ const CardAccomodation =({  roomTypeName,
                 </div>
               </div>
               <div className="text-center">
-                <p className="text-black">Estancia</p>
+                <p className="text-gray-600">Estancia</p>
                 <p className="font-bold">Noches: {nightsToday}</p>
               </div>
             </div>
             <div className="mt-4">
-              <div className="flex px-3 py-2 rounded-full items-center justify-between border border-black
-">
+              <div className="flex px-3 py-2 rounded-full items-center justify-between border">
                 <button className="text-sm sm:text-base">Tarifa estándar</button>
+                {validPromotion && <div className="inline-block border  bg-red-600 text-white font-bold text-small px-2 py-2 rounded-md">
+                  -10%
+                </div>
+                 }
                 <p className="font-bold">${parseInt(validPromotions).toLocaleString('es-CO')} cop</p>
               </div>
             </div>
@@ -207,11 +215,11 @@ const CardAccomodation =({  roomTypeName,
     
         {/* Tabs content */}
         <div className="lg:p-0 p-4">
-          <div className="border-b border-black flex flex-wrap justify-center max-w-[95%] mx-auto">
+          <div className="border-b flex flex-wrap justify-center max-w-[95%] mx-auto">
             {['Detalle'].map((tab) => (
               <button
                 key={tab}
-                className={`text-black pb-2 mb-2 text-sm sm:text-base ${activeTab === tab ? 'border-b-2 border-b-black' : ''}`}
+                className={`text-gray-600 pb-2 mb-2 text-sm sm:text-base ${activeTab === tab ? 'border-b-2 border-black' : ''}`}
                 onClick={() => setActiveTab(tab)}
               >
                 {tab}
@@ -220,7 +228,7 @@ const CardAccomodation =({  roomTypeName,
           </div>
           
           {/* Conditional rendering of content based on active tab */}
-          <div className="mt-4 lg:flex  text-black  block justify-between  max-w-[95%] mx-auto">
+          <div className="mt-4 lg:flex   block justify-between  max-w-[95%] mx-auto">
             {activeTab === 'Detalle' && (
               <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 gap-4">
                 {roomTypeFeatures.map((Service, index) => {
@@ -230,7 +238,6 @@ const CardAccomodation =({  roomTypeName,
                   const bathRoom = Service === "baño privado" && <IconShower />;
                   const fan =  Service =="Ventiladores de Techo" && <GiComputerFan fontSize={35} />
                   const Jacuzzi = "Jacuzzi privado" && <PiBathtubLight fontSize={35} />
-                 
                   return (
                     <div key={index} className="flex items-center space-x-3">
                       <span className={`flex items-center ${Service}`}>
@@ -239,6 +246,7 @@ const CardAccomodation =({  roomTypeName,
                     </div>
                   );
                 })}
+               
               </div>
             )}
 
