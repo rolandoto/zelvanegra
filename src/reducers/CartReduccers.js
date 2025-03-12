@@ -18,22 +18,42 @@ export const CartReduccers = createSlice({
             state.errorCart = "false"
         },
         addItemToCart: (state, action) => {
-            const { roomTypeID, quantity, Price, roomsAvailable,startDate,endDate,room_image,nights,person,roomTypeName,persontotal} = action.payload;
+            const { roomTypeID, quantity, Price, roomsAvailable, startDate, endDate, room_image, nights, person, roomTypeName, persontotal ,validCode} = action.payload;
             const existingRoom = state.cart.find(item => item.roomTypeID === roomTypeID);
         
             if (existingRoom) {
-                // verifica si la cantidad total excede las habitaciones disponibles
-                if (existingRoom.quantity +quantity > roomsAvailable) {
+                // Verifica si la cantidad total excede las habitaciones disponibles
+                if (existingRoom.quantity + quantity > roomsAvailable) {
                     state.errorCart = false;
                 } else {
-                    // incrementa la cantidad y ajusta el precio total
+                    // Incrementa la cantidad y ajusta el precio total
                     existingRoom.quantity += quantity;
-                    existingRoom.persontotal += persontotal;
+                    existingRoom.persontotal += person;
                     existingRoom.Price += Price * quantity;
+        
+                    // Agrega las personas al array `personsList`
+                    existingRoom.personsList = existingRoom.personsList || [];
+                    existingRoom.personsList.push(person);
+        
+                    // Aquí `person` es el número de personas, se añaden `person` veces al array
                 }
             } else {
-                // añade el nuevo ítem al carrito
-                state.cart.push({ roomTypeID, quantity, Price: Price * quantity, roomsAvailable,startDate,endDate,room_image,nights,person,roomTypeName,persontotal});
+                // Añade el nuevo ítem al carrito con `personsList`
+                state.cart.push({
+                    roomTypeID,
+                    quantity,
+                    Price: Price * quantity,
+                    roomsAvailable,
+                    startDate,
+                    endDate,
+                    room_image,
+                    nights,
+                    person,
+                    roomTypeName,
+                    persontotal,
+                    validCode,
+                    personsList: [person] 
+                });
             }
             state.loadingCart = false;
         },

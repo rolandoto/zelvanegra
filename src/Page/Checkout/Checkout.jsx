@@ -63,13 +63,16 @@ const Checkout  =() =>{
     const night = cart.map(item => ({
         startDate: item?.startDate,
         endDate: item?.endDate,
-        price: item?.Price
+        price: item?.Price,
+        validCode: item?.validCode
     }));
 
    
     const subtotalPayment =  night[0]?.price
     const StartDate = night[0]?.startDate
     const EndDate = night[0]?.endDate
+    const validCode = night[0]?.validCode
+
 
     const handleSubmit = async(e) => {
         e.preventDefault();
@@ -80,6 +83,7 @@ const Checkout  =() =>{
                                 token:Environment.Token,
                                 startDate:StartDate,
                                 endDate:EndDate,
+                                promoCode:validCode,
                                 guestFirstName:formValues.name,
                                 guestLastName:formValues.apellido,
                                 guestEmail:formValues.email,
