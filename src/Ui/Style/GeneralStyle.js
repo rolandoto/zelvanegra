@@ -118,7 +118,6 @@ export const StyleGroup= styled.div`
 
 export const MainProduct = styled.div`
 
-background: #f7efe7;
 max-width: 1000px;
 width: 100%;
 box-shadow: 17px 20px 40px rgba(0, 0, 0, .21) ;
@@ -133,6 +132,20 @@ border-radius:45px;
   dispaly: block;
 }
 `
+
+
+export const MainProductHome = styled.div`
+width: 100%;
+box-shadow: 17px 20px 40px rgba(0, 0, 0, .21) ;
+justify-content: space-between;
+align-items: center;
+border-radius:10px;
+background: white;
+@media(min-width: 1024) {
+  dispaly: block;
+}
+`
+
 
 export const MainAccomodationSection = styled.div`
 
@@ -252,23 +265,44 @@ export const BorderInput = styled.div`
   }
 `;
 
+
+export const  BorderInputHome = styled.div`
+border-left:1px solid rgb(224, 224, 224);
+cursos:pointer;
+width:100%;
+
+@media(max-width: 1024px) {
+  border-left:none;
+  border-bottom: 1px solid rgb(224, 224, 224)
+}
+`
+
+
 export const BorderInputInitial = styled(BorderInput)`
-  padding: 15px;
-  background: #f5f0eb;
+  padding: 16px;
+  background: white;
   box-shadow: 17px 20px 40px rgba(0, 0, 0, 0.21);
   border-radius: 39px;
 `;
-export const MainAccomodation = styled.main`
-display: flex;
-flex-direction: column;
-height: auto;
-margin: auto;
-max-width: 600px;
-overflow: auto;
-padding: 29px;
-text-align: center;
-width: 100vw;
+
+
+export const BorderInputInitialHome = styled(BorderInput)`
+ cursos:pointer;
+width:100%;
+@media(max-width: 1024px) {
+  border-left:none;
+  border-bottom: 1px solid rgb(224, 224, 224)
+}
 `;
+
+
+export const MainAccomodation = styled.main`
+margin-top: -65px;
+position: absolute;
+left: 0;
+right: 0;
+
+`
 
 export const MainAccomodationRoomSearch = styled.main`
 
@@ -288,9 +322,23 @@ export const BorderSearch = styled.div`
 export const ContainerButtonSearch = styled.div`
 padding: 13px;
 `
+
+
+export const ContainerButtonSearchHome = styled.div`
+
+`
+
 export const ButtonSearch = styled.button`
 border-radius: 25px;
 
+margin:auto;
+@media(max-width: 1500px) {
+}
+`
+
+
+export const ButtonSearchHome = styled.button`
+border-radius: 15px;
 
 
 margin:auto;

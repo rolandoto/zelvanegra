@@ -27,14 +27,14 @@ const CalenderSearch =({HandClickMenuPeople,
                         <span className="  " >{totalCountAdults}</span>
                         </BorderInput>
                         <ContainerButtonSearch  className="  ">
-                                        <ButtonSearch className=" lg:hidden justify-center  items-center    flex  cursor-pointer z-40   w-full bg-black text-white py-4    rounded-full  transition duration-200" onClick={onsubmit}>
+                                        <ButtonSearch className=" lg:hidden justify-center  items-center    flex  cursor-pointer z-40   w-full bg- text-white py-4    rounded-full  transition duration-200" onClick={onsubmit}>
                                                 Reservar <FiArrowRight fontSize={25}/>
                                         </ButtonSearch>
-                                        <ButtonSearch className=" justify-center  items-center lg:flex hidden cursor-pointer    p-4 lg:block  w-[150px]   bg-black  text-white py-4     rounded-full   transition duration-200" onClick={onsubmit}>
+                                        <ButtonSearch className=" justify-center  items-center lg:flex hidden cursor-pointer    p-4 lg:block  w-[150px]  bg-black text-white py-4     rounded-full   transition duration-200" onClick={onsubmit}>
                                         
                                         Reservar  <FiArrowRight fontSize={23}/>
                                         </ButtonSearch>
-                            </ContainerButtonSearch>
+                        </ContainerButtonSearch>
             </MainProduct>
         
     )

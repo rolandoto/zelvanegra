@@ -320,11 +320,16 @@ const subtotal = getCartSubtotal()
                 <div className="absolute inset-0 bg-black opacity-15"></div>
                 <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white">
                     <h1 className="text-4xl md:text-6xl lg:text-6xl font-lora">
-                      {loadingHotel ?"cargando " :hotel?.nombre}  
+                      {loadingHotel ?"cargando " :hotel?.nombre} Medellín 
                     </h1>
-                    <p className="mt-2 text-base md:text-xl lg:text-3xl font-lora font-normal">
-                    ¿Buscas un oasis de tranquilidad en el vibrante Parque del Poblado? 
-                    </p>
+                    <h2 className="mt-2 text-base md:text-xl lg:text-3xl font-lora font-normal">
+                      ¡Donde el arte y la hospitalidad se unen!
+                    </h2>
+
+                    <h2 className="mt-2 text-base md:text-xl lg:text-3xl font-lora font-normal">
+                    Tu hogar en el centro de Medellín
+                    </h2>
+                    
                     <button className="mt-6 bg-black text-white px-6 py-3 rounded-lg hover:bg-black" onClick={scrollToRoomSection}>
                         Ver habitaciones
                     </button>
