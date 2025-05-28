@@ -99,8 +99,6 @@ const Checkout  =() =>{
     
     };
 
-
-
     const FillContent =() =>{
 
         if(Boolean(reservation)){
