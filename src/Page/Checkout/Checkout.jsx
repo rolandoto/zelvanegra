@@ -121,11 +121,10 @@ const Checkout  =() =>{
         }
     }
 
- 
 
 
     return (<>
-            <div className="relative  bg-[#f6f6f6]  bg-cover bg-center h-full">
+            <div className="relative   bg-[#f6f6f6]  bg-cover bg-center h-full">
                 {loadingCart && <LoadingOverlay title={"Cargando..."} />}
                 {loading && <LoadingOverlay title={"Creando reserva..."} />}  
                 <HeaderStep currentStep={2} />

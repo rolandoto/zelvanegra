@@ -10,7 +10,7 @@ const HeaderStep =({currentStep}) =>{
       ];
   
     return (
-        <header className="fixed top-0 left-0 w-full z-50 bg-white border-b shadow-sm px-4 sm:px-6 py-3">
+        <header className="fixed top-0 left-0 w-full z-40 bg-white border-b shadow-sm px-4 sm:px-6 py-3">
         <div className="max-w-7xl mx-auto w-full flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
 
           <div className="flex justify-between items-center gap-4 sm:gap-10 w-full sm:w-auto">
