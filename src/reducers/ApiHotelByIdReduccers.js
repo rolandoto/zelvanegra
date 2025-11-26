@@ -7,11 +7,19 @@ export const initialState ={
     
     hotelList:[],
     loadingHotel:false,
-    errorHotel:null
+    errorHotel:null,
+
+    RoomsType:[],
+    LoadingRoomTypes:false,
+    ErrorRoomTypes:false,
+
+    banks: [],
+    loadingBanks: false,
+    errorBanks: null,
 }
 
 export const ApiHotelByIdReduccers = createSlice({
-    name:"Hotel",
+    name:"Tarifas",
     initialState,
     reducers:{
         loading:(state) =>{
@@ -40,9 +48,46 @@ export const ApiHotelByIdReduccers = createSlice({
             state.loadingHotel = false
             state.errorHotel = true
         },
+        //RoomsTypes
+        loadingRoomsTypes:(state) =>{
+            state.LoadingRoomTypes=true
+            state.ErrorRoomTypes= null
+        },
+        setRoomsTypes:(state,action) =>{
+            state.RoomsType = action.payload
+            state.LoadingRoomTypes= false
+        },
+        setErrorRoomsTypes:(state,action) =>{
+            state.LoadingRoomTypes = false
+            state.ErrorRoomTypes = true
+        },
+         loadingBanks: (state) => {
+            state.loadingBanks = true;
+            state.errorBanks = null;
+        },
+        setListBanks: (state, action) => {
+            state.banks = action.payload;
+            state.loadingBanks = false;
+        },
+        setListBanksError: (state, action) => {
+            state.loadingBanks = false;
+            state.errorBanks = true;
+        },
     }
 })
 
-export const {loading,setHotel,setError,loadingHotel,setListHotel,setlistoHotelError} = ApiHotelByIdReduccers.actions
+export const {  loading,
+                setHotel,
+                setError,
+                loadingHotel,
+                setListHotel,
+                setlistoHotelError,
+                loadingRoomsTypes,
+                setRoomsTypes,
+                setErrorRoomsTypes,
+                loadingBanks,
+                setListBanks,
+                setListBanksError
+            } = ApiHotelByIdReduccers.actions
 
 export default  ApiHotelByIdReduccers.reducer

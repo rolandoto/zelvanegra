@@ -29,6 +29,8 @@ const CardAccomodation =({  roomTypeName,
     const discountedPrice = originalPrice * (1 - discountRate);   
     const validPromotions =promotion ? discountedPrice :  roomRate
 
+
+
       // Formatear precio en formato COP
       const formatPrice = (price) => {
         return `COP ${price.toLocaleString('es-CO')}`;
@@ -57,8 +59,6 @@ const CardAccomodation =({  roomTypeName,
             AddCart({ roomTypeID, roomTypeName,quantity: 1,Price:roomRate,roomsAvailable,startDate,endDate,room_image:roomTypePhotos[0].image,nights:nightsToday,person:counPeople,persontotal:counPeople,validCode}); 
         }
     };
-
-
         
       const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -69,7 +69,6 @@ const CardAccomodation =({  roomTypeName,
       };
     
   
-
       useEffect(() => {
         const interval = setInterval(() => {
           setTimeout(() => {
@@ -116,27 +115,21 @@ const CardAccomodation =({  roomTypeName,
                         alt={roomTypeName} 
                         className={`w-full object-cover  h-auto ${animationClass}   `}
                       />
-                     
                     </div>
-                    
                     <div className="p-4 border-b border-gray-200">
                       <div className="flex flex-col gap-3">
-
                       <div className=" bottom-2 left-2 flex gap-4 text-gray-600 text-sm">
                         <div className="flex items-center gap-1  bg-opacity-60 px-2 py-1 rounded">
                              <IconFaUser  />
                           <span>{counPeople}</span>
                         </div>
-                       
                         <div className="flex items-center gap-1 bg-opacity-60 px-2 py-1 rounded">
                           <IconMdOutlineKingBed/>
                           <span>1</span>
                         </div>
                       </div>
-
                       </div>
                     </div>
-                   
                     <div className="p-4 border-b border-gray-200">
                       <h2 className="text-lg font-bold text-gray-900 mb-2">{roomTypeName}</h2>
                       <div className="text-gray-600 flex flex-col gap-1">
