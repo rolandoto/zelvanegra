@@ -48,6 +48,47 @@ const Accommodation = () => {
     getClassNameForDate} =  UseCalenderSearch()
 
 
+    /**
+     * 
+     *  {isVisible && <div className="fixed top-48 left-0 right-4 flex justify-center z-40">
+                      <div className="w-[90%] md:w-full max-w-md bg-black text-white rounded-3xl shadow-lg overflow-hidden flex">
+                        <div className="p-4 flex-1">
+                          <h2 className="text-sm md:text-base font-bold mb-2">
+                            ¡OFERTA EXCLUSIVA SOLO PARA TI! APLICA TU CUPÓN
+                          </h2>
+                          <input
+                            type="text"
+                            placeholder="Ingresa tu cupón"
+                            value={coupon}
+                            onChange={(e) => setCoupon(e.target.value)}
+                            className="w-full text-black p-2  rounded-lg mb-2  focus:outline-none focus:ring-2 focus:ring-gray-400"
+                          />
+                          <button  onClick={() => setIsVisible(false)} className="bg-white w-full text-gray-800 px-4 py-2  text-sm font-semibold hover:bg-gray-200 transition-colors">
+                            APLICAR
+                          </button>
+                        </div>
+
+                        <div className="w-1/2 relative">
+                          <img
+                            src="https://h-img1.cloudbeds.com/uploads/315192/img_0218_featured~~668c1a114c041.jpg"
+                            alt="Luxury Suite"
+                            className="object-cover h-full w-full"
+                          />
+                          <button
+                            onClick={() => setIsVisible(false)}
+                            aria-label="Cerrar oferta"
+                            className="absolute w-6 h-6 top-2 right-2 bg-gray-800 rounded-full flex items-center justify-center text-white hover:bg-gray-600 transition-colors"
+                          >
+                            ×
+                          </button>
+                        </div>
+                      </div>
+                    </div>}
+
+     * 
+     * 
+     */
+
     const [promotion,setPromotions] =useState(false)
     const {getCartSubtotal} = UseCart()
     const subtotal = getCartSubtotal()
@@ -157,40 +198,72 @@ const Accommodation = () => {
    
       return (<div  className="bg-[#f6f6f6] h-full  " >
                 <div className="relative  bg-cover bg-center h-full">
-                  {isVisible && <div className="fixed top-48 left-0 right-4 flex justify-center z-40">
-                      <div className="w-[90%] md:w-full max-w-md bg-black text-white rounded-3xl shadow-lg overflow-hidden flex">
-                        <div className="p-4 flex-1">
-                          <h2 className="text-sm md:text-base font-bold mb-2">
-                            ¡OFERTA EXCLUSIVA SOLO PARA TI! APLICA TU CUPÓN
-                          </h2>
-                          <input
-                            type="text"
-                            placeholder="Ingresa tu cupón"
-                            value={coupon}
-                            onChange={(e) => setCoupon(e.target.value)}
-                            className="w-full text-black p-2  rounded-lg mb-2  focus:outline-none focus:ring-2 focus:ring-gray-400"
-                          />
-                          <button  onClick={() => setIsVisible(false)} className="bg-white w-full text-gray-800 px-4 py-2  text-sm font-semibold hover:bg-gray-200 transition-colors">
-                            APLICAR
-                          </button>
-                        </div>
+                   
 
-                        <div className="w-1/2 relative">
-                          <img
-                            src="https://h-img1.cloudbeds.com/uploads/315192/img_0218_featured~~668c1a114c041.jpg"
-                            alt="Luxury Suite"
-                            className="object-cover h-full w-full"
-                          />
-                          <button
-                            onClick={() => setIsVisible(false)}
-                            aria-label="Cerrar oferta"
-                            className="absolute w-6 h-6 top-2 right-2 bg-gray-800 rounded-full flex items-center justify-center text-white hover:bg-gray-600 transition-colors"
-                          >
-                            ×
-                          </button>
-                        </div>
-                      </div>
-                    </div>}
+                   {isVisible && (
+                <div className="fixed inset-0 flex items-center justify-center px-4 z-40">
+                  <div
+                    className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+                    onClick={() => setIsVisible(false)}
+                  ></div>
+                  <div className="
+                    relative w-full max-w-md bg-black text-white rounded-3xl shadow-xl overflow-hidden
+                    animate-[fadeIn_0.3s_ease-out]
+                    md:flex">
+                    <div className="p-5 flex flex-col justify-center flex-1">
+                      <h2 className="text-base md:text-lg font-bold mb-2 leading-tight">
+                        ¡PROMOCIÓN ESPECIAL SOLO PARA TI!  
+                        <span className="block md:inline">RESERVA TU MASAJE</span>
+                      </h2>
+
+                      <p className="text-xs md:text-sm mb-4 text-gray-300">
+                        Contáctanos por WhatsApp y recibe beneficios exclusivos para tu próxima sesión de masaje.
+                      </p>
+
+                      <button
+                        onClick={() => {
+                          const phone = "573226065069";
+                          const message = encodeURIComponent(
+                            "Hola, deseo reservar un masaje. Vi la promoción en la página web."
+                          );
+                          window.open(`https://wa.me/${phone}?text=${message}`, "_blank");
+                          setIsVisible(false);
+                        }}
+                        className="
+                          bg-white text-gray-900 w-full py-2 text-sm font-semibold rounded-xl
+                          shadow-md hover:bg-gray-200 active:scale-95 transition-all
+                        "
+                      >
+                        Reservar por WhatsApp
+                      </button>
+                    </div>
+
+                    {/* Imagen */}
+                    <div className="relative w-full md:w-1/2 h-40 md:h-auto">
+                      <img
+                        src="https://github.com/rolandoto/image-pms/blob/main/WhatsApp%20Image%202025-12-01%20at%2010.09.34%20AM.jpeg?raw=true"
+                        alt="Masaje relajante"
+                        className="object-cover w-full h-full"
+                      />
+
+                      {/* Botón cerrar */}
+                      <button
+                        onClick={() => setIsVisible(false)}
+                        aria-label="Cerrar oferta"
+                        className="
+                          absolute top-2 right-2 w-7 h-7 bg-black/60 rounded-full flex items-center justify-center
+                          text-white text-lg font-bold hover:bg-black/80 transition
+                        "
+                      >
+                        ×
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+
+   
 
                     <div className="hidden md:block">
                       <HeaderStep currentStep={1} />
